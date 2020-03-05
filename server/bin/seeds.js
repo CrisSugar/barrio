@@ -14,7 +14,7 @@ const Shop = require("../models/Shop");
 const bcryptSalt = 10;
 
 mongoose
-  .connect("mongodb://localhost/barrio", {
+  .connect("${process.env.DBURL}", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
