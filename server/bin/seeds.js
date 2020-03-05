@@ -14,7 +14,7 @@ const Shop = require("../models/Shop");
 const bcryptSalt = 10;
 
 mongoose
-  .connect("${process.env.DBURL}", {
+  .connect(`${process.env.DBURL_HEROKU}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
