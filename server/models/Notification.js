@@ -1,12 +1,9 @@
-models/offer-model.js
-
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const notificationSchema = new Schema({
+  neighbourhood: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
   commentary: String,
-  
-  //populado por Id de tienda
 },{
     timestamps: {
       createdAt: 'created_at',
@@ -14,6 +11,6 @@ const notificationSchema = new Schema({
     }
 });
 
-const Notification = mongoose.model('Notification', offerSchema);
+const Notification = mongoose.model("Notification", offerSchema);
 
-module.exports = Offer;
+module.exports = Notification;

@@ -70,14 +70,14 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const authRouter = require('./routes/api/auth');
-app.use('/api/auth', authRouter);
+// const authRouter = require('./routes/api/auth');
+// app.use('/api/auth', authRouter);
+app.use("/",require("./routes"))
 
 app.use((req,res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.use("/",require("./routes"))
 
 
 module.exports = app;

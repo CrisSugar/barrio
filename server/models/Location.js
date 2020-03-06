@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const locationSchema = new Schema(
   {
     neighborhood: String,
-    city: String
+    city: String,
   },
   {
     timestamps: {

@@ -3,13 +3,24 @@ const Schema = mongoose.Schema;
 
 const shopSchema = new Schema(
   {
-    neighborhood: { type: Schema.Types.ObjectId, ref: "Location" },
+    neighbourhood: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
     name: String,
     sector: String,
+    description: String,
+    image: String,
+    mobile: Number,
+    web: String,
     owner: { type: Schema.Types.ObjectId, ref: "User" },
+    offers: [
+      {
+        comments: String
+      }
+    ],
     year: Number,
-    lat: Number,
-    lng: Number
+    location: {
+      lat: Number,
+      lng: Number
+    }
   },
   {
     timestamps: {

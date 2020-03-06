@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const offerSchema = new Schema({
+  location: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
+  shop: { type: Schema.Types.ObjectId, ref: "Shop" },
   product: String,
   prize: Number,
   offerPrize: Number,
-  year: Number
-  //populado por tienda
+  image: String
+  
 },{
     timestamps: {
       createdAt: 'created_at',
