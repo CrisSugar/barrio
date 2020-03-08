@@ -1,35 +1,35 @@
 import React from "react";
-import AnyShop from "../anyShop/AnyShop";
+import AnyOffer from "../anyOffer/AnyOffer";
 import Service from "../../services/Service";
 import Axios from "axios";
 
-export default class AllShops extends React.Component {
+export default class AllOffers extends React.Component {
   constructor(props) {
     super(props);
     this.service = new Service();
     this.state = {
-      shops: []
+      offers: []
     };
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/api/shops").then(response => {
+    Axios.get("http://localhost:5000/api/offers").then(response => {
       this.setState({
-        shops: response.data
+        offers: response.data
       });
     });
 }
 
     
     render() {
-        console.log(this.state.shops)
+        console.log(this.state.offers)
         // let shops = [this.props.allShops
     
     return (
         <>
         
-        {this.state.shops.map(anyshops => (
-          <AnyShop key={anyshops._id} anyshops={anyshops} ></AnyShop> 
+        {this.state.offers.map(anyoffers => (
+          <AnyOffer key={anyoffers._id} anyoffers={anyoffers} ></AnyOffer> 
         ))} 
         </>
    
@@ -37,4 +37,3 @@ export default class AllShops extends React.Component {
  )
   }
 }
-

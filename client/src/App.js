@@ -38,6 +38,7 @@ import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
+import AnyShop from "./components/anyShop/AnyShop";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -95,12 +96,13 @@ class App extends Component {
           {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
           {/* <Contents /> */}
           <Switch>
-            <Route
-              exact
-              path="/shops"
-              render= {() => <AllShops></AllShops>
-              }
-            />
+            <Route exact path="/shops" render={() => <AllShops></AllShops>} />
+
+            {/* <Route exact path="/shop/:id" render={() => <AnyShop></AnyShop>} /> */}
+
+            {/* <Route exact path="/offers" render={() => <AllOffers></AllOffers>} /> */}
+            {/* <Route exact path="/offer/:id" render={() => <AnyOffer></AnyOffer>} /> */}
+            
           </Switch>
         </div>
       </React.Fragment>

@@ -58,37 +58,47 @@ router.get("/shop/:id", (req, res, next) => {
 
 /// create one
 router.post("/shop/new", (req, res, next) => {
-  Shop.create(id_shop, req.body).then(() => res.json(allShops));
+  Shop.create(req.body).then((allShops) => res.json(allShops));
 });
 
 /// update one
 router.put("/shop/update", (req, res, next) => {
-  Shop.findOneAndUpdate(req.params.id, req.body).then(() =>
-    res.json({ updated: true })
+  Shop.findByIdAndUpdate(req.params.id, req.body).then(() =>
+    res.json({ updated: true, _id: req.params.id })
   );
 });
 
 /// delete one
 router.delete("/shop/delete", (req, res, next) => {
   Shop.findByIdAndDelete(req.params.id).then(() => {
-    res.json({ delete: true, _id: req.params.id });
+    res.json({ deleted: true, _id: req.params.id });
   });
 });
 
 /// ROUTES OF OFFERS  //////////////////////////////////////////////////
 
 /// show all
+
 router.get("/offers", (req, res, next) => {
   Offer.find()
-    .populate("shop")
-    .then(allOffers => res.json(allOffers));
+  .then(allOffers => {
+    res.json(allOffers);
+  });
 });
+
+// router.get("/offers", (req, res, next) => {
+//   Offer.find()
+//     // .populate("shop")
+//     // .then(offers => {let dataPayload={offers,currentShop};
+//     then(allOffers => {
+//       res.json(allOffers)});
+// });
 
 /// show one
 router.get("/offer/:id", (req, res, next) => {
   Offer.findById(req.params.id)
-    .populate("shop")
-    .then(allOffers => res.json(allOffers));
+    // .populate("shop")
+    .then(allOffers => {res.json(allOffers)});
 });
 
 /// create one

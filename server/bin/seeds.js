@@ -45,7 +45,7 @@ let shops = [
     mobile: 679854212,
     web: "www.zapateriaelpilar.com",
     // owner: String,
-    // offers:[],
+    offers:[],
     year: 1982,
     location: {
       lat: 33.23,
@@ -62,7 +62,7 @@ let shops = [
     mobile: 621485975,
     web: "www.ternascoymas.com",
     // owner: String,
-    // offers: [],
+    offers: [],
     year: 2013,
     location: {
       lat: 40.25,
@@ -79,7 +79,7 @@ let shops = [
     mobile: 632518977,
     web: "www.novedadeseloina.com",
     // owner: String,
-    // offers:[],
+    offers:[],
     year: 2004,
     location: {
       lat: 33.23,
@@ -96,7 +96,7 @@ let shops = [
     mobile: 675824198,
     web: "www.perfectvision.com",
     // owner: String,
-    //offers:[],
+    offers:[],
     year: 2001,
     location: {
       lat: 33.23,
@@ -113,7 +113,7 @@ let shops = [
     mobile: 635214496,
     web: "www.pastelerialamaja.com",
     // owner: String,
-    //offers:[],
+    offers:[],
     year: 1991,
     location: {
       lat: 33.23,
@@ -130,7 +130,7 @@ let shops = [
     mobile: 655841277,
     web: "www.outdoorsport.com",
     // owner: String,
-    //offers:[],
+    offers:[],
     year: 2009,
     location: {
       lat: 33.23,
@@ -147,7 +147,7 @@ let shops = [
     mobile: 616816868,
     web: "www.pizzasportobello.com",
     // owner: String,
-    //offers:[],
+    offers:[],
     year: 2004,
     location: {
       lat: 33.23,
@@ -164,7 +164,7 @@ let shops = [
     mobile: 630201040,
     web: "www.drogueriaagustin.com",
     // owner: String,
-    //offers: [],
+    offers: [],
     year: 1987,
     location: {
       lat: 33.23,
@@ -180,7 +180,7 @@ let shops = [
     mobile: 645781200,
     web: "www.kioskoTBO.com",
     // owner: String,
-    //ofers: [],
+    offers: [],
     year: 2017,
     location: {
       lat: 33.23,
@@ -197,7 +197,7 @@ let shops = [
     mobile: 678541269,
     web: "www.musicalsolfamida.com",
     // owner: String,
-    //offers: [],
+    offers: [],
     year: 2004,
     location: {
       lat: 33.23,
@@ -263,14 +263,7 @@ let offers = [
     offerPrize: "39 euros",
     image: "http://nohayimagentodavia.jpg"
   },
-  {
-    neighbourhood: "Delicias",
-    shop: "Novedades Eloína",
-    product: "Camisa de caballero manga larga",
-    prize: "45 euros",
-    offerPrize: "39 euros",
-    image: "http://nohayimagentodavia.jpg"
-  },
+  
 
 ];
 
@@ -281,7 +274,13 @@ User.deleteMany()
     return Shop.deleteMany();
   })
   .then(() => {
+    return Offer.deleteMany();
+  })
+  .then(() => {
     return User.deleteMany();
+  })
+  .then(() => {
+    return Offer.create(offers);
   })
   .then(() => {
     return Shop.create(shops);

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const offerSchema = new Schema({
-  location: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
+  neighbourhood: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
   shop: String,
   product: String,
   prize: String,
