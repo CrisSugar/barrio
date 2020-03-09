@@ -216,27 +216,27 @@ let shops = [
     commentary: "La asociación de vecinos nos solicita colaboración económica y organizativa para la I Marcha por la esclerósis múltiple. Se convoca reunión en la sede la Asociación el 08-04-2020."
   }
 ];
-// let users = [
-//   {
-//     neighbourhood: "Delicias",
-//     username: "alice",
-//     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
-//     role: "client",
-//     clientData: {
-//       comments: ["comment 1", "comment 2"]
-//     }
-//   },
-//   {
-//     neighbourhood: "Centro",
-//     username: "bob",
-//     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
-//     role: "owner",
-//     ownerData: {
-//       // shopId: shopsCreated[0]._id,
-//       comments: ["comment 1 dueño", "comment 2 dueño"]
-//     }
-//   }
-// ];
+let users = [
+  {
+    neighbourhood: "Delicias",
+    username: "alice",
+    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+    role: "client",
+    clientData: {
+      comments: ["comment 1", "comment 2"]
+    }
+  },
+  {
+    neighbourhood: "Centro",
+    username: "bob",
+    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+    role: "owner",
+    ownerData: {
+      // shopId: shopsCreated[0]._id,
+      comments: ["comment 1 dueño", "comment 2 dueño"]
+    }
+  }
+];
 
 let offers = [
   {
@@ -281,6 +281,9 @@ User.deleteMany()
   })
   .then(() => {
     return Notification.deleteMany();
+  })
+  .then(() => {
+    return User.create(users);
   })
   .then(() => {
     return Notification.create(notifications);

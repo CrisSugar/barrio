@@ -143,9 +143,13 @@ router.get("/notification/:id", (req, res, next) => {
 });
 
 /// create one
-router.post("/offer/new", (req, res, next) => {
-  Notification.create(req.params.id, req.body).then(() =>
-    res.json(allNotifications)
+router.post("/notification/new", (req, res, next) => {
+  let aviso = {
+    neighbourhood : req.body.neighbourhood,
+    commentary: req.body.commentary
+  }
+  Notification.create(aviso).then(() =>
+    res.json(aviso)
   );
 });
 

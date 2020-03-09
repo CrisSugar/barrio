@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import AnyShop from "../anyShop/AnyShop";
 import Service from "../../services/Service";
 import Axios from "axios";
@@ -8,36 +8,35 @@ export default class AllShops extends React.Component {
     super(props);
     this.service = new Service();
     this.state = {
-      shops: []
+      shops: [],
+      // loggedInUser: userObj
     };
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/api/shops").then(response => {
+    Axios.get("http://localhost:5000/api/shops").then(response => { 
+
+      let filteredShops;
+      filteredShops = response.data.filter((shop) => {
+       return shop.neighbourhood.includes("Centro")
+      });
+
       this.setState({
-        shops: response.data
+        shops: filteredShops
       });
     });
-}
+  }
 
-    
-    render() {
-        console.log(this.state.shops)
-        // let shops = [this.props.allShops
-    
+  render() {
+    console.log(this.state.shops);
+    // let shops = [this.props.allShops
+
     return (
-        <>
-        
+      <>
         {this.state.shops.map(anyshops => (
-          <AnyShop key={anyshops._id} {...anyshops}/>
-        ))} 
-
-        
-
-        </>
-   
-      
- )
+          <AnyShop key={anyshops._id} {...anyshops} />
+        ))}
+      </>
+    );
   }
 }
-

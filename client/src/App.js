@@ -30,9 +30,7 @@ import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 
-// import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
-// import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
@@ -46,6 +44,8 @@ import AnyNotification from "./components/anyNotification/AnyNotification";
 import ShopDetail from "./components/shopDetail/ShopDetail";
 import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
+import HomeClient from "./components/homeClient/HomeClient";
+import HomeOwner from "./components/homeOwner/HomeOwner";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -103,19 +103,62 @@ class App extends Component {
           {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
           {/* <Contents /> */}
           <Switch>
-            <Route exact path="/shops" render={() => <AllShops></AllShops>} />
+            {/* <Route
+              exact
+              path=""
+              render={() => <Home></Home>}
+            /> */}
 
-            <Route exact path="/shop/:id" render={(match) => <ShopDetail {...match}></ShopDetail>} />
+            <Route
+              exact
+              path="/homeowner"
+              render={() => <HomeOwner></HomeOwner>}
+            />
+            <Route
+              exact
+              path="/homeclient"
+              render={() => <HomeClient></HomeClient>}
+            />
 
-            <Route exact path="/offers" render={() => <AllOffers></AllOffers>} />
+            <Route
+              exact
+              path="/shops"
+              render={props => (
+                <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+              )}
+            />
 
-            <Route exact path="/offer/:id" render={(match) => <OfferDetail {...match}></OfferDetail>} />
+            <Route
+              exact
+              path="/shop/:id"
+              render={match => <ShopDetail {...match}></ShopDetail>}
+            />
 
-            <Route exact path="/notifications" render={() => <AllNotifications></AllNotifications>} />
+            <Route
+              exact
+              path="/offers"
+              render={() => <AllOffers></AllOffers>}
+            />
 
-            <Route exact path="/notification/:id" render={(match) => <NotificationDetail {...match}></NotificationDetail>} />
+            <Route
+              exact
+              path="/offer/:id"
+              render={match => <OfferDetail {...match}></OfferDetail>}
+            />
 
-            
+            <Route
+              exact
+              path="/notifications"
+              render={() => <AllNotifications></AllNotifications>}
+            />
+
+            <Route
+              exact
+              path="/notification/:id"
+              render={match => (
+                <NotificationDetail {...match}></NotificationDetail>
+              )}
+            />
           </Switch>
         </div>
       </React.Fragment>
