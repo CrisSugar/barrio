@@ -56,20 +56,37 @@ router.get("/shop/:id", (req, res, next) => {
   });
 });
 
+router.get("/shop/:neighbourhood", (req, res, next) => {
+  Shop.find(req.params.neighbourhood).then(allShops => {
+    res.json(allShops);
+  });
+});
+
 /// create one
 router.post("/shop/new", (req, res, next) => {
-  Shop.create(req.body).then((allShops) => res.json(allShops));
+  const {
+    neighbourhood,
+    name,
+    sector,
+    description,
+    mobile,
+    web,
+    offers,
+    year,
+    location
+  } = req.body;
+  Shop.create(req.body).then(allShops => res.json(allShops));
 });
 
 /// update one
-router.put("/shop/update", (req, res, next) => {
-  Shop.findByIdAndUpdate(req.params.id, req.body).then(() =>
-    res.json({ updated: true, _id: req.params.id })
-  );
+router.put("/shop/:id", (req, res, next) => {
+  Shop.findByIdAndUpdate(req.params.id, req.body).then(() => {
+    res.json({ updated: true, _id: req.params.id });
+  });
 });
 
 /// delete one
-router.delete("/shop/delete", (req, res, next) => {
+router.delete("/shop/:id", (req, res, next) => {
   Shop.findByIdAndDelete(req.params.id).then(() => {
     res.json({ deleted: true, _id: req.params.id });
   });
@@ -80,25 +97,16 @@ router.delete("/shop/delete", (req, res, next) => {
 /// show all
 
 router.get("/offers", (req, res, next) => {
-  Offer.find()
-  .then(allOffers => {
+  Offer.find().then(allOffers => {
     res.json(allOffers);
   });
 });
 
-// router.get("/offers", (req, res, next) => {
-//   Offer.find()
-//     // .populate("shop")
-//     // .then(offers => {let dataPayload={offers,currentShop};
-//     then(allOffers => {
-//       res.json(allOffers)});
-// });
-
 /// show one
 router.get("/offer/:id", (req, res, next) => {
-  Offer.findById(req.params.id)
-    // .populate("shop")
-    .then(allOffers => {res.json(allOffers)});
+  Offer.findById(req.params.id).then(allOffers => {
+    res.json(allOffers);
+  });
 });
 
 /// create one
@@ -107,14 +115,14 @@ router.post("/offer/new", (req, res, next) => {
 });
 
 /// update one
-router.put("/offer/update", (req, res, next) => {
+router.put("/offer/:id", (req, res, next) => {
   Offer.findByIdAndUpdate(req.params.id, req.body).then(() =>
     res.json({ updated: true })
   );
 });
 
 /// delete one
-router.delete("/offer/delete", (req, res, next) => {
+router.delete("/offer/:id", (req, res, next) => {
   Offer.findByIdAndDelete(req.params.id).then(() =>
     res.json({ delete: true, _id: req.params.id })
   );
@@ -124,37 +132,34 @@ router.delete("/offer/delete", (req, res, next) => {
 
 /// show all
 router.get("/notifications", (req, res, next) => {
-  Notification.find()
-    .populate("user", {
-      role: "owner"
-    })
-    .then(allNotifications => res.json(allNotifications));
+  Notification.find().then(allNotifications => res.json(allNotifications));
 });
 
 /// show one
-router.get("/notification", (req, res, next) => {
-  Notification.findById(req.params.id)
-    .populate("user", { role: "owner" })
-    .then(allNotifications => res.json(allNotifications));
+router.get("/notification/:id", (req, res, next) => {
+  Notification.findById(req.params.id).then(allNotifications =>
+    res.json(allNotifications)
+  );
 });
 
 /// create one
 router.post("/offer/new", (req, res, next) => {
   Notification.create(req.params.id, req.body).then(() =>
-    res.redirect("/notifications")
+    res.json(allNotifications)
   );
 });
 
 /// update one
-router.put("/notification/update", (req, res, next) => {
+router.put("/notification/:id", (req, res, next) => {
   Notification.findByIdAndUpdate(req.params.id, req.body).then(() => res.json, {
-    update: true
+    update: true,
+    _id: req.params.id
   });
 });
 
 /// delete one
-router.delete("/notification/delete", (req, res, next) => {
-  Notification.delete(req.params.id).then(() =>
+router.delete("/notification/:id", (req, res, next) => {
+  Notification.findByIdAndDelete(req.params.id).then(() =>
     res.json({ delete: true, _id: req.params.id })
   );
 });

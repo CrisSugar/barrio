@@ -39,6 +39,13 @@ import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
 import AnyShop from "./components/anyShop/AnyShop";
+import AllOffers from "./components/allOffers/AllOffers";
+import AnyOffer from "./components/anyOffer/AnyOffer";
+import AllNotifications from "./components/allNotifications/AllNotifications";
+import AnyNotification from "./components/anyNotification/AnyNotification";
+import ShopDetail from "./components/shopDetail/ShopDetail";
+import OfferDetail from "./components/offerDetail/OfferDetail";
+import NotificationDetail from "./components/notificationDetail/NotificationDetail";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -98,10 +105,16 @@ class App extends Component {
           <Switch>
             <Route exact path="/shops" render={() => <AllShops></AllShops>} />
 
-            {/* <Route exact path="/shop/:id" render={() => <AnyShop></AnyShop>} /> */}
+            <Route exact path="/shop/:id" render={(match) => <ShopDetail {...match}></ShopDetail>} />
 
-            {/* <Route exact path="/offers" render={() => <AllOffers></AllOffers>} /> */}
-            {/* <Route exact path="/offer/:id" render={() => <AnyOffer></AnyOffer>} /> */}
+            <Route exact path="/offers" render={() => <AllOffers></AllOffers>} />
+
+            <Route exact path="/offer/:id" render={(match) => <OfferDetail {...match}></OfferDetail>} />
+
+            <Route exact path="/notifications" render={() => <AllNotifications></AllNotifications>} />
+
+            <Route exact path="/notification/:id" render={(match) => <NotificationDetail {...match}></NotificationDetail>} />
+
             
           </Switch>
         </div>

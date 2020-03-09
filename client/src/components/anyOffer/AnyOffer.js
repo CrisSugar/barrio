@@ -1,7 +1,9 @@
 import React from "react";
-// import Axios from "axios";
+import Axios from "axios";
+import {Link} from "react-router-dom";
 
-export default class AnyOffer extends React.Component {
+
+function AnyOffer(props) {
   // constructor(props){
   //   super(props);
   //   this.state = {
@@ -17,28 +19,29 @@ export default class AnyOffer extends React.Component {
   //   });
   // }
 
-  render() {
+  
     return (
       <div>
-        {/* <img src={this.props.anyoffers.image_url} alt="" /> */}
+        {/* <img src={props.image_url} alt="" /> */}
         <ul>
           <li>
-            <p>{this.props.anyoffers.neighbourhood}</p>
+            <p>{props.neighbourhood}</p>
           </li>
           <li>
-            <h4>{this.props.anyoffers.shop}</h4>
+            <h4>{props.shop}</h4>
           </li>
           <li>
-            <h2>{this.props.anyoffers.product}</h2>
+            <h2>{props.product}</h2>
           </li>
           <li>
-            <p>{this.props.anyoffers.prize}</p>
+            <p> Precio : {props.prize}</p>
           </li>
           <li>
-            <p>{this.props.anyoffers.offerPrize}</p>
+            <p> Precio oferta: {props.offerPrize}</p>
           </li>
+          <Link to={`/offer/${props._id}`}>Ver Oferta</Link>
         </ul>
       </div>
     );
   }
-}
+  export default AnyOffer

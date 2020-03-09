@@ -29,8 +29,11 @@ export default class AllShops extends React.Component {
         <>
         
         {this.state.shops.map(anyshops => (
-          <AnyShop key={anyshops._id} anyshops={anyshops} ></AnyShop> 
+          <AnyShop key={anyshops._id} {...anyshops}/>
         ))} 
+
+        
+
         </>
    
       

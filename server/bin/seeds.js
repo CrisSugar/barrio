@@ -206,16 +206,16 @@ let shops = [
   }
 ];
 
-// let notification = [
-//   {
-//     neighbourhood: "La Almozara",
-//     commentary: "Desde el 20-3-2020: corte al tráfico de las calles Braulio Foz y Pedro I de Aragón por obras de conservación en Palacio de la Aljafería.",
-//   },
-//   {
-//     neighbourhood: "Centro",
-//     commentary: "La asociación de vecinos nos solicita colaboración económica y organizativa para la I Marcha por la esclerósis múltiple. Se convoca reunión en la sede la Asociación el 08-04-2020."
-//   }
-// ];
+  let notifications = [
+  {
+    neighbourhood: "La Almozara",
+    commentary: "Desde el 20-3-2020: corte al tráfico de las calles Braulio Foz y Pedro I de Aragón por obras de conservación en Palacio de la Aljafería.",
+  },
+  {
+    neighbourhood: "Centro",
+    commentary: "La asociación de vecinos nos solicita colaboración económica y organizativa para la I Marcha por la esclerósis múltiple. Se convoca reunión en la sede la Asociación el 08-04-2020."
+  }
+];
 // let users = [
 //   {
 //     neighbourhood: "Delicias",
@@ -280,7 +280,10 @@ User.deleteMany()
     return User.deleteMany();
   })
   .then(() => {
-    return Offer.create(offers);
+    return Notification.deleteMany();
+  })
+  .then(() => {
+    return Notification.create(notifications);
   })
   .then(() => {
     return Shop.create(shops);

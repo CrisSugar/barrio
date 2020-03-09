@@ -29,7 +29,7 @@ export default class AllOffers extends React.Component {
         <>
         
         {this.state.offers.map(anyoffers => (
-          <AnyOffer key={anyoffers._id} anyoffers={anyoffers} ></AnyOffer> 
+          <AnyOffer key={anyoffers._id} {...anyoffers} ></AnyOffer> 
         ))} 
         </>
    

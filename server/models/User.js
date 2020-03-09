@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    neighborhood: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
+    neighbourhood: { type: String, enum: ["Delicias", "La Almozara", "Centro"] },
     username: String,
     password: String,
     role: { type: String, enum: ["client", "owner"] },
