@@ -14,32 +14,27 @@ export default class AllOffers extends React.Component {
 
   componentDidMount() {
     Axios.get("http://localhost:5000/api/offers").then(response => {
-
       let filteredOffers;
-      filteredOffers = response.data.filter((offer) => {
-       return offer.neighbourhood.includes("Delicias")
+      filteredOffers = response.data.filter(offer => {
+        return offer.neighbourhood.includes("Delicias");
       });
 
       this.setState({
         offers: filteredOffers
       });
     });
-}
+  }
 
-    
-    render() {
-        console.log(this.state.offers)
-        // let shops = [this.props.allShops
-    
+  render() {
+    console.log(this.state.offers);
+    // let shops = [this.props.allShops
+
     return (
-        <>
-        
+      <>
         {this.state.offers.map(anyoffers => (
-          <AnyOffer key={anyoffers._id} {...anyoffers} ></AnyOffer> 
-        ))} 
-        </>
-   
-      
- )
+          <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>
+        ))}
+      </>
+    );
   }
 }

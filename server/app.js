@@ -28,11 +28,11 @@ const app = express();
 
 // Middleware Setup
 var whitelist = [
-  'http://localhost:3000'
+  'http://localhost:3000', 'https://barrio-app.herokuapp.com/'
 ];
 var corsOptions = {
   origin: function(origin, callback){
-      var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+      var originIsWhitelisted = whitelist.includes(origin);
       callback(null, originIsWhitelisted);
   },
   credentials: true
@@ -58,8 +58,7 @@ app.use(session({
 }));
 require('./passport')(app);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico'))); 
 
@@ -70,8 +69,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-// const authRouter = require('./routes/api/auth');
-// app.use('/api/auth', authRouter);
+
 app.use("/",require("./routes"))
 
 app.use((req,res) => {

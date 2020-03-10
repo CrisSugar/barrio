@@ -1,38 +1,11 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import axios from "axios";
+
 
 import Navbar from "./components/navbar/Navbar";
-import Signup from "./components/auth/Signup";
-import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
@@ -44,8 +17,10 @@ import AnyNotification from "./components/anyNotification/AnyNotification";
 import ShopDetail from "./components/shopDetail/ShopDetail";
 import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
+import Home from "./components/home/Home";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
+import GoogleMaps from "./components/googleMap/GoogleMaps";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -60,6 +35,7 @@ class App extends Component {
   }
 
   getUser = userObj => {
+    console.log(userObj)
     this.setState({
       loggedInUser: userObj
     });
@@ -76,9 +52,13 @@ class App extends Component {
     return this.service
       .loggedin()
       .then(response => {
+        console.log("entra en el then")
+        console.log(response)
+
         this.setState({
-          loggedInUser: response
+          loggedInUser: response,
         });
+
       })
       .catch(err => {
         this.setState({
@@ -89,25 +69,30 @@ class App extends Component {
 
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
-    // if (this.state.loggedInUser) {
+     if (this.state.loggedInUser) {
     //en este caso mostramos los contenidos ya que hay usuario
     return (
       <React.Fragment>
-        {/* <Redirect to="/home" /> */}
+        <Redirect to="/home" /> 
 
         <div className="App">
-          {/* <Navbar
+          <Navbar
                 userInSession={this.state.loggedInUser}
                 logout={this.logout}
-              /> */}
-          {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
-          {/* <Contents /> */}
+              /> 
+    
           <Switch>
-            {/* <Route
+            <Route
               exact
-              path=""
+              path="/home"
               render={() => <Home></Home>}
-            /> */}
+            />
+ 
+          <Route
+              exact
+              path="/maps"
+              render={() => <GoogleMaps></GoogleMaps>}
+            /> }
 
             <Route
               exact
@@ -163,35 +148,18 @@ class App extends Component {
         </div>
       </React.Fragment>
     );
-    // } else {
-    //   //si no estás logeado, mostrar opcionalmente o login o signup
-    //   return (
-    //     <React.Fragment>
-    //      <Redirect to="/login" />
+    } else {
+      //si no estás logeado, mostrar opcionalmente o login o signup
+      return (
+        <React.Fragment>
+         <Redirect to="/login" />
 
-    //       <div className="App">
-    //         <header className="App-header">
-    //           <Navbar
-    //             userInSession={this.state.loggedInUser}
-    //             logout={this.logout}
-    //           />
-    //           <Switch>
-    //             <Route
-    //               exact
-    //               path="/signup"
-    //               render={() => <Signup getUser={this.getUser} />}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/login"
-    //               render={() => <Login getUser={this.getUser} />}
-    //             />
-    //           </Switch>
-    //         </header>
-    //       </div>
-    //     </React.Fragment>
-    //   );
-    // }
+          <div className="App">
+          
+          </div>
+        </React.Fragment>
+      );
+    }
   }
 }
 

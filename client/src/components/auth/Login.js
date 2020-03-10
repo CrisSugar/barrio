@@ -16,6 +16,8 @@ class Login extends Component {
 
     this.service.login(username, password)
       .then(response => {
+        console.log("entra en la peticion")
+        console.log(response)
         this.setState({
           username: username,
           password: password,
