@@ -17,7 +17,7 @@ export default class HomeClient extends React.Component {
     }
 
     // componentDidMount() {
-    //   Axios.get("http://localhost:5000/api/offers").then(response => {
+    //   Axios.get('${process.env.REACT_APP_API_URL}/offers').then(response => {
     //   this.setState({
     //     offers: response.data,
     //   });
