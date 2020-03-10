@@ -17,7 +17,7 @@
 //       // Important! Always set the container height explicitly
 //       <div className="map-container">
 //         <GoogleMapReact
-//           bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+//           bootstrapURLKeys={{ key: AIzaSyABr94UyZMHAdW2XtW_wDaz_Y8iKc_IXm8  }}
 //           defaultCenter={this.props.center}
 //           defaultZoom={this.props.zoom}
 //         >

@@ -1,11 +1,38 @@
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-
+import axios from "axios";
 
 import Navbar from "./components/navbar/Navbar";
+import Signup from "./components/auth/Signup";
+import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
@@ -155,7 +182,23 @@ class App extends Component {
          <Redirect to="/login" />
 
           <div className="App">
-          
+            <header className="App-header">
+              <Navbar
+                logout={this.logout}
+              />
+              <Switch>
+                <Route
+                  exact
+                  path="/signup"
+                  render={() => <Signup getUser={this.getUser} />}
+                />
+                <Route
+                  exact
+                  path="/login"
+                  render={() => <Login getUser={this.getUser} />}
+                />
+              </Switch>
+            </header>
           </div>
         </React.Fragment>
       );
