@@ -14,7 +14,7 @@ export default class OfferDetail extends React.Component {
 
   componentDidMount() {
     Axios.get(
-      `http://localhost:5000/api/offer/${this.props.match.params.id}`
+      `${process.env.REACT_APP_API_URL}/offer/${this.props.match.params.id}`
     ).then(response => {
       this.setState({
         offer: response.data

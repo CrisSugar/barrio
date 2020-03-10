@@ -15,7 +15,7 @@ export default class NotificationDetail extends React.Component {
   componentDidMount() {
     console.log("entra en el didmount")
     Axios.get(
-      `http://localhost:5000/api/notification/${this.props.match.params.id}`
+      `${process.env.REACT_APP_API_URL}/notification/${this.props.match.params.id}`
     ).then(response => {
       this.setState({
         notification: response.data

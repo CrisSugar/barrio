@@ -15,7 +15,7 @@ export default class ShopDetail extends React.Component {
   componentDidMount() {
     console.log("entra en el didmount")
     Axios.get(
-      `http://localhost:5000/api/shop/${this.props.match.params.id}`
+      `${process.env.REACT_APP_API_URL}/shop/${this.props.match.params.id}`
     ).then(response => {
       this.setState({
         shop: response.data
