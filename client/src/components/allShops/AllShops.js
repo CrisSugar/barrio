@@ -14,7 +14,7 @@ export default class AllShops extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/api/shops").then(response => { 
+    Axios.get('${process.env.REACT_APP_API_URL}/shops').then(response => { 
 
       let filteredShops;
       filteredShops = response.data.filter((shop) => {
