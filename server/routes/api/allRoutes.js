@@ -96,8 +96,14 @@ router.delete("/shop/:id", (req, res, next) => {
 
 /// show all
 
-router.get("/offers", (req, res, next) => {
-  Offer.find().then(allOffers => {
+// router.get("/offers", (req, res, next) => {
+//   Offer.find().then(allOffers => {
+//     res.json(allOffers);
+//   });
+// });
+
+router.get("/offers", (req,res,next) => {
+  Offer.find() . then(allOffers => {
     res.json(allOffers);
   });
 });

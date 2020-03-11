@@ -245,7 +245,7 @@ let offers = [
     product: "cuarto de cordero lechal",
     prize: "22.95 euros/Kg",
     offerPrize: "19.95 euros/Kg",
-    image: "http://nohayimagentodavia.jpg"
+    // image: "http://nohayimagentodavia.jpg"
   },
   {
     neighbourhood: "Centro",
@@ -253,7 +253,7 @@ let offers = [
     product: "Saxofón alto, marca JÚPITER",
     prize: "740 euros",
     offerPrize: "695 euros",
-    image: "http://nohayimagentodavia.jpg"
+    // image: "http://nohayimagentodavia.jpg"
   },
   {
     neighbourhood: "Delicias",
@@ -261,7 +261,7 @@ let offers = [
     product: "Camisa de caballero manga larga",
     prize: "45 euros",
     offerPrize: "39 euros",
-    image: "http://nohayimagentodavia.jpg"
+    // image: "http://nohayimagentodavia.jpg"
   },
   
 
