@@ -14,13 +14,13 @@ export default class HomeClient extends React.Component {
     };
   }
 
-  componentDidMount() {
-    Axios.get('${process.env.REACT_APP_API_URL}/offers')
-    .then(response => {
-    this.setState({
-      offers: response.data,
-    });
-  })
+  // componentDidMount() {
+  //   Axios.get('${process.env.REACT_APP_API_URL}/offers')
+  //   .then(response => {
+  //   this.setState({
+  //     offers: response.data,
+  //   });
+  // })
 }
 
   render() {
@@ -28,9 +28,9 @@ export default class HomeClient extends React.Component {
 
     <div className="home-container">
         <Navbar></Navbar>
-        {this.state.offers.map(offer => {
+        {/* {this.state.offers.map(offer => {
             return <h1>{offer.shop}</h1>
-        })}
+        })} */}
 
     </div>
       )

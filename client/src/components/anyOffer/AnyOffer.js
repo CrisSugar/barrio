@@ -12,7 +12,7 @@ function AnyOffer(props) {
   // }
 
   // componentDidMount(){
-  //   Axios.get("http://localhost:5000/api/offer/${offer.id}").then(offer => {
+  //   Axios.get('${process.env.REACT_APP_API_URL}/offer/${offer.id}').then(offer => {
   //     this.setState({
   //       offer : offer.data
   //     });
