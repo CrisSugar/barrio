@@ -28,7 +28,7 @@ const app = express();
 
 // Middleware Setup
 var whitelist = [
-  'http://localhost:3000', 'https://barrio-app.herokuapp.com/', 'https://localhost:3000' 
+  'http://localhost:3000', 'https://barrio-app.herokuapp.com/', 'http://barrio-app.herokuapp.com/','https://localhost:3000' 
 ];
 var corsOptions = {
   origin: function(origin, callback){
