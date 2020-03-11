@@ -1,4 +1,4 @@
-                                                                            /**
+/**
  * Welcome to your Workbox-powered service worker!
  *
  * You'll need to register this file in your web app and you should
@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.ac5a0ea161dc23fa2e7193573b6232f5.js"
+  "/precache-manifest.ba8e27c5f9902d3fc7fc769a35642b39.js"
 );
 
 self.addEventListener('message', (event) => {
