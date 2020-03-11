@@ -13,7 +13,7 @@ export default class AllNotifications extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('${process.env.REACT_APP_API_URL}/notifications').then(response => {
+    this.service.getAllNotifications().then(response => {
       this.setState({
         notifications: response.data
       });

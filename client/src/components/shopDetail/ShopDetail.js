@@ -6,17 +6,18 @@ import Axios from "axios";
 export default class ShopDetail extends React.Component {
   constructor(props) {
     super(props);
-    // this.service = new Service();
+    this.service = new Service();
     this.state = {
       shop: null,
     };
   }
 
   componentDidMount() {
-    console.log("entra en el didmount")
-    Axios.get(
-      `${process.env.REACT_APP_API_URL}/shop/${this.props.match.params.id}`
-    ).then(response => {
+    this.service.getShop(this.props.match.params.id).then(response => {
+      this.setState({
+        shop: response.data
+      });
+    }).then(response => {
       this.setState({
         shop: response.data
       });

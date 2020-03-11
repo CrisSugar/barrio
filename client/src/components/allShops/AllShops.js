@@ -14,13 +14,11 @@ export default class AllShops extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('${process.env.REACT_APP_API_URL}/shops').then(response => { 
-
+    this.service.getAllShops().then(response => { 
       let filteredShops;
       filteredShops = response.data.filter((shop) => {
        return shop.neighbourhood.includes("Centro")
       });
-
       this.setState({
         shops: filteredShops
       });

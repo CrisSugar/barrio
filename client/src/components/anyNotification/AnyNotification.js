@@ -17,7 +17,8 @@ function AnyNotification(props) {
             <Link to={`/notification/${props._id}`}>Ver Aviso</Link>
           </ul>
 
-         
+        
+
         
           
 

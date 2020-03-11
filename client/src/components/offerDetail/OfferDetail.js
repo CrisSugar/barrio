@@ -6,16 +6,14 @@ import Axios from "axios";
 export default class OfferDetail extends React.Component {
   constructor(props) {
     super(props);
-    // this.service = new Service();
+    this.service = new Service();
     this.state = {
       offer: null
     };
   }
-
+  
   componentDidMount() {
-    Axios.get(
-      `${process.env.REACT_APP_API_URL}/offer/${this.props.match.params.id}`
-    ).then(response => {
+   this.service.getOffer(this.props.match.params.id).then(response => {
       this.setState({
         offer: response.data
       });

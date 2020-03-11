@@ -13,7 +13,7 @@ export default class AllOffers extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('${process.env.REACT_APP_API_URL}/offers').then(response => {
+    this.service.getAllOffers().then(response => {
       let filteredOffers;
       filteredOffers = response.data.filter(offer => {
         return offer.neighbourhood.includes("Delicias");

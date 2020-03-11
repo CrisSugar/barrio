@@ -21,7 +21,7 @@ export default class HomeClient extends React.Component {
   //     offers: response.data,
   //   });
   // })
-}
+// }
 
   render() {
     return (

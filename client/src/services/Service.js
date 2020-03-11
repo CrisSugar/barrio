@@ -7,13 +7,33 @@ class Service {
         })
     }
 
-    // fetchStudents = () => {
-    //     return this.instance
-    //     .get("/")
-    //     .then(res => res.data)
-    //     .catch(error => console.log(error));
-    // };
+    getAllOffers =()=>{
+        return this.service
+        .get("/offers")
+        .then(response => response.data)
+        .catch(error => console.log(error));
+    }
 
+    getOffer = (offerId) =>{
+        return this.service
+        .get(`/offer/${offerId}`)
+        .then(response => response.data)
+        .catch(error => console.log(error));
+    }
+
+    getAllNotifications =()=>{
+        return this.service
+        .get("/notifications")
+        .then(response => response.data)
+        .catch(error => console.log(error));
+    }
+
+    getNotification = (notificationId) =>{
+        return this.service
+        .get(`/notification/${notificationId}`)
+        .then(response => response.data)
+        .catch(error => console.log(error));
+    }
 
     getAllShops = () => {
         return this.service
@@ -22,13 +42,18 @@ class Service {
         .catch(error => console.log(error));
     };
 
-    getAnyShop = (id) => {
+    getShop= (shopId) =>{
         return this.service
-        .get("/shop/:id")
+        .get(`/shop/${shopId}`)
         .then(response => response.data)
         .catch(error => console.log(error));
     }
 
 }
+
+//vale, lo que hemos hecho aqui es centralizar todas las peticiones axios para que solo dependan de una variable
+//qeu está declarada en la linea 6, así no hay que estar cmabiando en todos los archivos :) gracias, pruebo ahra a ver si sigue el error de cors?
+
+
 
 export default Service;

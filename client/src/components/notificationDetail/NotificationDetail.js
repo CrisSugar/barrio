@@ -1,4 +1,4 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import AnyNotification from "../anyNotification/AnyNotification";
 import Service from "../../services/Service";
 import Axios from "axios";
@@ -6,22 +6,21 @@ import Axios from "axios";
 export default class NotificationDetail extends React.Component {
   constructor(props) {
     super(props);
-    // this.service = new Service();
+    this.service = new Service();
     this.state = {
       notification: null,
     };
   }
 
   componentDidMount() {
-    console.log("entra en el didmount")
-    Axios.get(
-      `${process.env.REACT_APP_API_URL}/notification/${this.props.match.params.id}`
-    ).then(response => {
+    this.service.getNotification(this.props.match.params.id).then(response => {
       this.setState({
         notification: response.data
       });
     });
-  }
+
+  }   
+
 
   render() {
     // console.log(this.state.shops);
