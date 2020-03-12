@@ -45,7 +45,7 @@ class Signup extends Component {
   render() {
     return(
       <div>
-        <h3>Welcome!, create your account next:</h3>
+        <h2>¡Bienvenido a tu Barrio!, crea tu cuenta aquí:</h2>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>

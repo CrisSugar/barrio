@@ -1,23 +1,23 @@
 import React, { useReducer } from "react";
 import AnyShop from "../anyShop/AnyShop";
 import Service from "../../services/Service";
-import Axios from "axios";
+import "./AllShops.css";
 
 export default class AllShops extends React.Component {
   constructor(props) {
     super(props);
     this.service = new Service();
     this.state = {
-      shops: [],
+      shops: []
       // loggedInUser: userObj
     };
   }
 
   componentDidMount() {
-    this.service.getAllShops().then(response => { 
+    this.service.getAllShops().then(response => {
       let filteredShops;
-      filteredShops = response.data.filter((shop) => {
-       return shop.neighbourhood.includes("Centro")
+      filteredShops = response.filter(shop => {
+        return shop.neighbourhood.includes("Centro");
       });
       this.setState({
         shops: filteredShops
@@ -30,11 +30,11 @@ export default class AllShops extends React.Component {
     // let shops = [this.props.allShops
 
     return (
-      <>
+      <ul className="shops-container">
         {this.state.shops.map(anyshops => (
           <AnyShop key={anyshops._id} {...anyshops} />
         ))}
-      </>
+      </ul>
     );
   }
 }

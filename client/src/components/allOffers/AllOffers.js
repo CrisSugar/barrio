@@ -1,7 +1,6 @@
 import React from "react";
 import AnyOffer from "../anyOffer/AnyOffer";
 import Service from "../../services/Service";
-import Axios from "axios";
 
 export default class AllOffers extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export default class AllOffers extends React.Component {
   componentDidMount() {
     this.service.getAllOffers().then(response => {
       let filteredOffers;
-      filteredOffers = response.data.filter(offer => {
+      filteredOffers = response.filter(offer => {
         return offer.neighbourhood.includes("Delicias");
       });
 

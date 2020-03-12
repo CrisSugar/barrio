@@ -1,0 +1,8 @@
+/* .shops-container {
+    display: flex;
+    flex-direction: row; 
+} */
+
+li{
+    list-style:none;
+}

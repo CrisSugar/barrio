@@ -32,20 +32,53 @@ const id_location = [];
 const id_shop = [];
 const id_user = [];
 
-
-
 let shops = [
   {
     neighbourhood: "Delicias",
     name: "Zapatería El Pilar",
     sector: "Calzado",
-    description:
-      "Cuidamos tus pies desde 1982, con calzado hecho en España.",
-    // image: String,
+    description: "Cuidamos tus pies desde 1982, con calzado hecho en España.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/zapateria_b04dte.jpg",
     mobile: 679854212,
     web: "www.zapateriaelpilar.com",
     // owner: String,
-    offers:[],
+    offers: [],
+    year: 1982,
+    location: {
+      lat: 33.23,
+      lng: 33.23
+    }
+  },
+  {
+    neighbourhood: "Delicias",
+    name: "Ferretería Domínguez",
+    sector: "Materiales Auxiliares",
+    description:
+      "Tornillería a granel, mecanismos eléctricos y menaje del hogar.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/ferreteria_uan6vy.jpg",
+    mobile: 679854212,
+    web: "www.ferreteriadominguez.com",
+    // owner: String,
+    offers: [],
+    year: 1999,
+    location: {
+      lat: 33.23,
+      lng: 33.23
+    }
+  },
+  {
+    neighbourhood: "Delicias",
+    name: "Taberna Manchega",
+    sector: "Hostelería",
+    description: "Cocina tradicional manchega, bodega selecta y buen ambiente.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/bar_c6mtff.jpg",
+    mobile: 679854212,
+    web: "www.tabernamanchega.com",
+    // owner: String,
+    offers: [],
     year: 1982,
     location: {
       lat: 33.23,
@@ -58,7 +91,8 @@ let shops = [
     sector: "Alimentación",
     description:
       "Todos nuestros productos provienen de granjas certificadas, de animales alimentados sin OGM y en libertad.",
-    //image: String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/carniceria_zn6hh2.jpg",
     mobile: 621485975,
     web: "www.ternascoymas.com",
     // owner: String,
@@ -75,11 +109,12 @@ let shops = [
     sector: "Textil",
     description:
       "Últimas tendencias y modelos clásicos, ropa y complementos de señora y caballero.",
-    // image: String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendaropa_xjl8e6.jpg",
     mobile: 632518977,
     web: "www.novedadeseloina.com",
     // owner: String,
-    offers:[],
+    offers: [],
     year: 2004,
     location: {
       lat: 33.23,
@@ -92,11 +127,12 @@ let shops = [
     sector: "Óptica",
     description:
       "Desde 2001 corriengo la visión de los zaragozanos, precios competitivos en gafas de visión y de sol.",
-    //image: String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/optica_za58th.jpg",
     mobile: 675824198,
     web: "www.perfectvision.com",
     // owner: String,
-    offers:[],
+    offers: [],
     year: 2001,
     location: {
       lat: 33.23,
@@ -105,15 +141,16 @@ let shops = [
   },
   {
     neighbourhood: "La Almozara",
-    name: "Pastelería La Maja",
-    sector: "Alimentación",
+    name: "Farmacia Romerales",
+    sector: "Farmacéutico",
     description:
-      "Dulces y tartas para todas tus celebraciones, bombones y pastelería para celíacos.",
-    //image: String,
+      "Desde 1989 despachamos medicamentos con receta y productos naturales.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/farmacia_sulkni.jpg",
     mobile: 635214496,
-    web: "www.pastelerialamaja.com",
+    web: "www.farmaciaromerales.com",
     // owner: String,
-    offers:[],
+    offers: [],
     year: 1991,
     location: {
       lat: 33.23,
@@ -122,15 +159,34 @@ let shops = [
   },
   {
     neighbourhood: "La Almozara",
-    name: "Outdoor Sport",
-    sector: "Deportes",
+    name: "Mobydick",
+    sector: "Alimentación",
     description:
-      "Expertos en equipamiento de montaña y nieve, también material de runnig y padel.",
-    //image:String,
-    mobile: 655841277,
-    web: "www.outdoorsport.com",
+      "Pescados de captura del dia, bajo normativa, respetando el medio ambiente.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/pescader%C3%ADa_zja92q.jpg",
+    mobile: 635214496,
+    web: "www.pescadosmobydick.com",
     // owner: String,
-    offers:[],
+    offers: [],
+    year: 1991,
+    location: {
+      lat: 33.23,
+      lng: 33.23
+    }
+  },
+  {
+    neighbourhood: "La Almozara",
+    name: "Flor de Lis",
+    sector: "Floristería",
+    description:
+      "Te acompañamos en tus momentos más felices, con flores exóticas, nacionales y plantas.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/florister%C3%ADa_jtl9y2.jpg",
+    mobile: 655841277,
+    web: "www.flordelis.com",
+    // owner: String,
+    offers: [],
     year: 2009,
     location: {
       lat: 33.23,
@@ -143,11 +199,12 @@ let shops = [
     sector: "Alimentación",
     description:
       "Pizzas tradicionales en horno de leña, con las recetas de la nonna.",
-    //image:String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/pizzeria_ihrkvn.jpg",
     mobile: 616816868,
     web: "www.pizzasportobello.com",
     // owner: String,
-    offers:[],
+    offers: [],
     year: 2004,
     location: {
       lat: 33.23,
@@ -156,13 +213,14 @@ let shops = [
   },
   {
     neighbourhood: "Centro",
-    name: "Droguería Agustín",
-    sector: "Droguería Perfumería",
+    name: "Peluquería La Señal",
+    sector: "Servicios",
     description:
-      "Todo tipo de productos de limpieza, venta al detalle y al por mayor.",
-    //image: String,
+      "Somos profesionales titulados, siempre al día en las tendencias de estilo de peluquería y barbería.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/peluquer%C3%ADa_yir4iy.jpg",
     mobile: 630201040,
-    web: "www.drogueriaagustin.com",
+    web: "www.peluquerialasenal.com",
     // owner: String,
     offers: [],
     year: 1987,
@@ -176,9 +234,27 @@ let shops = [
     name: "kiosco TBO",
     sector: "Distribución",
     description: "Prensa, golosinas y expedición de boletos de lotería.",
-    //image: String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/kiosko_hcyf7g.jpg",
     mobile: 645781200,
     web: "www.kioskoTBO.com",
+    // owner: String,
+    offers: [],
+    year: 2017,
+    location: {
+      lat: 33.23,
+      lng: 33.23
+    }
+  },
+  {
+    neighbourhood: "Centro",
+    name: "Restaurante El Trisquel",
+    sector: "Hostelería",
+    description: "Alta cocina, chef con estrella Michelin desde 2017.servicio de mediodia y noche bajo reserva.",
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/restaurante_ctoiqm.jpg",
+    mobile: 645781200,
+    web: "www.restauranteeltrisquel.com",
     // owner: String,
     offers: [],
     year: 2017,
@@ -193,7 +269,8 @@ let shops = [
     sector: "Artesanía",
     description:
       "Instrumentos de viento, cuerda y percusión. Tercera generación de luthiers.",
-    //image: String,
+    image:
+      "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendamusical_frueoc.jpg",
     mobile: 678541269,
     web: "www.musicalsolfamida.com",
     // owner: String,
@@ -206,14 +283,36 @@ let shops = [
   }
 ];
 
-  let notifications = [
+let notifications = [
   {
     neighbourhood: "La Almozara",
-    commentary: "Desde el 20-3-2020: corte al tráfico de las calles Braulio Foz y Pedro I de Aragón por obras de conservación en Palacio de la Aljafería.",
+    commentary:
+      "Desde el 20-3-2020: corte al tráfico de las calles Braulio Foz y Pedro I de Aragón por obras de conservación en Palacio de la Aljafería."
+  },
+  {
+    neighbourhood: "La Almozara",
+    commentary:
+      "Por próximas obras en el negocio, precisamos almacenar parte de nuestra mercancía. Si alguien tiene espacio en su almacén, se gratificará."
+  },
+  {
+    neighbourhood: "Delicias",
+    commentary:
+      "Una vecina del barrio nos consulta si sabemos de algún negocio que pueda cederle un espación para la realización de taller de caligrafía dos veces al mes."
+  },
+  {
+    neighbourhood: "Delicias",
+    commentary:
+      "Hemos recibido una notificación del Ayuntamiento avisando de corte circulatorio en calle Antonio Sangenis por cambio de tubería en las próximas fechas."
   },
   {
     neighbourhood: "Centro",
-    commentary: "La asociación de vecinos nos solicita colaboración económica y organizativa para la I Marcha por la esclerósis múltiple. Se convoca reunión en la sede la Asociación el 08-04-2020."
+    commentary:
+      "La asociación de vecinos nos solicita colaboración económica y organizativa para la I Marcha por la esclerósis múltiple. Se convoca reunión en la sede la Asociación el 08-04-2020."
+  },
+  {
+    neighbourhood: "Centro",
+    commentary:
+      "Un vecino busca reloj antiguo de muñeca perdido la semana pasada en nuestro barrio."
   }
 ];
 let users = [
@@ -241,10 +340,18 @@ let users = [
 let offers = [
   {
     neighbourhood: "Delicias",
+    shop: "Taberna Manchega",
+    product: "Todos los jueves, con cada consumición, ración de caracoles con tomate.",
+    prize: "10.95 euros/Kg",
+    offerPrize: "7.95 euros/Kg"
+    // image: "http://nohayimagentodavia.jpg"
+  },
+  {
+    neighbourhood: "Delicias",
     shop: "Ternasco y más",
     product: "cuarto de cordero lechal",
     prize: "22.95 euros/Kg",
-    offerPrize: "19.95 euros/Kg",
+    offerPrize: "19.95 euros/Kg"
     // image: "http://nohayimagentodavia.jpg"
   },
   {
@@ -252,7 +359,15 @@ let offers = [
     shop: "Tienda musical SOLFAMIDA",
     product: "Saxofón alto, marca JÚPITER",
     prize: "740 euros",
-    offerPrize: "695 euros",
+    offerPrize: "695 euros"
+    // image: "http://nohayimagentodavia.jpg"
+  },
+  {
+    neighbourhood: "Centro",
+    shop: "Pizzería Portobello",
+    product: "Pizza Napolitana mediana, 2x1 local y recoger.",
+    prize: "22,50 euros",
+    offerPrize: "11,25 euros"
     // image: "http://nohayimagentodavia.jpg"
   },
   {
@@ -260,14 +375,34 @@ let offers = [
     shop: "Novedades Eloína",
     product: "Camisa de caballero manga larga",
     prize: "45 euros",
-    offerPrize: "39 euros",
+    offerPrize: "39 euros"
     // image: "http://nohayimagentodavia.jpg"
   },
-  
-
+  {
+    neighbourhood: "La Almozara",
+    shop: "PerfectVision",
+    product: "Solución única de lentillas,pack 3 x 330ml.",
+    prize: "15 euros",
+    offerPrize: "11,95 euros"
+    // image: "http://nohayimagentodavia.jpg"
+  },
+  {
+    neighbourhood: "La Almozara",
+    shop: "Flor de Lis",
+    product: "Saco de 5kg de bulbos de tulipanes holandeses, colores variados.",
+    prize: "32,95 euros",
+    offerPrize: "26,95 euros"
+    // image: "http://nohayimagentodavia.jpg"
+  },
+  {
+    neighbourhood: "Centro",
+    shop: "Peluquería La Señal",
+    product: "Retoque de barba y depilación de cejas.",
+    prize: "25 euros",
+    offerPrize: "19.95 euros"
+    // image: "http://nohayimagentodavia.jpg"
+  }
 ];
-
-
 
 User.deleteMany()
   .then(() => {
@@ -291,26 +426,28 @@ User.deleteMany()
   .then(() => {
     return Shop.create(shops);
   })
-  .then((shopsCreated) => {
-    Offer.create(offers)
-    .then(offersCreated => {
-        shopsCreated.forEach((shop,idx) => {
-          offersCreated.forEach((offer,idx) => {
-            if(shop.name === offer.shop){
-              console.log(offer._id)
-              console.log(offer.shop)
-              Shop.findOneAndUpdate({name: offer.shop},{$push: {offers: offer._id}})
-              .then(()=> console.log("OH YEAH ACTUALIZADO!"))
-              .catch(err => console.log(err))
-            }
-          })
-        })
-    })
+  .then(shopsCreated => {
+    Offer.create(offers).then(offersCreated => {
+      shopsCreated.forEach((shop, idx) => {
+        offersCreated.forEach((offer, idx) => {
+          if (shop.name === offer.shop) {
+            console.log(offer._id);
+            console.log(offer.shop);
+            Shop.findOneAndUpdate(
+              { name: offer.shop },
+              { $push: { offers: offer._id } }
+            )
+              .then(() => console.log("OH YEAH ACTUALIZADO!"))
+              .catch(err => console.log(err));
+          }
+        });
+      });
+    });
   })
   .then(() => {
-    console.log("FUNCIONÓ CRIS!! NO TE PREOCUPES :)")
+    console.log("FUNCIONÓ CRIS!! NO TE PREOCUPES :)");
     // Close properly the connection to Mongoose
-   // mongoose.disconnect();
+    // mongoose.disconnect();
   })
   .catch(err => {
     //mongoose.disconnect();

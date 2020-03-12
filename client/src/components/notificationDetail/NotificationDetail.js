@@ -1,14 +1,12 @@
 import React, { isValidElement } from "react";
-import AnyNotification from "../anyNotification/AnyNotification";
 import Service from "../../services/Service";
-import Axios from "axios";
 
 export default class NotificationDetail extends React.Component {
   constructor(props) {
     super(props);
     this.service = new Service();
     this.state = {
-      notification: null,
+      notification: null
     };
   }
 
@@ -18,23 +16,18 @@ export default class NotificationDetail extends React.Component {
         notification: response.data
       });
     });
-
-  }   
-
+  }
 
   render() {
-    // console.log(this.state.shops);
-    // let notifications = [this.props.ShopDetail
-    if(this.state.notification){
+    if (this.state.notification) {
       return (
         <>
-          <h4>{this.state.notification.neighbourhood}</h4> 
+          <h4>{this.state.notification.neighbourhood}</h4>
           <p>{this.state.notification.commentary}</p>
         </>
       );
-    }else{
-      return <h2>Cargando info...</h2>
+    } else {
+      return <h2>Cargando info...</h2>;
     }
-   
   }
 }

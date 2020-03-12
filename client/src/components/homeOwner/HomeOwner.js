@@ -7,14 +7,14 @@ import Axios from "axios";
 import { Link } from "react-router-dom";
 
 export default class HomeOwner extends React.Component {
-  constructor(props) {
-    super(props);
-    this.service = new Service();
-    this.state = {
-      offers: [],
-      shops: []
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.service = new Service();
+  //   this.state = {
+  //     offers: [],
+  //     shops: []
+  //   };
+  // }
 
   //   componentDidMount() {
   //     Axios.get('${process.env.REACT_APP_API_URL}/shops').then(response => {
@@ -28,12 +28,14 @@ export default class HomeOwner extends React.Component {
       <div class="homeowner">
         <AllShops></AllShops>
         <div>
-          <h4>
-            <Link to="/offers">Todas las ofertas</Link>
-          </h4>
+          <div>
+            <Link to="/offers"><h4>Todas las oferta></h4></Link>
+          </div>
+          <div>
+            <Link to="/notifications"><h4>Todos los avisos</h4></Link>
+          </div>
         </div>
       </div>
-    
     );
   }
 }

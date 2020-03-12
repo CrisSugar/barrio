@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
+import logo from './logo.svg';
 
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
@@ -70,10 +71,12 @@ class App extends Component {
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
      if (this.state.loggedInUser) {
+ 
     //en este caso mostramos los contenidos ya que hay usuario
     return (
       <React.Fragment>
-        <Redirect to="/home" /> 
+        
+        {/* <Redirect to="/home" />  */}
 
         <div className="App">
           <Navbar
@@ -149,10 +152,11 @@ class App extends Component {
       </React.Fragment>
     );
     } else {
+     
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-         <Redirect to="/login" />
+         
 
           <div className="App">
             <header className="App-header">
