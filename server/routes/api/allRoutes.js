@@ -70,13 +70,15 @@ router.post("/shop/new", (req, res, next) => {
     name,
     sector,
     description,
+    imageUrl,
     mobile,
     web,
     offers,
     year,
     location
   } = req.body;
-  Shop.create(req.body).then(allShops => res.json(allShops));
+  
+    Shop.create(req.body).then(allShops => res.json(allShops));
 });
 
 /// update one

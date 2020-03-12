@@ -21,10 +21,9 @@ import NotificationDetail from "./components/notificationDetail/NotificationDeta
 import Home from "./components/home/Home";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
-import AddOne from "./components/addOne/AddOne";
-import AddFile from "./components/addFile/AddFile";
+// import AddOne from "./components/addOne/AddOne";
+import AddShop from "./components/addShop/AddShop";
 import GoogleMaps from "./components/googleMap/GoogleMaps";
-
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -107,6 +106,11 @@ class App extends Component {
                   render={props => (
                     <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
                   )}
+                />
+                <Route
+                  exact
+                  path="/shop/new"
+                  render={() => <AddShop></AddShop>}
                 />
                 <Route
                   exact

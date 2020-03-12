@@ -53,20 +53,23 @@ class Service {
       .catch(error => console.log(error));
   };
 
+  getAddShop = shop => {
+    return this.service
+      .post("/shop/new", shop)
+      .then(response => response.data)
+      .catch(error => console.log(error));
+  };
+
   handleUpload(theFile) {
     // console.log('file in service: ', theFile)
-    return this.service
-      .post("/upload", theFile)
-      .then(res => res.data)
-      // .catch(errorHandler);
+    return this.service.post("/upload", theFile).then(res => res.data);
+    // .catch(errorHandler);
   }
 
   saveNewThing(newThing) {
     // console.log('new thing is: ', newThing)
-    return this.service
-      .post("/things/create", newThing)
-      .then(res => res.data)
-      // .catch(errorHandler);
+    return this.service.post("/things/create", newThing).then(res => res.data);
+    // .catch(errorHandler);
   }
 }
 
