@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function AnyShop(props) {
+  // console.log(props)
   return (
-    <div >
-      <img src={props.anyshops.image} alt="image" /> 
+    <div>
       <ul className="list">
+        <li>
+          <img src={props.imageUrl} alt="image"/>
+        </li>
         <li>
           <h4>{props.neighbourhood}</h4>
         </li>

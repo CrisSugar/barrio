@@ -15,7 +15,7 @@ export default class AllNotifications extends React.Component {
     this.service.getAllNotifications().then(response => {
       let filteredNotifications;
       filteredNotifications = response.filter(notification => {
-        return notification.neighbourhood.includes("Centro");
+        return notification.neighbourhood.includes("");
       });
       this.setState({
         notifications: filteredNotifications

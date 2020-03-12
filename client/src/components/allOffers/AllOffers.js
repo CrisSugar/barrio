@@ -15,7 +15,7 @@ export default class AllOffers extends React.Component {
     this.service.getAllOffers().then(response => {
       let filteredOffers;
       filteredOffers = response.filter(offer => {
-        return offer.neighbourhood.includes("Delicias");
+        return offer.neighbourhood.includes("");
       });
 
       this.setState({
