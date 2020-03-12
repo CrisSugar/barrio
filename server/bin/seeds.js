@@ -38,7 +38,7 @@ let shops = [
     name: "Zapatería El Pilar",
     sector: "Calzado",
     description: "Cuidamos tus pies desde 1982, con calzado hecho en España.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/zapateria_b04dte.jpg",
     mobile: 679854212,
     web: "www.zapateriaelpilar.com",
@@ -56,7 +56,7 @@ let shops = [
     sector: "Materiales Auxiliares",
     description:
       "Tornillería a granel, mecanismos eléctricos y menaje del hogar.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/ferreteria_uan6vy.jpg",
     mobile: 679854212,
     web: "www.ferreteriadominguez.com",
@@ -73,7 +73,7 @@ let shops = [
     name: "Taberna Manchega",
     sector: "Hostelería",
     description: "Cocina tradicional manchega, bodega selecta y buen ambiente.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/bar_c6mtff.jpg",
     mobile: 679854212,
     web: "www.tabernamanchega.com",
@@ -91,7 +91,7 @@ let shops = [
     sector: "Alimentación",
     description:
       "Todos nuestros productos provienen de granjas certificadas, de animales alimentados sin OGM y en libertad.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/carniceria_zn6hh2.jpg",
     mobile: 621485975,
     web: "www.ternascoymas.com",
@@ -109,7 +109,7 @@ let shops = [
     sector: "Textil",
     description:
       "Últimas tendencias y modelos clásicos, ropa y complementos de señora y caballero.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendaropa_xjl8e6.jpg",
     mobile: 632518977,
     web: "www.novedadeseloina.com",
@@ -127,7 +127,7 @@ let shops = [
     sector: "Óptica",
     description:
       "Desde 2001 corriengo la visión de los zaragozanos, precios competitivos en gafas de visión y de sol.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/optica_za58th.jpg",
     mobile: 675824198,
     web: "www.perfectvision.com",
@@ -145,7 +145,7 @@ let shops = [
     sector: "Farmacéutico",
     description:
       "Desde 1989 despachamos medicamentos con receta y productos naturales.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/farmacia_sulkni.jpg",
     mobile: 635214496,
     web: "www.farmaciaromerales.com",
@@ -163,7 +163,7 @@ let shops = [
     sector: "Alimentación",
     description:
       "Pescados de captura del dia, bajo normativa, respetando el medio ambiente.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/pescader%C3%ADa_zja92q.jpg",
     mobile: 635214496,
     web: "www.pescadosmobydick.com",
@@ -181,7 +181,7 @@ let shops = [
     sector: "Floristería",
     description:
       "Te acompañamos en tus momentos más felices, con flores exóticas, nacionales y plantas.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/florister%C3%ADa_jtl9y2.jpg",
     mobile: 655841277,
     web: "www.flordelis.com",
@@ -199,7 +199,7 @@ let shops = [
     sector: "Alimentación",
     description:
       "Pizzas tradicionales en horno de leña, con las recetas de la nonna.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/pizzeria_ihrkvn.jpg",
     mobile: 616816868,
     web: "www.pizzasportobello.com",
@@ -217,7 +217,7 @@ let shops = [
     sector: "Servicios",
     description:
       "Somos profesionales titulados, siempre al día en las tendencias de estilo de peluquería y barbería.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/peluquer%C3%ADa_yir4iy.jpg",
     mobile: 630201040,
     web: "www.peluquerialasenal.com",
@@ -234,7 +234,7 @@ let shops = [
     name: "kiosco TBO",
     sector: "Distribución",
     description: "Prensa, golosinas y expedición de boletos de lotería.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/kiosko_hcyf7g.jpg",
     mobile: 645781200,
     web: "www.kioskoTBO.com",
@@ -251,7 +251,7 @@ let shops = [
     name: "Restaurante El Trisquel",
     sector: "Hostelería",
     description: "Alta cocina, chef con estrella Michelin desde 2017.servicio de mediodia y noche bajo reserva.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/restaurante_ctoiqm.jpg",
     mobile: 645781200,
     web: "www.restauranteeltrisquel.com",
@@ -269,7 +269,7 @@ let shops = [
     sector: "Artesanía",
     description:
       "Instrumentos de viento, cuerda y percusión. Tercera generación de luthiers.",
-    image:
+    imageUrl:
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendamusical_frueoc.jpg",
     mobile: 678541269,
     web: "www.musicalsolfamida.com",

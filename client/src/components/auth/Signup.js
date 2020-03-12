@@ -6,7 +6,7 @@ import AuthService from './AuthService'
 class Signup extends Component {
   constructor(props){
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '' , neighbourhood: '' , role: ''};
     this.service = new AuthService();
   }
     
@@ -14,13 +14,17 @@ class Signup extends Component {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
+    const neighbourhood = this.state.neighbourhood;
+    const role = this.state.role;
 
     //aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
-    this.service.signup(username, password)
+    this.service.signup(username, password, neighbourhood)
     .then( response => {
         this.setState({
             username: "", 
             password: "",
+            neighbourhood: "",
+            role: ""
         });
         //aquí elevamos el nuevo usuario una vez creado a App usando getUser via props
         //por tanto, informamos a App de que el nuevo usuario ha sido creado, provocando un re-render
@@ -31,6 +35,8 @@ class Signup extends Component {
       this.setState({
         username: username,
         password: password,
+        neighbourhood: neighbourhood,
+        role: role,
         error: true
       });
     })
@@ -44,21 +50,35 @@ class Signup extends Component {
 
   render() {
     return(
-      <div>
-        <h2>¡Bienvenido a tu Barrio!, crea tu cuenta aquí:</h2>
+      <div> 
+      <h1> ;-) </h1>
+        <h3>¡Bienvenido a tu Barrio! Crea tu cuenta aquí:</h3>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
-            <label>Username:</label>
+            <label>Nombre de Usuario:</label>
             <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           </fieldset>
-          
+
           <fieldset>
-            <label>Password:</label>
+            <label>Rol: <select name="role" value={this.state.role} onChange={ e => this.handleChange(e)}>
+            <option value=""></option>
+            <option value="vecino">Vecino</option>
+            <option value="comerciante">Comerciante</option>
+          </select> </label>
+          </fieldset>
+
+          <fieldset>
+            <label>Barrio:</label>
+            <input type="text" name="neighbourhood" value={this.state.neighbourhood} onChange={ e => this.handleChange(e)}/>
+          </fieldset>
+
+          <fieldset>
+            <label>Contraseña:</label>
             <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           </fieldset>
           
-          <input type="submit" value="Sign up" />
+          <input className="enviar" type="submit" value="Enviar" />
         </form>
 
         <h1>{this.state.error ? 'Error' : ''}</h1>

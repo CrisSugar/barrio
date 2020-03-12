@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
-import logo from './logo.svg';
+import logo from "./logo.svg";
 
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
@@ -21,7 +21,10 @@ import NotificationDetail from "./components/notificationDetail/NotificationDeta
 import Home from "./components/home/Home";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
+import AddOne from "./components/addOne/AddOne";
+import AddFile from "./components/addFile/AddFile";
 import GoogleMaps from "./components/googleMap/GoogleMaps";
+
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -36,7 +39,7 @@ class App extends Component {
   }
 
   getUser = userObj => {
-    console.log(userObj)
+    console.log(userObj);
     this.setState({
       loggedInUser: userObj
     });
@@ -53,13 +56,12 @@ class App extends Component {
     return this.service
       .loggedin()
       .then(response => {
-        console.log("entra en el then")
-        console.log(response)
+        console.log("entra en el then");
+        console.log(response);
 
         this.setState({
-          loggedInUser: response,
+          loggedInUser: response
         });
-
       })
       .catch(err => {
         this.setState({
@@ -70,99 +72,82 @@ class App extends Component {
 
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
-     if (this.state.loggedInUser) {
- 
-    //en este caso mostramos los contenidos ya que hay usuario
-    return (
-      <React.Fragment>
-        
-        {/* <Redirect to="/home" />  */}
-
-        <div className="App">
-          <Navbar
-                userInSession={this.state.loggedInUser}
-                logout={this.logout}
-              /> 
-    
-          <Switch>
-            <Route
-              exact
-              path="/home"
-              render={() => <Home></Home>}
+    if (this.state.loggedInUser) {
+      //en este caso mostramos los contenidos ya que hay usuario
+      return (
+        <React.Fragment>
+          {/* <Redirect to="/home" />  */}
+          <div>
+            <Navbar
+              userInSession={this.state.loggedInUser}
+              logout={this.logout}
             />
- 
-          <Route
-              exact
-              path="/maps"
-              render={() => <GoogleMaps></GoogleMaps>}
-            /> }
-
-            <Route
-              exact
-              path="/homeowner"
-              render={() => <HomeOwner></HomeOwner>}
-            />
-            <Route
-              exact
-              path="/homeclient"
-              render={() => <HomeClient></HomeClient>}
-            />
-
-            <Route
-              exact
-              path="/shops"
-              render={props => (
-                <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
-              )}
-            />
-
-            <Route
-              exact
-              path="/shop/:id"
-              render={match => <ShopDetail {...match}></ShopDetail>}
-            />
-
-            <Route
-              exact
-              path="/offers"
-              render={() => <AllOffers></AllOffers>}
-            />
-
-            <Route
-              exact
-              path="/offer/:id"
-              render={match => <OfferDetail {...match}></OfferDetail>}
-            />
-
-            <Route
-              exact
-              path="/notifications"
-              render={() => <AllNotifications></AllNotifications>}
-            />
-
-            <Route
-              exact
-              path="/notification/:id"
-              render={match => (
-                <NotificationDetail {...match}></NotificationDetail>
-              )}
-            />
-          </Switch>
-        </div>
-      </React.Fragment>
-    );
+            <div className="App">
+              <Switch>
+                <Route exact path="/home" render={() => <Home></Home>} />
+                <Route
+                  exact
+                  path="/maps"
+                  render={() => <GoogleMaps></GoogleMaps>}
+                />{" "}
+                }
+                <Route
+                  exact
+                  path="/homeowner"
+                  render={() => <HomeOwner></HomeOwner>}
+                />
+                <Route
+                  exact
+                  path="/homeclient"
+                  render={() => <HomeClient></HomeClient>}
+                />
+                <Route
+                  exact
+                  path="/shops"
+                  render={props => (
+                    <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+                  )}
+                />
+                <Route
+                  exact
+                  path="/shop/:id"
+                  render={match => <ShopDetail {...match}></ShopDetail>}
+                />
+                <Route
+                  exact
+                  path="/offers"
+                  render={() => <AllOffers></AllOffers>}
+                />
+                <Route
+                  exact
+                  path="/offer/:id"
+                  render={match => <OfferDetail {...match}></OfferDetail>}
+                />
+                <Route
+                  exact
+                  path="/notifications"
+                  render={() => <AllNotifications></AllNotifications>}
+                />
+                <Route
+                  exact
+                  path="/notification/:id"
+                  render={match => (
+                    <NotificationDetail {...match}></NotificationDetail>
+                  )}
+                />
+              </Switch>
+            </div>
+          </div>
+        </React.Fragment>
+      );
     } else {
-     
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-         
-
           <div className="App">
+            <Navbar logout={this.logout} />
+
             <header className="App-header">
-              <Navbar
-                logout={this.logout}
-              />
               <Switch>
                 <Route
                   exact

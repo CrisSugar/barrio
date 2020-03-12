@@ -52,6 +52,22 @@ class Service {
       .then(response => response.data)
       .catch(error => console.log(error));
   };
+
+  handleUpload(theFile) {
+    // console.log('file in service: ', theFile)
+    return this.service
+      .post("/upload", theFile)
+      .then(res => res.data)
+      // .catch(errorHandler);
+  }
+
+  saveNewThing(newThing) {
+    // console.log('new thing is: ', newThing)
+    return this.service
+      .post("/things/create", newThing)
+      .then(res => res.data)
+      // .catch(errorHandler);
+  }
 }
 
 //vale, lo que hemos hecho aqui es centralizar todas las peticiones axios para que solo dependan de una variable

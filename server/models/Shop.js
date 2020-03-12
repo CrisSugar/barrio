@@ -7,7 +7,7 @@ const shopSchema = new Schema(
     name: String,
     sector: String,
     description: String,
-    image: String,
+    imageUrl: String,
     mobile: Number,
     web: String,
     owner: { type: Schema.Types.ObjectId, ref: "User" },

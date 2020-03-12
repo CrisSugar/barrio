@@ -39,10 +39,10 @@ class Navbar extends Component {
           <nav className="nav-style">
             <ul>
               <li>
-                <button><Link to="/signup">Registrarse</Link></button>
+                <button className="navbutton"><Link to="/signup">Registrarse</Link></button>
               </li>
               <li>
-                <button><Link to="/login">Iniciar sesión</Link></button>
+                <button className="navbutton"><Link to="/login">Iniciar sesión</Link></button>
               </li>
             </ul>
           </nav>

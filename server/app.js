@@ -70,6 +70,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use("/",require("./routes"))
 
+// app.use('/', require('./routes/file-upload-routes'));
+
 app.use((req,res) => {
   res.sendFile(__dirname + "/public/index.html");
 });

@@ -43,20 +43,20 @@ class Login extends Component {
   render() {
 
     return (<div>
-      <h3>Please, login to our site</h3>
+      <h3>Inicia sesión con tus datos:</h3>
 
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>
-          <label>Username:</label>
+          <label>Usuario:</label>
           <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
         </fieldset>
 
         <fieldset>
-          <label>Password:</label>
+          <label>Contraseña:</label>
           <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
-        <input type="submit" value="Login" />
+        <input className="enviar" type="submit" value="Enviar" />
       </form>
 
       <h1>{this.state.error ? 'Error' : ''}</h1>
