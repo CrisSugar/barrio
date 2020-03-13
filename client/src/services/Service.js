@@ -74,9 +74,9 @@ class Service {
       .catch(error => console.log(error));
   };
 
-  deleteShop = shopId => {
+  deleteShop = (id) => {
     return this.service
-      .delete(`/shop/${shopId}`)
+      .delete(`/shop/${id}`)
       .then(response => response.data)
       .catch(error => console.log(error));
   };

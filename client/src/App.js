@@ -91,7 +91,7 @@ class App extends Component {
       return (
         <React.Fragment>
           {/* <Redirect to="/homeOwner" /> */}
-          <div>
+          <div className="father">
             <Navbar
               userInSession={this.state.loggedInUser}
               logout={this.logout}

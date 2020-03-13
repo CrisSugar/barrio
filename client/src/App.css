@@ -1,9 +1,10 @@
-body{
-  body {overflow-x:hidden;}
-}
+
+/* .father{
+  max-width: 1280px;
+} */
 
 .App {
-  height: 100vh;
+  height: 100%;
   max-width: 1280px;
   margin-top: 60px;
   padding-top: 40px;
@@ -11,7 +12,7 @@ body{
   background-color: #4ABDAC;
   color: #DFDCE3;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   
 }
 
@@ -25,10 +26,10 @@ body{
   background-color: #4ABDAC;
   height: 100vh;
   width: 400px;
-  /* display: flex;  */
-  /* flex-direction: column; 
+  display: flex; 
+  flex-direction: column; 
   align-items: center;
-  justify-content: center; */
+  justify-content: center; 
   font-size: calc(10px + 2vmin);
   color: #DFDCE3; 
 }
