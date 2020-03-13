@@ -7,39 +7,6 @@ const Offer = require("../../models/Offer");
 const Notification = require("../../models/Notification");
 const uploader = require("../../configs/cloudinary-setup");
 
-// /// ROUTES OF LOCATIONS/////////////////////////////////////////////
-
-// /// show all
-// router.get("/locations", (req, res, next) => {
-//   Location.find().then(allLocations => res.json(allLocations));
-// });
-
-// ///  show one
-// router.get("/location/:id", (req, res, next) => {
-//   Location.findById(req.params.id).then(allLocations => {
-//     res.json(allLocations);
-//   });
-// });
-
-// /// create one
-// router.post("/location/new", (req, res, next) => {
-//   // let id_location = new mongoose.mongo.ObjectId();
-//   Location.create(id_location, req.body).then(() => res.redirect("/locations"));
-// });
-
-// /// update one
-// router.put("location/update", (req, res, next) => {
-//   Location.findByIdAndUpdate(req.params.id, req.body).then(() => {
-//     res.json({ updated: true });
-//   });
-// });
-
-// /// delete one
-// router.delete("location/delete", (req, res, next) => {
-//   Location.findByIdAndDelete(req.params.id).then(() => {
-//     res.json({ deleted: true, _id: req.params.id });
-//   });
-// });
 
 ///  ROUTES OF SHOPS ///////////////////////////////////////////////
 
