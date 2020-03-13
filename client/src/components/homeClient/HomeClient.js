@@ -38,7 +38,7 @@ export default class HomeClient extends React.Component {
 
         <div>
           <h4>
-            <Link to="/shops">Todas las tiendas</Link>
+            <button><Link to="/shops">Todas las tiendas</Link></button>
           </h4>
         </div>
       </div>

@@ -15,20 +15,20 @@ function AnyShop(props) {
         <li>
           <h2>{props.name}</h2>
         </li>
-        <li>
+        {/* <li>
           <p>{props.sector}</p>
         </li>
         <li>
           <p>{props.description}</p>
-        </li>
+        </li> */}
         {/* <li>{props.offers}</li> */}
-        <li>
+        {/* <li>
           <p>
             Contacto: Web: {props.web} Teléfono: {props.mobile}
           </p>
-        </li>
-        <Link to={`/shop/${props._id}`}>Ver Tienda</Link>
-        <Link to="/shop/delete">Borrar</Link>
+        </li> */}
+        <button><Link to={`/shop/${props._id}`}>Ver Tienda</Link></button>
+        <button><Link to="/shop/delete">Borrar</Link></button>
       
       </ul>
     </div>

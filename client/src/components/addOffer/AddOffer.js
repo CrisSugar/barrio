@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
+import { Link } from "react-router-dom";
 
 class AddOffer extends Component {
   constructor(props) {
@@ -155,6 +156,9 @@ class AddOffer extends Component {
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
+        <button><Link to="/offers">
+              <h4>Ver todas las ofertas</h4>
+            </Link></button>
       </div>
     );
   }

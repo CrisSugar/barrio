@@ -1,4 +1,10 @@
+body{
+  body {overflow-x:hidden;}
+}
+
 .App {
+  height: 100vh;
+  max-width: 1280px;
   margin-top: 60px;
   padding-top: 40px;
   text-align: center;
@@ -6,6 +12,7 @@
   color: #DFDCE3;
   display: flex;
   justify-content: center;
+  
 }
 
 /* .App-logo {
@@ -16,7 +23,7 @@
 
 .App-header {
   background-color: #4ABDAC;
-  min-height: 100vh;
+  height: 100vh;
   width: 400px;
   /* display: flex;  */
   /* flex-direction: column; 

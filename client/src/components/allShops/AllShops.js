@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import AnyShop from "../anyShop/AnyShop";
 import Service from "../../services/Service";
 import "./AllShops.css";
+import { Link } from "react-router-dom";
 
 export default class AllShops extends React.Component {
   constructor(props) {
@@ -31,11 +32,14 @@ export default class AllShops extends React.Component {
     // let shops = [this.props.allShops
 
     return (
+      <div>
       <ul className="shops-container">
         {this.state.shops.map(anyshops => (
           <AnyShop key={anyshops._id} {...anyshops} />
         ))}
       </ul>
+      <button><Link to={'/shop/new'}>Crear Tienda</Link></button>
+      </div>
     );
   }
 }

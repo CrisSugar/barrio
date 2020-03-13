@@ -7,6 +7,7 @@ import logo from "./logo.svg";
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
+import Authorization from "./components/auth/Authorization";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
@@ -32,7 +33,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
-    this.state = { loggedInUser: null };
+    this.state = {
+      loggedInUser: null,
+      userType: "none",
+      homeClient: ["client"],
+      homeOwner: ["owner"]
+    };
     this.service = new AuthService();
 
     this.fetchUser();
@@ -42,6 +48,12 @@ class App extends Component {
     console.log(userObj);
     this.setState({
       loggedInUser: userObj
+    });
+  };
+
+  selectUserType = userType => {
+    this.setState({
+      userType: userType
     });
   };
 
@@ -72,17 +84,20 @@ class App extends Component {
 
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
-    if (this.state.loggedInUser) {
+    if (this.state.loggedInUser)
+    //  && this.state.userType === "owner") 
+     {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          {/* <Redirect to="/home" />  */}
+          {/* <Redirect to="/homeOwner" /> */}
           <div>
             <Navbar
               userInSession={this.state.loggedInUser}
               logout={this.logout}
             />
             <div className="App">
+              
               <Switch>
                 {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
 
@@ -104,8 +119,9 @@ class App extends Component {
                 <Route
                   exact
                   path="/shops"
-                  render={props => (
-                    <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+                  render={() => (
+                    // <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+                    <AllShops></AllShops>
                   )}
                 />
                 <Route
@@ -160,7 +176,102 @@ class App extends Component {
           </div>
         </React.Fragment>
       );
-    } else {
+    } 
+    
+    // if ((this.state.loggedInUser) && (this.state.userType === "cliente")){
+
+    //   return (
+    //     <React.Fragment>
+    //       <Redirect to="/homeClient" />
+    //       <div>
+    //         <Navbar
+    //           userInSession={this.state.loggedInUser}
+    //           logout={this.logout}
+    //         />
+    //         <div className="App">
+              
+    //           <Switch>
+    //             {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
+
+    //             <Route
+    //               exact
+    //               path="/maps"
+    //               render={() => <GoogleMaps></GoogleMaps>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/homeowner"
+    //               render={() => <HomeOwner></HomeOwner>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/homeclient"
+    //               render={() => <HomeClient></HomeClient>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/shops"
+    //               render={props => (
+    //                 <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+    //               )}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/shop/new"
+    //               render={() => <AddShop></AddShop>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/shop/:id"
+    //               render={match => <ShopDetail {...match}></ShopDetail>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/shop/delete"
+    //               render={() => <AllShops></AllShops>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/offers"
+    //               render={() => <AllOffers></AllOffers>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/offer/new"
+    //               render={() => <AddOffer></AddOffer>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/offer/:id"
+    //               render={match => <OfferDetail {...match}></OfferDetail>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/notifications"
+    //               render={() => <AllNotifications></AllNotifications>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/notification/new"
+    //               render={() => <AddNotification></AddNotification>}
+    //             />
+    //             <Route
+    //               exact
+    //               path="/notification/:id"
+    //               render={match => (
+    //                 <NotificationDetail {...match}></NotificationDetail>
+    //               )}
+    //             />
+    //           </Switch>
+    //         </div>
+    //       </div>
+    //     </React.Fragment>
+    //   );
+    // } 
+  
+    
+
+    else {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
@@ -186,6 +297,6 @@ class App extends Component {
       );
     }
   }
-}
 
+}
 export default App;

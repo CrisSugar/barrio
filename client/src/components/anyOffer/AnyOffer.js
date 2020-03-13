@@ -22,6 +22,8 @@ function AnyOffer(props) {
         <li>
           <p> Precio oferta: {props.offerPrize}</p>
         </li>
+        
+        
         {/* <Link to={`/offer/${props._id}`}>Ver Oferta</Link> */}
         {/* <Link to={`/shop/${AnyShop._id}`}>Ver Tienda</Link> */}
       </ul>

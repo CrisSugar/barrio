@@ -1,6 +1,7 @@
 import React from "react";
 import AnyNotification from "../anyNotification/AnyNotification";
 import Service from "../../services/Service";
+import { Link } from "react-router-dom";
 
 export default class AllNotifications extends React.Component {
   constructor(props) {
@@ -27,11 +28,12 @@ export default class AllNotifications extends React.Component {
     console.log(this.state.notifications);
 
     return (
-      <>
+      <div>
         {this.state.notifications.map(anynotifications => (
           <AnyNotification key={anynotifications._id} {...anynotifications} />
         ))}
-      </>
+        <button><Link to={'/notification/new'}>Crear aviso</Link></button>
+      </div>
     );
   }
 }

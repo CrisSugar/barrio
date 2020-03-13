@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
+import { Link } from "react-router-dom";
 
 class AddNotification extends Component {
   constructor(props) {
@@ -110,9 +111,13 @@ class AddNotification extends Component {
           </fieldset>
           {/* <input type="file" onChange={e => this.handleFileUpload(e)} /> */}
           <button type="submit">Guardar</button>
+
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
+        <button><Link to="/notifications">
+              <h4>Ver todos los avisos</h4>
+            </Link></button>
       </div>
     );
   }

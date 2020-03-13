@@ -42,7 +42,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/zapateria_b04dte.jpg",
     mobile: 679854212,
     web: "www.zapateriaelpilar.com",
-    // owner: String,
+    owner: "Manolo Garcia",
     offers: [],
     year: 1982,
     location: {
@@ -60,7 +60,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/ferreteria_uan6vy.jpg",
     mobile: 679854212,
     web: "www.ferreteriadominguez.com",
-    // owner: String,
+    owner: "Teresa Fanjul",
     offers: [],
     year: 1999,
     location: {
@@ -77,7 +77,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/bar_c6mtff.jpg",
     mobile: 679854212,
     web: "www.tabernamanchega.com",
-    // owner: String,
+    owner: "Paloma Herrero",
     offers: [],
     year: 1982,
     location: {
@@ -95,7 +95,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/carniceria_zn6hh2.jpg",
     mobile: 621485975,
     web: "www.ternascoymas.com",
-    // owner: String,
+    owner: "Enrique Granda",
     offers: [],
     year: 2013,
     location: {
@@ -131,7 +131,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/optica_za58th.jpg",
     mobile: 675824198,
     web: "www.perfectvision.com",
-    // owner: String,
+    owner: "Alberto Gil",
     offers: [],
     year: 2001,
     location: {
@@ -149,7 +149,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/farmacia_sulkni.jpg",
     mobile: 635214496,
     web: "www.farmaciaromerales.com",
-    // owner: String,
+    owner: "Pilar de la Rosa",
     offers: [],
     year: 1991,
     location: {
@@ -167,7 +167,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/pescader%C3%ADa_zja92q.jpg",
     mobile: 635214496,
     web: "www.pescadosmobydick.com",
-    // owner: String,
+    owner: "Sonia Domínguez",
     offers: [],
     year: 1991,
     location: {
@@ -185,7 +185,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/florister%C3%ADa_jtl9y2.jpg",
     mobile: 655841277,
     web: "www.flordelis.com",
-    // owner: String,
+    owner: "Carlos Iglesias",
     offers: [],
     year: 2009,
     location: {
@@ -203,7 +203,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/pizzeria_ihrkvn.jpg",
     mobile: 616816868,
     web: "www.pizzasportobello.com",
-    // owner: String,
+    owner: "Isabel Ramos",
     offers: [],
     year: 2004,
     location: {
@@ -221,7 +221,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/peluquer%C3%ADa_yir4iy.jpg",
     mobile: 630201040,
     web: "www.peluquerialasenal.com",
-    // owner: String,
+    owner: "Joaquín Gómez",
     offers: [],
     year: 1987,
     location: {
@@ -238,7 +238,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967177/barrio-app/kiosko_hcyf7g.jpg",
     mobile: 645781200,
     web: "www.kioskoTBO.com",
-    // owner: String,
+    owner: "Patricia Llera",
     offers: [],
     year: 2017,
     location: {
@@ -255,7 +255,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/restaurante_ctoiqm.jpg",
     mobile: 645781200,
     web: "www.restauranteeltrisquel.com",
-    // owner: String,
+    owner: "Salvador Masaveu",
     offers: [],
     year: 2017,
     location: {
@@ -273,7 +273,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendamusical_frueoc.jpg",
     mobile: 678541269,
     web: "www.musicalsolfamida.com",
-    // owner: String,
+    owner: "Claudia Perez",
     offers: [],
     year: 2004,
     location: {

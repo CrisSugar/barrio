@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
+import { Link } from "react-router-dom";
 
 class AddShop extends Component {
   constructor(props) {
@@ -30,11 +31,12 @@ class AddShop extends Component {
     // req.body to .create() method when creating a new thing in '/api/things/create' POST route
     uploadData.append("imageUrl", e);
 
-    this.service.handleUpload(uploadData)
+    this.service
+      .handleUpload(uploadData)
       .then(response => {
         // console.log('response is: ', response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-        console.log(response.secure_url)
+        console.log(response.secure_url);
         this.setState({ imageUrl: response.secure_url });
       })
       .catch(err => {
@@ -45,47 +47,50 @@ class AddShop extends Component {
   // this method submits the form
   handleFormSubmit = event => {
     event.preventDefault();
-    this.handleFileUpload(this.state.file)
+    this.handleFileUpload(this.state.file);
     const name = this.state.name;
     const neighbourhood = this.state.neighbourhood;
     const sector = this.state.sector;
     const description = this.state.description;
     const imageUrl = this.state.imageUrl;
+    const owner = this.state.owner;
     const mobile = this.state.mobile;
     const web = this.state.web;
     const year = this.state.year;
     const lat = this.state.lat;
     const lng = this.state.lng;
 
-    this.service
-      .getAddShop(this.state)
+    this.service.getAddShop(this.state)
 
-      //   .saveNewThing(
-      //     name,
-      //     neighbourhood,
-      //     sector,
-      //     description,
-      //     imageUrl,
+    //   .saveNewThing(
+    //     name,
+    //     neighbourhood,
+    //     sector,
+    //     description,
+    //     imageUrl,
+            // owner
       //     mobile,
       //     web,
       //     year,
       //     lat,
       //     lng
       //   )
+
       .then(response => {
         console.log("added: ", response);
         // here you would redirect to some other page
         this.setState({
-          name: '',
-          neighbourhood: '',
+          name: "",
+          neighbourhood: "",
           sector: sector,
-          description: '',
-          imageUrl: '',
-          mobile: '',
-          web: '',
-          year: '',
-          lat: '',
-          lng: '',
+          description: "",
+          imageUrl: "",
+          owner:"",
+          mobile: "",
+          web: "",
+          year: "",
+          lat: "",
+          lng: "",
           error: false
         });
         // this.props.getShop(response);
@@ -109,19 +114,15 @@ class AddShop extends Component {
 
   handleChange = event => {
     // event.preventDefault();
-    const {
-      name, value
-    } = event.target;
+    const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
   handleImage = event => {
     // event.preventDefault();
-    const {
-      name, value,files
-    } = event.target;
-    this.setState({ [name]: value});
-    this.setState({ ["file"]: files[0]});
+    const { name, value, files } = event.target;
+    this.setState({ [name]: value });
+    this.setState({ ["file"]: files[0] });
   };
 
   render() {
@@ -176,6 +177,16 @@ class AddShop extends Component {
             />
           </fieldset>
           <fieldset>
+            <label>Propietario</label>
+            <input
+              type="text"
+              name="owner"
+              value={this.state.owner}
+              onChange={e => this.handleChange(e)}
+              //onChange={e => this.handleFileUpload(e)}
+            />
+          </fieldset>
+          <fieldset>
             <label>Móvil</label>
             <input
               type="text"
@@ -202,7 +213,7 @@ class AddShop extends Component {
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
-          <fieldset>
+          {/* <fieldset>
             <label>Latitud</label>
             <input
               type="text"
@@ -219,12 +230,17 @@ class AddShop extends Component {
               value={this.state.lng}
               onChange={e => this.handleChange(e)}
             />
-          </fieldset>
+          </fieldset> */}
           {/* <input type="file" onChange={e => this.handleFileUpload(e)} /> */}
           <button type="submit">Guardar</button>
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
+        <button>
+          <Link to="/shops">
+            <h4>Ver todas los tiendas</h4>
+          </Link>
+        </button>
       </div>
     );
   }

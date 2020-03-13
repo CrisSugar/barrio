@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Redirect } from "react-router";
 
 class AuthService {
   constructor() {
@@ -8,9 +9,9 @@ class AuthService {
     });
   }
 
-  signup = (username, password) => {
+  signup = (username, password, role) => {
     return this.service
-      .post("/signup", { username, password })
+      .post("/signup", { username, password, role })
       .then(response => response.data);
   };
 
@@ -20,9 +21,12 @@ class AuthService {
       .then(response => response.data);
   };
 
-  loggedin = () => {
-    return this.service.get("/currentUser").then(response => response.data);
+  loggedin = () => { 
+    return this.service.get("/currentUser")
+    .then(response => response.data);
   };
+
+
 
   logout = () => {
     return this.service.get("/logout").then(response => response.data);

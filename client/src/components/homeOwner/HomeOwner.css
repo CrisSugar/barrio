@@ -1,0 +1,4 @@
+.but-cont{
+    display: flex;
+    flex-direction: row;
+}
