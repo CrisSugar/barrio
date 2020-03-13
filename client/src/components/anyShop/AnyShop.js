@@ -1,6 +1,7 @@
 import React from "react";
 import "./AnyShop.css";
 import { Link } from "react-router-dom";
+
 function AnyShop(props) {
   // console.log(props)
   return (
@@ -29,7 +30,7 @@ function AnyShop(props) {
         </li> */}
         <button><Link to={`/shop/${props._id}`}>Ver Tienda</Link></button>
         {/* <button><Link to="/shop/delete">Borrar</Link></button> */}
-      {/* <button onClick={() => this.deleteAnyShop(this.state.shop._id)}></button> */}
+      <button onClick={() => this.deleteAnyShop(this.state.shop._id)}>Borrar</button>
       </ul>
     </div>
   );

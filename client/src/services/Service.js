@@ -95,7 +95,5 @@ class Service {
   }
 }
 
-//vale, lo que hemos hecho aqui es centralizar todas las peticiones axios para que solo dependan de una variable
-//qeu está declarada en la linea 6, así no hay que estar cmabiando en todos los archivos :) gracias, pruebo ahra a ver si sigue el error de cors?
 
 export default Service;

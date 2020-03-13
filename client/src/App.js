@@ -35,7 +35,7 @@ class App extends Component {
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
     this.state = {
       loggedInUser: null,
-      userType: "none",
+      role: "none",
       homeClient: ["client"],
       homeOwner: ["owner"]
     };
@@ -43,11 +43,11 @@ class App extends Component {
 
     this.fetchUser();
   }
-
   getUser = userObj => {
     console.log(userObj);
     this.setState({
-      loggedInUser: userObj
+      loggedInUser: userObj,
+      role: userObj.role
     });
   };
 
@@ -84,194 +84,108 @@ class App extends Component {
 
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
-    if (this.state.loggedInUser)
-    //  && this.state.userType === "owner") 
-     {
-      //en este caso mostramos los contenidos ya que hay usuario
-      return (
-        <React.Fragment>
-          {/* <Redirect to="/homeOwner" /> */}
-          <div className="father">
-            <Navbar
-              userInSession={this.state.loggedInUser}
-              logout={this.logout}
-            />
-            <div className="App">
-              
-              <Switch>
-                {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
+    if (this.state.loggedInUser) {
+      // if (this.state.loggedInUser.role === "owner") { 
+        return (
+          <React.Fragment>
+            {/* <Redirect to="/homeOwner" /> */}
 
-                <Route
-                  exact
-                  path="/maps"
-                  render={() => <GoogleMaps></GoogleMaps>}
-                />
-                <Route
-                  exact
-                  path="/homeowner"
-                  render={() => <HomeOwner></HomeOwner>}
-                />
-                <Route
-                  exact
-                  path="/homeclient"
-                  render={() => <HomeClient></HomeClient>}
-                />
-                <Route
-                  exact
-                  path="/shops"
-                  render={() => (
-                    // <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
-                    <AllShops></AllShops>
-                  )}
-                />
-                <Route
-                  exact
-                  path="/shop/new"
-                  render={() => <AddShop></AddShop>}
-                />
-                <Route
-                  exact
-                  path="/shop/:id"
-                  render={match => <ShopDetail {...match}></ShopDetail>}
-                />
-                <Route
-                  exact
-                  path="/shop/delete"
-                  render={() => <AllShops></AllShops>}
-                />
-                <Route
-                  exact
-                  path="/offers"
-                  render={() => <AllOffers></AllOffers>}
-                />
-                <Route
-                  exact
-                  path="/offer/new"
-                  render={() => <AddOffer></AddOffer>}
-                />
-                <Route
-                  exact
-                  path="/offer/:id"
-                  render={match => <OfferDetail {...match}></OfferDetail>}
-                />
-                <Route
-                  exact
-                  path="/notifications"
-                  render={() => <AllNotifications></AllNotifications>}
-                />
-                <Route
-                  exact
-                  path="/notification/new"
-                  render={() => <AddNotification></AddNotification>}
-                />
-                <Route
-                  exact
-                  path="/notification/:id"
-                  render={match => (
-                    <NotificationDetail {...match}></NotificationDetail>
-                  )}
-                />
-              </Switch>
+            <div className="father">
+              <Navbar
+                userInSession={this.state.loggedInUser}
+                logout={this.logout}
+              />
+              <div className="App">
+                <Switch>
+                  {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
+
+                  <Route
+                    exact
+                    path="/maps"
+                    render={() => <GoogleMaps></GoogleMaps>}
+                  />
+                  <Route
+                    exact
+                    path="/homeowner"
+                    render={() => <HomeOwner></HomeOwner>}
+                  />
+                  <Route
+                    exact
+                    path="/homeclient"
+                    render={() => <HomeClient></HomeClient>}
+                  />
+                  <Route
+                    exact
+                    path="/shops"
+                    render={() => (
+                      // <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
+                      <AllShops></AllShops>
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/shop/new"
+                    render={() => <AddShop></AddShop>}
+                  />
+                  <Route
+                    exact
+                    path="/shop/:id"
+                    render={match => <ShopDetail {...match}></ShopDetail>}
+                  />
+                  <Route
+                    exact
+                    path="/shop/delete"
+                    render={() => <AllShops></AllShops>}
+                  />
+                  <Route
+                    exact
+                    path="/offers"
+                    render={() => <AllOffers></AllOffers>}
+                  />
+                  <Route
+                    exact
+                    path="/offer/new"
+                    render={() => <AddOffer></AddOffer>}
+                  />
+                  <Route
+                    exact
+                    path="/offer/:id"
+                    render={match => <OfferDetail {...match}></OfferDetail>}
+                  />
+                  <Route
+                    exact
+                    path="/notifications"
+                    render={() => <AllNotifications></AllNotifications>}
+                  />
+                  <Route
+                    exact
+                    path="/notification/new"
+                    render={() => <AddNotification></AddNotification>}
+                  />
+                  <Route
+                    exact
+                    path="/notification/:id"
+                    render={match => (
+                      <NotificationDetail {...match}></NotificationDetail>
+                    )}
+                  />
+                </Switch>
+              </div>
             </div>
-          </div>
-        </React.Fragment>
-      );
-    } 
-    
-    // if ((this.state.loggedInUser) && (this.state.userType === "cliente")){
-
-    //   return (
-    //     <React.Fragment>
-    //       <Redirect to="/homeClient" />
-    //       <div>
-    //         <Navbar
-    //           userInSession={this.state.loggedInUser}
-    //           logout={this.logout}
-    //         />
-    //         <div className="App">
-              
-    //           <Switch>
-    //             {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
-
-    //             <Route
-    //               exact
-    //               path="/maps"
-    //               render={() => <GoogleMaps></GoogleMaps>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/homeowner"
-    //               render={() => <HomeOwner></HomeOwner>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/homeclient"
-    //               render={() => <HomeClient></HomeClient>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/shops"
-    //               render={props => (
-    //                 <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
-    //               )}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/shop/new"
-    //               render={() => <AddShop></AddShop>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/shop/:id"
-    //               render={match => <ShopDetail {...match}></ShopDetail>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/shop/delete"
-    //               render={() => <AllShops></AllShops>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/offers"
-    //               render={() => <AllOffers></AllOffers>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/offer/new"
-    //               render={() => <AddOffer></AddOffer>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/offer/:id"
-    //               render={match => <OfferDetail {...match}></OfferDetail>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/notifications"
-    //               render={() => <AllNotifications></AllNotifications>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/notification/new"
-    //               render={() => <AddNotification></AddNotification>}
-    //             />
-    //             <Route
-    //               exact
-    //               path="/notification/:id"
-    //               render={match => (
-    //                 <NotificationDetail {...match}></NotificationDetail>
-    //               )}
-    //             />
-    //           </Switch>
-    //         </div>
-    //       </div>
-    //     </React.Fragment>
-    //   );
-    // } 
-  
-    
-
-    else {
+          </React.Fragment>
+        );
+      // } else {
+      //   return (
+      //     <div>
+      //       <h1></h1>
+      //       <React.Fragment>
+      //         {/* <Redirect to="/homeClient" /> */}
+      //       </React.Fragment>
+      //     </div>
+      //   );
+      // }
+      //en este caso mostramos los contenidos ya que hay usuario
+    } else {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
@@ -297,6 +211,5 @@ class App extends Component {
       );
     }
   }
-
 }
 export default App;

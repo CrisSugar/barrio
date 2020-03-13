@@ -32,13 +32,13 @@ export default class AllShops extends React.Component {
     // let shops = [this.props.allShops
 
     return (
-      <div>
+      <div className="cadatienda">
       <ul className="shops-container">
         {this.state.shops.map(anyshops => 
           <AnyShop key={anyshops._id} {...anyshops} />
          ) }
       </ul>
-      <button><Link to={'/shop/new'}>Crear Tienda></Link></button>
+      <button className="buttonshop"><Link to={'/shop/new'}>Crear Tienda></Link></button>
       </div>
     );
   }
