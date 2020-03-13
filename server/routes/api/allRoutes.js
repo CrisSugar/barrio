@@ -90,8 +90,8 @@ router.put("/shop/:id", (req, res, next) => {
 
 /// delete one
 router.delete("/shop/:id", (req, res, next) => {
-  Shop.findByIdAndDelete(req.params.id).then(() => {
-    res.json({ deleted: true, _id: req.params.id });
+  Shop.findByIdAndDelete(req.params.id).then((deletedShop) => {
+    res.json({ deleted: true, deletedShop});
   });
 });
 
