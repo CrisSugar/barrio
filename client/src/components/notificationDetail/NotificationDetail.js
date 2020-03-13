@@ -13,7 +13,7 @@ export default class NotificationDetail extends React.Component {
   componentDidMount() {
     this.service.getNotification(this.props.match.params.id).then(response => {
       this.setState({
-        notification: response.data
+        notification: response
       });
     });
   }

@@ -133,9 +133,23 @@ router.get("/offer/:id", (req, res, next) => {
 });
 
 /// create one
+// router.post("/offer/new", (req, res, next) => {
+//   Offer.create(req.params.id, req.body).then(() => res.redirect("/offers"));
+// });
+
+
 router.post("/offer/new", (req, res, next) => {
-  Offer.create(req.params.id, req.body).then(() => res.redirect("/offers"));
+  const {
+    neighbourhood,
+    shop,
+    product,
+    prize,
+    offerPrize
+  } = req.body;
+  
+    Offer.create(req.body).then(allOffers => res.json(allOffers));
 });
+
 
 /// update one
 router.put("/offer/:id", (req, res, next) => {
@@ -166,14 +180,23 @@ router.get("/notification/:id", (req, res, next) => {
 });
 
 /// create one
+// router.post("/notification/new", (req, res, next) => {
+//   let aviso = {
+//     neighbourhood : req.body.neighbourhood,
+//     commentary: req.body.commentary
+//   }
+//   Notification.create(aviso).then(() =>
+//     res.json(aviso)
+//   );
+// });
+
 router.post("/notification/new", (req, res, next) => {
-  let aviso = {
-    neighbourhood : req.body.neighbourhood,
-    commentary: req.body.commentary
-  }
-  Notification.create(aviso).then(() =>
-    res.json(aviso)
-  );
+  const {
+    neighbourhood,
+    commentary
+  } = req.body;
+  
+    Notification.create(req.body).then(allNotifications => res.json(allNotifications));
 });
 
 /// update one

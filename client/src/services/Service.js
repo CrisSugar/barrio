@@ -60,6 +60,28 @@ class Service {
       .catch(error => console.log(error));
   };
 
+  getAddOffer = offer => {
+    return this.service
+      .post("/offer/new", offer)
+      .then(response => response.data)
+      .catch(error => console.log(error));
+  };
+
+  getAddNotification = notification => {
+    return this.service
+      .post("/notification/new", notification)
+      .then(response => response.data)
+      .catch(error => console.log(error));
+  };
+
+  deleteShop = shopId => {
+    return this.service
+      .delete(`/shop/${shopId}`)
+      .then(response => response.data)
+      .catch(error => console.log(error));
+  };
+
+
   handleUpload(theFile) {
     // console.log('file in service: ', theFile)
     return this.service.post("/upload", theFile).then(res => res.data);

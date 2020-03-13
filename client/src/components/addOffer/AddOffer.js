@@ -3,12 +3,15 @@ import React, { Component } from "react";
 // import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
 
-class AddNotification extends Component {
+class AddOffer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       neighbourhood: "",
-      commentary: "",
+      shop: "",
+      product: "",
+      prize: "",
+      offerPrize: "",
     };
     this.service = new Service();
   }
@@ -39,29 +42,41 @@ class AddNotification extends Component {
     event.preventDefault();
     // this.handleFileUpload(this.state.file)
     const neighbourhood = this.state.neighbourhood;
-    const commentary = this.state.commentary;
+    const shop = this.state.shop;
+    const product = this.state.product;
+    const prize = this.state.prize;
+    const offerPrize = this.state.offerPrize;
 
     this.service
-      .getAddNotification(this.state)
+      .getAddOffer(this.state)
 
       //   .saveNewThing(
       //     neighbourhood,
-      //     commentary,
+      //     shop,
+      //     product,
+      //     prize,
+      //     offerPrize,
       //   )
       .then(response => {
         console.log("added: ", response);
         // here you would redirect to some other page
         this.setState({
           neighbourhood: '',
-          commentary: '',
+          shop: '',
+          product: '',
+          prize: '',
+          offerPrize: '',
           error: false
         });
-        // this.props.getNotification(response);
+        // this.props.getOffer(response);
       })
       .catch(err => {
         this.setState({
           neighbourhood: neighbourhood,
-          commentary: commentary,
+          shop: shop,
+          product: product,
+          prize: prize,
+          offerPrize: offerPrize,
           error: true
         });
       });
@@ -87,7 +102,7 @@ class AddNotification extends Component {
   render() {
     return (
       <div>
-        <h2>Nuevo Aviso</h2>
+        <h2>Nueva Oferta</h2>
         <form onSubmit={this.handleFormSubmit}>
 
           <fieldset>
@@ -100,11 +115,38 @@ class AddNotification extends Component {
             />
           </fieldset>
           <fieldset>
-            <label>Comentario</label>
+            <label>Tienda</label>
             <input
               type="text"
-              name="commentary"
-              value={this.state.commentary}
+              name="shop"
+              value={this.state.shop}
+              onChange={e => this.handleChange(e)}
+            />
+          </fieldset>
+          <fieldset>
+            <label>Producto</label>
+            <input
+              type="text"
+              name="product"
+              value={this.state.product}
+              onChange={e => this.handleChange(e)}
+            />
+          </fieldset>
+          <fieldset>
+            <label>Precio</label>
+            <input
+              type="text"
+              name="prize"
+              value={this.state.prize}
+              onChange={e => this.handleChange(e)}
+            />
+          </fieldset>
+          <fieldset>
+            <label>Precio de Oferta</label>
+            <input
+              type="text"
+              name="offerPrize"
+              value={this.state.offerPrize}
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
@@ -118,5 +160,4 @@ class AddNotification extends Component {
   }
 }
 
-
-export default AddNotification;
+export default AddOffer;

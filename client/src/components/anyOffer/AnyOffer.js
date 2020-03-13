@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AnyShop from "../anyShop/AnyShop";
 
 function AnyOffer(props) {
   return (
@@ -21,7 +22,8 @@ function AnyOffer(props) {
         <li>
           <p> Precio oferta: {props.offerPrize}</p>
         </li>
-        <Link to={`/offer/${props._id}`}>Ver Oferta</Link>
+        {/* <Link to={`/offer/${props._id}`}>Ver Oferta</Link> */}
+        {/* <Link to={`/shop/${AnyShop._id}`}>Ver Tienda</Link> */}
       </ul>
     </div>
   );

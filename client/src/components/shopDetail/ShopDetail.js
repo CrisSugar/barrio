@@ -13,14 +13,10 @@ export default class ShopDetail extends React.Component {
   componentDidMount() {
     this.service.getShop(this.props.match.params.id).then(response => {
       this.setState({
-        shop: response.data
+        // shop: response.data
+        shop: response
       });
     });
-    // .then(response => {
-    //   this.setState({
-    //     shop: response.data
-    //   });
-    // });
   }
 
   render() {
@@ -33,7 +29,7 @@ export default class ShopDetail extends React.Component {
           <p>{this.state.shop.sector}</p>
           <p>{this.state.shop.description}</p>
           <p>
-            Contacto: Web: {this.state.shop.web} Teléfono:{" "}
+            Contacto: Web: {this.state.shop.web} Teléfono:
             {this.state.shop.mobile}
           </p>
         </>

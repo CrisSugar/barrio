@@ -6,7 +6,8 @@ import Service from "../../services/Service";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
-export default class HomeOwner extends React.Component {
+
+
   // constructor(props) {
   //   super(props);
   //   this.service = new Service();
@@ -23,16 +24,43 @@ export default class HomeOwner extends React.Component {
   //     });
   //   }
 
+export default class HomeOwner extends React.Component {
+  constructor(props) {
+    super(props);
+    this.service = new Service();
+    this.state = {
+      shops: []
+      // loggedInUser: userObj
+    };
+  }
+
+  componentDidMount() {
+    this.service.getAllShops().then(response => {
+      let filteredShops;
+      filteredShops = response.filter(shop => {
+        console.log(shop)
+        return shop.neighbourhood.includes("");
+      });
+      this.setState({
+        shops: filteredShops
+      });
+    });
+  }
+
   render() {
     return (
       <div class="homeowner">
         <AllShops></AllShops>
         <div>
           <div>
-            <Link to="/offers"><h4>Todas las oferta></h4></Link>
+            <Link to="/offers">
+              <h4>Todas las ofertas</h4>
+            </Link>
           </div>
           <div>
-            <Link to="/notifications"><h4>Todos los avisos</h4></Link>
+            <Link to="/notifications">
+              <h4>Todos los avisos</h4>
+            </Link>
           </div>
         </div>
       </div>

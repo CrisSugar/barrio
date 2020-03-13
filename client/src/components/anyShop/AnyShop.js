@@ -1,12 +1,13 @@
 import React from "react";
+import "./AnyShop.css";
 import { Link } from "react-router-dom";
 function AnyShop(props) {
   // console.log(props)
   return (
-    <div>
+    <div className="item">
       <ul className="list">
         <li>
-          <img src={props.imageUrl} alt="image"/>
+          <img className="photo" src={props.imageUrl} alt="image"/>
         </li>
         <li>
           <h4>{props.neighbourhood}</h4>
@@ -27,6 +28,8 @@ function AnyShop(props) {
           </p>
         </li>
         <Link to={`/shop/${props._id}`}>Ver Tienda</Link>
+        <Link to="/shop/delete">Borrar</Link>
+      
       </ul>
     </div>
   );

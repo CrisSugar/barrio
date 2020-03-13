@@ -18,7 +18,7 @@ export default class AllShops extends React.Component {
       let filteredShops;
       filteredShops = response.filter(shop => {
         console.log(shop)
-        return shop.neighbourhood.includes("Delicias");
+        return shop.neighbourhood.includes("");
       });
       this.setState({
         shops: filteredShops

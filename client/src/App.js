@@ -18,11 +18,12 @@ import AnyNotification from "./components/anyNotification/AnyNotification";
 import ShopDetail from "./components/shopDetail/ShopDetail";
 import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
-import Home from "./components/home/Home";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
 // import AddOne from "./components/addOne/AddOne";
 import AddShop from "./components/addShop/AddShop";
+import AddOffer from "./components/addOffer/AddOffer";
+import AddNotification from "./components/addNotification/AddNotification";
 import GoogleMaps from "./components/googleMap/GoogleMaps";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
@@ -83,13 +84,13 @@ class App extends Component {
             />
             <div className="App">
               <Switch>
-                <Route exact path="/home" render={() => <Home></Home>} />
+                {/* <Route exact path="/home" render={() => <Home></Home>} /> */}
+
                 <Route
                   exact
                   path="/maps"
                   render={() => <GoogleMaps></GoogleMaps>}
-                />{" "}
-                }
+                />
                 <Route
                   exact
                   path="/homeowner"
@@ -119,8 +120,18 @@ class App extends Component {
                 />
                 <Route
                   exact
+                  path="/shop/delete"
+                  render={() => <AllShops></AllShops>}
+                />
+                <Route
+                  exact
                   path="/offers"
                   render={() => <AllOffers></AllOffers>}
+                />
+                <Route
+                  exact
+                  path="/offer/new"
+                  render={() => <AddOffer></AddOffer>}
                 />
                 <Route
                   exact
@@ -131,6 +142,11 @@ class App extends Component {
                   exact
                   path="/notifications"
                   render={() => <AllNotifications></AllNotifications>}
+                />
+                <Route
+                  exact
+                  path="/notification/new"
+                  render={() => <AddNotification></AddNotification>}
                 />
                 <Route
                   exact

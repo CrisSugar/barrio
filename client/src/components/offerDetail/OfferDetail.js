@@ -13,7 +13,7 @@ export default class OfferDetail extends React.Component {
   componentDidMount() {
     this.service.getOffer(this.props.match.params.id).then(response => {
       this.setState({
-        offer: response.data
+        offer: response
       });
     });
   }
