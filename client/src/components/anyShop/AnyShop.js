@@ -28,9 +28,10 @@ function AnyShop(props) {
             Contacto: Web: {props.web} Teléfono: {props.mobile}
           </p>
         </li> */}
+        <div>
         <button><Link to={`/shop/${props._id}`}>Ver Tienda</Link></button>
         {/* <button><Link to="/shop/delete">Borrar</Link></button> */}
-      <button onClick={() => this.deleteAnyShop(this.state.shop._id)}>Borrar</button>
+      <button onClick={() => this.deleteAnyShop(this.state.shop._id)}>Borrar</button></div>
       </ul>
     </div>
   );

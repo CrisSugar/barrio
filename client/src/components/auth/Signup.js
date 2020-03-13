@@ -51,7 +51,7 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sigform">
         <h1> ;-) </h1>
         <h3>¡Bienvenido a tu Barrio! Crea tu cuenta aquí:</h3>
 

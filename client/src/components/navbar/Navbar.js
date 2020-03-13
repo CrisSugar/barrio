@@ -21,14 +21,14 @@ class Navbar extends Component {
         <div>
           <nav className="nav-style">
             <ul>
-              <li></li>
+            
               <li>
                 <a onClick={this.handleLogout}>Logout</a>
               </li>
             </ul>
 
             <div className="header">
-              {/* <img src={logo192} alt="" height="100"/> */}
+              <img className="navimag" src="../../../logo193.png" alt="" height="60"/>
               <h2>Hola, {this.state.loggedInUser.username} !</h2>
             </div>
           </nav>
@@ -39,6 +39,7 @@ class Navbar extends Component {
         <div>
           <nav className="nav-style">
             <ul>
+            <img className="navimag" src="../../../logo193.png" alt="" height="60"/>
               <li className="navlink">
                 <Link to="/signup">Registrarse</Link>
               </li>
