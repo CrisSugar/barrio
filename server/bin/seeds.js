@@ -44,11 +44,7 @@ let shops = [
     web: "www.zapateriaelpilar.com",
     // owner: "Manolo Garcia",
     offers: [],
-    year: 1982,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1982
   },
   {
     neighbourhood: "Delicias",
@@ -62,11 +58,7 @@ let shops = [
     web: "www.ferreteriadominguez.com",
     // owner: "Teresa Fanjul",
     offers: [],
-    year: 1999,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1999
   },
   {
     neighbourhood: "Delicias",
@@ -79,11 +71,7 @@ let shops = [
     web: "www.tabernamanchega.com",
     // owner: "Paloma Herrero",
     offers: [],
-    year: 1982,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1982
   },
   {
     neighbourhood: "Delicias",
@@ -97,11 +85,7 @@ let shops = [
     web: "www.ternascoymas.com",
     // owner: "Enrique Granda",
     offers: [],
-    year: 2013,
-    location: {
-      lat: 40.25,
-      lng: 33.23
-    }
+    year: 2013
   },
   {
     neighbourhood: "Delicias",
@@ -115,11 +99,7 @@ let shops = [
     web: "www.novedadeseloina.com",
     // owner: String,
     offers: [],
-    year: 2004,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2004
   },
   {
     neighbourhood: "La Almozara",
@@ -133,11 +113,7 @@ let shops = [
     web: "www.perfectvision.com",
     // owner: "Alberto Gil",
     offers: [],
-    year: 2001,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2001
   },
   {
     neighbourhood: "La Almozara",
@@ -151,11 +127,7 @@ let shops = [
     web: "www.farmaciaromerales.com",
     // owner: "Pilar de la Rosa",
     offers: [],
-    year: 1991,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1991
   },
   {
     neighbourhood: "La Almozara",
@@ -169,11 +141,7 @@ let shops = [
     web: "www.pescadosmobydick.com",
     // owner: "Sonia Domínguez",
     offers: [],
-    year: 1991,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1991
   },
   {
     neighbourhood: "La Almozara",
@@ -187,11 +155,7 @@ let shops = [
     web: "www.flordelis.com",
     // owner: "Carlos Iglesias",
     offers: [],
-    year: 2009,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2009
   },
   {
     neighbourhood: "Centro",
@@ -205,11 +169,7 @@ let shops = [
     web: "www.pizzasportobello.com",
     // owner: "Isabel Ramos",
     offers: [],
-    year: 2004,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2004
   },
   {
     neighbourhood: "Centro",
@@ -223,11 +183,7 @@ let shops = [
     web: "www.peluquerialasenal.com",
     // owner: "Joaquín Gómez",
     offers: [],
-    year: 1987,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 1987
   },
   {
     neighbourhood: "Centro",
@@ -240,11 +196,7 @@ let shops = [
     web: "www.kioskoTBO.com",
     // owner: "Patricia Llera",
     offers: [],
-    year: 2017,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2017
   },
   {
     neighbourhood: "Centro",
@@ -257,11 +209,7 @@ let shops = [
     web: "www.restauranteeltrisquel.com",
     // owner: "Salvador Masaveu",
     offers: [],
-    year: 2017,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2017
   },
   {
     neighbourhood: "Centro",
@@ -275,11 +223,7 @@ let shops = [
     web: "www.musicalsolfamida.com",
     // owner: "Claudia Perez",
     offers: [],
-    year: 2004,
-    location: {
-      lat: 33.23,
-      lng: 33.23
-    }
+    year: 2004
   }
 ];
 

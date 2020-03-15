@@ -26,7 +26,8 @@ class Signup extends Component {
           username: "",
           password: "",
           neighbourhood: "",
-          role: ""
+          role: "",
+          error: true
         });
         //aquí elevamos el nuevo usuario una vez creado a App usando getUser via props
         //por tanto, informamos a App de que el nuevo usuario ha sido creado, provocando un re-render
@@ -52,9 +53,9 @@ class Signup extends Component {
   render() {
     return (
       <div className="sigform">
+        {" "}
         <h1> ;-) </h1>
         <h3>¡Bienvenido a tu Barrio! Crea tu cuenta aquí:</h3>
-
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
             <label>Nombre de Usuario:</label>
@@ -68,6 +69,22 @@ class Signup extends Component {
 
           <fieldset>
             <label>
+              Barrio:{" "}
+              <select
+                name="neighbourhood"
+                value={this.state.neighbourhood}
+                onChange={e => this.handleChange(e)}
+              >
+                <option value=""></option>
+                <option value="Delicias">Delicias</option>
+                <option value="Centro">Centro</option>
+                <option value="La Almozara">La Almozara</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <label>
               Rol:{" "}
               <select
                 name="role"
@@ -75,20 +92,10 @@ class Signup extends Component {
                 onChange={e => this.handleChange(e)}
               >
                 <option value=""></option>
-                <option value="vecino">Vecino</option>
-                <option value="comerciante">Comerciante</option>
+                <option value="client">Vecino</option>
+                <option value="owner">Comerciante</option>
               </select>
             </label>
-          </fieldset>
-
-          <fieldset>
-            <label>Barrio:</label>
-            <input
-              type="text"
-              name="neighbourhood"
-              value={this.state.neighbourhood}
-              onChange={e => this.handleChange(e)}
-            />
           </fieldset>
 
           <fieldset>
@@ -100,10 +107,11 @@ class Signup extends Component {
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
-
           <input className="enviar" type="submit" value="Enviar" />
+          <Link className="link" to="/login">
+            Login
+          </Link>
         </form>
-
         <h1>{this.state.error ? "Error" : ""}</h1>
       </div>
     );

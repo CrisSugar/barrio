@@ -53,12 +53,12 @@ export default class HomeOwner extends React.Component {
         <AllShops></AllShops>
         <div class="but-cont">
           <div>
-            <button><Link to="/offers">
+            <button><Link to="/offers" className="link">
               <h4>Todas las ofertas</h4>
             </Link></button>
           </div>
           <div>
-            <button><Link to="/notifications">
+            <button><Link to="/notifications" className="link">
               <h4>Todos los avisos</h4>
             </Link></button>
           </div>

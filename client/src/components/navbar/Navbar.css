@@ -3,16 +3,16 @@
     height: 80px;
     width: 100vw;
     margin: 0px;
-    /* display: flex; 
+    display: flex; 
     justify-content: center;
-    align-items: center;  */
+    align-items: center; 
     position: fixed;
     top: 0;
     left: 0;
     right: auto; 
     display: flex;
-    justify-content: center;
 }
+
 
 
 
@@ -23,11 +23,26 @@ nav>ul {
         
 }
 
-.navlink {
-    text-decoration: none;
-    border: solid;
-    border-radius: 5%;
-    box-shadow: none;
-    color: #4ABDAC
+.div-nav {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
+.link {
+    text-decoration: none;
+    color: #DFDCE3;
+    border: double;
+    border-radius: 35%;
+    box-shadow: none;
+    border-color: #DFDCE3;
+    margin: 20px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.div-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

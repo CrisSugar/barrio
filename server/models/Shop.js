@@ -17,10 +17,6 @@ const shopSchema = new Schema(
       }
     ],
     year: Number,
-    location: {
-      lat: Number,
-      lng: Number
-    }
   },
   {
     timestamps: {

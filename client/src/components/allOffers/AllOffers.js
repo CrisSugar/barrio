@@ -34,7 +34,7 @@ export default class AllOffers extends React.Component {
         {this.state.offers.map(anyoffers => (
           <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>
         ))}
-        <button><Link to={'/offer/new'}>Crear Oferta</Link></button>
+        <button><Link to={'/offer/new'} className="link">Crear Oferta</Link></button>
       </div>
     );
   }

@@ -29,7 +29,7 @@ function AnyShop(props) {
           </p>
         </li> */}
         <div>
-        <button><Link to={`/shop/${props._id}`}>Ver Tienda</Link></button>
+        <button><Link to={`/shop/${props._id}`}  className="link">Ver Tienda</Link></button>
         {/* <button><Link to="/shop/delete">Borrar</Link></button> */}
       <button onClick={() => this.deleteAnyShop(this.state.shop._id)}>Borrar</button></div>
       </ul>

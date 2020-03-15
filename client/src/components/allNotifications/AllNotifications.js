@@ -32,7 +32,7 @@ export default class AllNotifications extends React.Component {
         {this.state.notifications.map(anynotifications => (
           <AnyNotification key={anynotifications._id} {...anynotifications} />
         ))}
-        <button><Link to={'/notification/new'}>Crear aviso</Link></button>
+        <button><Link to={'/notification/new'} className="link">Crear aviso</Link></button>
       </div>
     );
   }

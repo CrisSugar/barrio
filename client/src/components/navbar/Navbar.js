@@ -11,6 +11,10 @@ class Navbar extends Component {
     this.service = new AuthService();
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ ...this.state, loggedInUser: nextProps["userInSession"] });
+  }
+
   handleLogout = e => {
     this.props.logout();
   };
@@ -18,34 +22,47 @@ class Navbar extends Component {
   render() {
     if (this.state.loggedInUser) {
       return (
-        <div>
+        <div className="navbar-div">
           <nav className="nav-style">
+            <img
+              src="../../../logo193.png"
+              alt="logo"
+              height="60"
+              className="navimag"
+            />
             <ul>
-            
-              <li>
-                <a onClick={this.handleLogout}>Logout</a>
-              </li>
+              <div className="div-nav">
+                <li>
+                  <h2>Hola, {this.state.loggedInUser.username} !</h2>
+                </li>
+                <li>
+                  <a onClick={this.handleLogout}>Logout</a>
+                </li>
+              </div>
             </ul>
-
-            <div className="header">
-              <img className="navimag" src="../../../logo193.png" alt="" height="60"/>
-              <h2>Hola, {this.state.loggedInUser.username} !</h2>
-            </div>
           </nav>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="navbar-div">
           <nav className="nav-style">
+            <img
+              className="navimag"
+              src="../../../logo193.png"
+              alt=""
+              height="60"
+            />
             <ul>
-            <img className="navimag" src="../../../logo193.png" alt="" height="60"/>
+              <div className="div-nav">
               <li className="navlink">
-                <Link to="/signup">Registrarse</Link>
+                <Link to="/signup" className="link">Registrarse</Link>
               </li>
+              
               <li className="navlink">
-                <Link to="/login">Iniciar sesión</Link>
+                <Link to="/login" className="link">Iniciar sesión</Link>
               </li>
+              </div>
             </ul>
           </nav>
         </div>

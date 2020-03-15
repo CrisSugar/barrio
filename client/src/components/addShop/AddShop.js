@@ -15,9 +15,7 @@ class AddShop extends Component {
       imageUrl: "",
       mobile: "",
       web: "",
-      year: "",
-      lat: "",
-      lng: ""
+      year: ""
     };
     this.service = new Service();
   }
@@ -57,8 +55,6 @@ class AddShop extends Component {
     const mobile = this.state.mobile;
     const web = this.state.web;
     const year = this.state.year;
-    const lat = this.state.lat;
-    const lng = this.state.lng;
 
     this.service.getAddShop(this.state)
 
@@ -89,8 +85,6 @@ class AddShop extends Component {
           mobile: "",
           web: "",
           year: "",
-          lat: "",
-          lng: "",
           error: false
         });
         // this.props.getShop(response);
@@ -105,8 +99,6 @@ class AddShop extends Component {
           mobile: mobile,
           web: web,
           year: year,
-          lat: lat,
-          lng: lng,
           error: true
         });
       });
@@ -171,7 +163,7 @@ class AddShop extends Component {
             <input
               type="file"
               name="imageUrl"
-              value={this.state.fileUrl}
+              value={this.state.imageUrl}
               onChange={e => this.handleImage(e)}
               //onChange={e => this.handleFileUpload(e)}
             />
