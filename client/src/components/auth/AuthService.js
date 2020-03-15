@@ -3,15 +3,18 @@ import { Redirect } from "react-router";
 
 class AuthService {
   constructor() {
+
+    let xxx = `${process.env.REACT_APP_API_URL}/auth`
+
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/auth`,
       withCredentials: true
     });
   }
 
-  signup = (username, password, role) => {
+  signup = (username, password) => {
     return this.service
-      .post("/signup", { username, password, role })
+      .post("/signup", { username, password})
       .then(response => response.data);
   };
 
@@ -29,7 +32,8 @@ class AuthService {
 
 
   logout = () => {
-    return this.service.get("/logout").then(response => response.data);
+    return this.service.post("/logout")
+    .then(response => response.data);
   };
 }
 

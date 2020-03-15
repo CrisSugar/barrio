@@ -7,7 +7,7 @@ import logo from "./logo.svg";
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
-import Authorization from "./components/auth/Authorization";
+// import Authorization from "./components/auth/Authorization";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
@@ -31,18 +31,24 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      loggedInUser: null
+    this.state = { loggedInUser: null };
 
       // loggedInUser: null
       // role: "none",
       // homeClient: ["client"],
       // homeOwner: ["owner"]
-    };
+   
     this.service = new AuthService();
-
-    this.fetchUser();
+    // this.fetchUser();
   }
+
+  updateForm(e, field) {
+    this.setState({
+      ...this.state,
+      [field]: e.target.value
+    });
+  }
+
 
   getUser = userObj => {
     this.setState({
@@ -59,7 +65,9 @@ class App extends Component {
 
   logout = () => {
     this.service.logout().then(() => {
-      this.setState({ loggedInUser: null }, () => console.log(this.state));
+      this.setState({ loggedInUser: null }
+        // , () => console.log(this.state)
+        );
     });
   };
 
@@ -80,21 +88,25 @@ class App extends Component {
       });
   }
 
-  render() {
-    const { loggedInUser } = this.state;
-    const { logout } = this;
+  componentDidMount() {
+    this.fetchUser();
+  }
 
-    if (loggedInUser) {
+  render() {
+    // const { loggedInUser } = this.state;
+    // const { logout } = this;
+
+    if (this.state.loggedInUser) {
       // if (this.state.loggedInUser.role === "owner") {
       return (
         <React.Fragment>
-          {/* <Redirect to="/homeOwner" /> */}
+          <Redirect to="/homeOwner" />
           <Switch>
             <div className="App">
               <Navbar
-                userInSession={loggedInUser}
-                getUser={this.getUser}
-                logout={logout}
+                userInSession={this.state.loggedInUser}
+                // getUser={this.getUser}
+                logout={this.logout}
               />{" "}
               {/* <Route exact path="/" render={() => <Home></Home>} /> */}
               {/* <Route
@@ -175,8 +187,11 @@ class App extends Component {
     } else {
       return (
         <React.Fragment>
+        <Redirect to="/login" />
           <div className="App">
-            <Navbar logout={this.logout} />
+            <Navbar 
+            userInSession={this.state.loggedInUser}
+            logout={this.logout} />
               <Switch>
                 <Route
                   exact

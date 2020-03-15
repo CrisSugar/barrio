@@ -12,7 +12,7 @@ const User = require("../models/User");
 const Shop = require("../models/Shop");
 const Offer = require("../models/Offer");
 const Notification = require("../models/Notification");
-const bcryptSalt = 10;
+// const bcryptSalt = 10;
 
 mongoose
   .connect(`${process.env.DBURL_HEROKU}`, {

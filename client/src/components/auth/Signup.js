@@ -15,18 +15,18 @@ class Signup extends Component {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
-    const neighbourhood = this.state.neighbourhood;
-    const role = this.state.role;
+    // const neighbourhood = this.state.neighbourhood;
+    // const role = this.state.role;
 
     //aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
     this.service
-      .signup(username, password, neighbourhood)
+      .signup(username, password)
       .then(response => {
         this.setState({
           username: "",
           password: "",
-          neighbourhood: "",
-          role: "",
+          // neighbourhood: "",
+          // role: "",
           error: true
         });
         //aquí elevamos el nuevo usuario una vez creado a App usando getUser via props
@@ -38,8 +38,8 @@ class Signup extends Component {
         this.setState({
           username: username,
           password: password,
-          neighbourhood: neighbourhood,
-          role: role,
+          // neighbourhood: neighbourhood,
+          // role: role,
           error: true
         });
       });
@@ -67,7 +67,7 @@ class Signup extends Component {
             />
           </fieldset>
 
-          <fieldset>
+          {/* <fieldset>
             <label>
               Barrio:{" "}
               <select
@@ -81,9 +81,9 @@ class Signup extends Component {
                 <option value="La Almozara">La Almozara</option>
               </select>
             </label>
-          </fieldset>
+          </fieldset> */}
 
-          <fieldset>
+          {/* <fieldset>
             <label>
               Rol:{" "}
               <select
@@ -96,7 +96,7 @@ class Signup extends Component {
                 <option value="owner">Comerciante</option>
               </select>
             </label>
-          </fieldset>
+          </fieldset> */}
 
           <fieldset>
             <label>Contraseña:</label>
