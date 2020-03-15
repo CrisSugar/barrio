@@ -115,8 +115,8 @@ class AddNotification extends Component {
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
-        <button><Link to="/notifications">
-              <h4>Ver todos los avisos</h4>
+        <button><Link to="/notifications" className="link">
+              <h4>Ver Avisos</h4>
             </Link></button>
       </div>
     );

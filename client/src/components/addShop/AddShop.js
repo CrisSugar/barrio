@@ -13,6 +13,7 @@ class AddShop extends Component {
       sector: "",
       description: "",
       imageUrl: "",
+      owner: "",
       mobile: "",
       web: "",
       year: ""
@@ -96,6 +97,7 @@ class AddShop extends Component {
           sector: sector,
           description: description,
           imageUrl: imageUrl,
+          owner: owner,
           mobile: mobile,
           web: web,
           year: year,
@@ -205,32 +207,15 @@ class AddShop extends Component {
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
-          {/* <fieldset>
-            <label>Latitud</label>
-            <input
-              type="text"
-              name="lat"
-              value={this.state.lat}
-              onChange={e => this.handleChange(e)}
-            />
-          </fieldset>
-          <fieldset>
-            <label>Longitud</label>
-            <input
-              type="text"
-              name="lng"
-              value={this.state.lng}
-              onChange={e => this.handleChange(e)}
-            />
-          </fieldset> */}
+    
           {/* <input type="file" onChange={e => this.handleFileUpload(e)} /> */}
           <button type="submit">Guardar</button>
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
         <button>
-          <Link to="/shops">
-            <h4>Ver todas los tiendas</h4>
+          <Link to="/shops" className="link">
+            <h4>Ver Tiendas</h4>
           </Link>
         </button>
       </div>

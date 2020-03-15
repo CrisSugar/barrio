@@ -156,8 +156,8 @@ class AddOffer extends Component {
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
-        <button><Link to="/offers">
-              <h4>Ver todas las ofertas</h4>
+        <button><Link to="/offers" className="link">
+              <h4>Ver Ofertas</h4>
             </Link></button>
       </div>
     );

@@ -36,7 +36,7 @@ class Navbar extends Component {
                   <h2>Hola, {this.state.loggedInUser.username} !</h2>
                 </li>
                 <li>
-                  <a onClick={this.handleLogout}>Logout</a>
+                  <a onClick={this.handleLogout} className="link">Logout</a>
                 </li>
               </div>
             </ul>

@@ -11,7 +11,7 @@ function AnyNotification(props) {
         <li>
           <p>{props.commentary}</p>
         </li>
-        {/* <Link to={`/notification/${props._id}`}>Ver Aviso</Link> */}
+        {/* <Link to={`/notification/${props._id}`} className="link">Ver Aviso</Link> */}
       </ul>
     </div>
   );

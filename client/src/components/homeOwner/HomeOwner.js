@@ -49,9 +49,9 @@ export default class HomeOwner extends React.Component {
 
   render() {
     return (
-      <div class="homeowner">
+      <div className="homeowner">
         <AllShops></AllShops>
-        <div class="but-cont">
+        <div className="but-cont">
           <div>
             <button><Link to="/offers" className="link">
               <h4>Todas las ofertas</h4>

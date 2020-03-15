@@ -34,8 +34,8 @@ export default class ShopDetail extends React.Component {
             {this.state.shop.mobile}
           </p>
           <button>
-          <Link to="/shops">
-            <h4>Ver todas las tiendas</h4>
+          <Link to="/shops" className="link">
+            <h4>Ver Tiendas</h4>
           </Link>
         </button>
         </div>

@@ -24,8 +24,8 @@ function AnyOffer(props) {
         </li>
         
         
-        {/* <Link to={`/offer/${props._id}`}>Ver Oferta</Link> */}
-        {/* <Link to={`/shop/${AnyShop._id}`}>Ver Tienda</Link> */}
+        {/* <Link to={`/offer/${props._id}`} className="link">Ver Oferta</Link> */}
+        {/* <Link to={`/shop/${AnyShop._id}`} className="link">Ver Tienda</Link> */}
       </ul>
     </div>
   );

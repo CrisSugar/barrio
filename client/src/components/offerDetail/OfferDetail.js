@@ -29,8 +29,8 @@ export default class OfferDetail extends React.Component {
           <h2>{this.state.offer.product}</h2>
           <p> Precio : {this.state.offer.prize}</p>
           <p>Precio oferta: {this.state.offer.offerPrize}</p>
-          <button><Link to="/offers">
-            <h4>Ver todas las ofertas</h4>
+          <button><Link to="/offers" className="link">
+            <h4>Ver Ofertas</h4>
           </Link>
         </button>
         </div>

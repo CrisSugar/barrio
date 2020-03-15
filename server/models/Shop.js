@@ -10,7 +10,7 @@ const shopSchema = new Schema(
     imageUrl: String,
     mobile: Number,
     web: String,
-    owner: { type: Schema.Types.ObjectId, ref: "User" },
+    owner: String,
     offers: [
       {
         comments: String

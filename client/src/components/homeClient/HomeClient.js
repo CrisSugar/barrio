@@ -28,7 +28,7 @@ export default class HomeClient extends React.Component {
 
   render() {
     return (
-      <div class="homeclient">
+      <div className="homeclient">
         <h1 className="titular">
           Aquí encontrarás un montón de ofertas, échales un ojo!
         </h1>

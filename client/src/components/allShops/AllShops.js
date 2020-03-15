@@ -38,7 +38,7 @@ export default class AllShops extends React.Component {
           <AnyShop key={anyshops._id} {...anyshops} />
          ) }
       </ul>
-      <button className="buttonshop"><Link to={'/shop/new'}>Crear Tienda  className="link"</Link></button>
+      <button className="buttonshop"><Link to={'/shop/new'} className="link">Añadir Tienda</Link></button>
       </div>
     );
   }

@@ -25,10 +25,11 @@ export default class NotificationDetail extends React.Component {
         <div>
           <h4>{this.state.notification.neighbourhood}</h4>
           <p>{this.state.notification.commentary}</p>
-          <button><Link to="/notifications">
-            <h4>Ver todos los avisos</h4>
-          </Link>
-        </button>
+          <button>
+            <Link to="/notifications" className="link">
+              Ver avisos
+            </Link>
+          </button>
         </div>
       );
     } else {
