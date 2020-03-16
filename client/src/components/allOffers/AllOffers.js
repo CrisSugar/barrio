@@ -31,9 +31,10 @@ export default class AllOffers extends React.Component {
 
     return (
       <div>
+       <ul className="offers-container">
         {this.state.offers.map(anyoffers => (
           <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>
-        ))}
+        ))}</ul>
         <button><Link to={'/offer/new'} className="link">Crear Oferta</Link></button>
       </div>
     );

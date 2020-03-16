@@ -1,5 +1,4 @@
 import React from "react";
-import AnyOffer from "../anyOffer/AnyOffer";
 import AllOffers from "../allOffers/AllOffers";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";

@@ -1,25 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import logo from "./logo.svg";
 
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
-import Contents from "./components/contents/Contents";
 import AllShops from "./components/allShops/AllShops";
-import AnyShop from "./components/anyShop/AnyShop";
 import AllOffers from "./components/allOffers/AllOffers";
-import AnyOffer from "./components/anyOffer/AnyOffer";
 import AllNotifications from "./components/allNotifications/AllNotifications";
-import AnyNotification from "./components/anyNotification/AnyNotification";
 import ShopDetail from "./components/shopDetail/ShopDetail";
 import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
-// import AddOne from "./components/addOne/AddOne";
 import AddShop from "./components/addShop/AddShop";
 import AddOffer from "./components/addOffer/AddOffer";
 import AddNotification from "./components/addNotification/AddNotification";
@@ -66,8 +60,7 @@ class App extends Component {
   }
 
   render() {
-    // const { loggedInUser } = this.state;
-    // const { logout } = this;
+
 
     if (this.state.loggedInUser) {
       // if (this.state.loggedInUser.role === "owner") {
@@ -82,7 +75,7 @@ class App extends Component {
               logout={this.logout}
               {...this.props}
             />
-            />
+            
             <main className="container">
               <Switch>
                 <Route
@@ -164,7 +157,7 @@ class App extends Component {
               userInSession={this.state.loggedInUser}
               logout={this.logout} {...this.props}
             />
-            <main>
+            <main className="container">
             <Switch>
               <Route
                 exact
@@ -178,7 +171,7 @@ class App extends Component {
               />
             </Switch>
             </main>
-            {(this.state.navigate) && <Redirect to="/" push="true"/>}
+            {(this.state.navigate) && <Redirect to="/signup" push="true"/>}
           </div>
         </React.Fragment>
       );

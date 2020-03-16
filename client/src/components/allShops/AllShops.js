@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React  from "react";
 import AnyShop from "../anyShop/AnyShop";
 import Service from "../../services/Service";
 import "./AllShops.css";

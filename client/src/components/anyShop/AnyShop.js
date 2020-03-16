@@ -10,10 +10,10 @@ function AnyShop(props) {
         <li>
           <img className="photo" src={props.imageUrl} alt="image"/>
         </li>
-        <li>
+        <li className="li-neigh">
           <h4>{props.neighbourhood}</h4>
         </li>
-        <li>
+        <li className="li-name"> 
           <h2>{props.name}</h2>
         </li>
         {/* <li>
@@ -31,7 +31,7 @@ function AnyShop(props) {
         <div>
         <button><Link to={`/shop/${props._id}`}  className="link">Ver Tienda</Link></button>
         {/* <button><Link to="/shop/delete" className="link">Borrar</Link></button> */}
-      <button onClick={() => this.deleteAnyShop(this.state.shop._id)}>Borrar</button></div>
+      <button onClick={() => this.deleteAnyShop(this.state.shop._id)} className="link" >Borrar</button></div>
       </ul>
     </div>
   );

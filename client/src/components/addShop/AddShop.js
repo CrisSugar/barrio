@@ -82,6 +82,7 @@ class AddShop extends Component {
           sector: sector,
           description: "",
           imageUrl: "",
+          flie: "file",
           owner:"",
           mobile: "",
           web: "",
@@ -164,8 +165,8 @@ class AddShop extends Component {
             <label>Imagen</label>
             <input
               type="file"
-              name="imageUrl"
-              value={this.state.imageUrl}
+              name="file"
+              value={this.state.file}
               onChange={e => this.handleImage(e)}
               //onChange={e => this.handleFileUpload(e)}
             />

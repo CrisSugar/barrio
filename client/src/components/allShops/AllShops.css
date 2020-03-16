@@ -1,7 +1,7 @@
 .shops-container {
     
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
     /* border: solid #5B6DCD 10px;
     padding: 2px; */
 
@@ -11,10 +11,19 @@ li {
     list-style: none;
     box-sizing: content-box;
 
+}
 
+.li-neigh{
+height: 40px;
+}
+
+.li-name{
+height: 95px;
 }
 
 .cadatienda{
+    max-width: 1290px;
     margin-bottom: 20px;
 
 }
+

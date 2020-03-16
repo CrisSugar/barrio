@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import AnyShop from "../anyShop/AnyShop";
 
 function AnyOffer(props) {
   return (

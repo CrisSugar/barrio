@@ -36,7 +36,9 @@ class Navbar extends Component {
                   <h2>Hola, {this.state.loggedInUser.username} !</h2>
                 </li>
                 <li>
-                  <a onClick={this.handleLogout} className="link">Logout</a>
+                  <a onClick={this.handleLogout} className="link">
+                    Logout
+                  </a>
                 </li>
               </div>
             </ul>
@@ -55,13 +57,16 @@ class Navbar extends Component {
             />
             <ul>
               <div className="div-nav">
-              <li className="navlink">
-                <Link to="/signup" className="link">Registrarse</Link>
-              </li>
-              
-              <li className="navlink">
-                <Link to="/login" className="link">Iniciar sesión</Link>
-              </li>
+                <li className="navlink">
+                  <Link to="/signup" className="link">
+                    Registrarse
+                  </Link>
+                </li>
+                <li className="navlink">
+                  <Link to="/login" className="link">
+                    Iniciar sesión
+                  </Link>
+                </li>
               </div>
             </ul>
           </nav>
