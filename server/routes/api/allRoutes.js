@@ -7,7 +7,6 @@ const Offer = require("../../models/Offer");
 const Notification = require("../../models/Notification");
 const uploader = require("../../configs/cloudinary-setup");
 
-
 ///  ROUTES OF SHOPS ///////////////////////////////////////////////
 
 /// show all
@@ -44,8 +43,8 @@ router.post("/shop/new", (req, res, next) => {
     year,
     location
   } = req.body;
-  
-    Shop.create(req.body).then(allShops => res.json(allShops));
+
+  Shop.create(req.body).then(allShops => res.json(allShops));
 });
 
 /// update one
@@ -56,25 +55,26 @@ router.put("/shop/:id", (req, res, next) => {
 });
 
 /// delete one
-router.delete("/shop/:id", (req, res, next) => {
-  Shop.findByIdAndDelete(req.params.id).then((deletedShop) => {
-    res.json({ deleted: true, deletedShop});
-  });
+router.delete("/shopdelete/:id", (req, res, next) => {
+  Shop.findByIdAndDelete(req.params.id)
+    .then(() => res.json({ status: "Shop delete" }))
+
+    .catch(err => next(new Error(err)));
 });
 
 /// CLOUDINARY-ROUTES  //////////////////////////////////////////////////
 
-router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
+router.post("/upload", uploader.single("imageUrl"), (req, res, next) => {
   // console.log('file is: ', req.file)
 
   if (!req.file) {
-    next(new Error('No file uploaded!'));
+    next(new Error("No file uploaded!"));
     return;
   }
-  // get secure_url from the file object and save it in the 
+  // get secure_url from the file object and save it in the
   // variable 'secure_url', but this can be any name, just make sure you remember to use the same in frontend
   res.json({ secure_url: req.file.secure_url });
-})
+});
 
 /// ROUTES OF OFFERS  //////////////////////////////////////////////////
 
@@ -86,8 +86,8 @@ router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
 //   });
 // });
 
-router.get("/offers", (req,res,next) => {
-  Offer.find() . then(allOffers => {
+router.get("/offers", (req, res, next) => {
+  Offer.find().then(allOffers => {
     res.json(allOffers);
   });
 });
@@ -104,19 +104,11 @@ router.get("/offer/:id", (req, res, next) => {
 //   Offer.create(req.params.id, req.body).then(() => res.redirect("/offers"));
 // });
 
-
 router.post("/offer/new", (req, res, next) => {
-  const {
-    neighbourhood,
-    shop,
-    product,
-    prize,
-    offerPrize
-  } = req.body;
-  
-    Offer.create(req.body).then(allOffers => res.json(allOffers));
-});
+  const { neighbourhood, shop, product, prize, offerPrize } = req.body;
 
+  Offer.create(req.body).then(allOffers => res.json(allOffers));
+});
 
 /// update one
 router.put("/offer/:id", (req, res, next) => {
@@ -158,12 +150,11 @@ router.get("/notification/:id", (req, res, next) => {
 // });
 
 router.post("/notification/new", (req, res, next) => {
-  const {
-    neighbourhood,
-    commentary
-  } = req.body;
-  
-    Notification.create(req.body).then(allNotifications => res.json(allNotifications));
+  const { neighbourhood, commentary } = req.body;
+
+  Notification.create(req.body).then(allNotifications =>
+    res.json(allNotifications)
+  );
 });
 
 /// update one

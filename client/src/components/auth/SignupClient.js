@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
 //uno llama a /signup y el otro a /login usando nuestro AuthService
-class Signup extends Component {
+class SignupClient extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "", neighbourhood: "", role: "" };
@@ -16,7 +16,7 @@ class Signup extends Component {
     const username = this.state.username;
     const password = this.state.password;
     const neighbourhood = this.state.neighbourhood;
-    const role = "owner";
+    const role = "client";
 
     //aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
     this.service
@@ -101,4 +101,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default SignupClient;

@@ -3,21 +3,6 @@ import AllShops from "../allShops/AllShops";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 
-// constructor(props) {
-//   super(props);
-//   this.service = new Service();
-//   this.state = {
-//     offers: [],
-//     shops: []
-//   };
-// }
-
-//   componentDidMount() {
-//     Axios.get('${process.env.REACT_APP_API_URL}/shops').then(response => {
-//     this.setState({
-//       shops: response.data
-//     });
-//   }
 
 export default class HomeOwner extends React.Component {
   constructor(props) {

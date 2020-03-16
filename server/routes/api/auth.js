@@ -26,61 +26,90 @@ const login = (req, user) => {
 // })
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
+  const { neighbourhood, username, password, role } = req.body;
 
-  if (!username || !password){
-    next(new Error('You must provide valid credentials'));
+  if (!username || !password) {
+    next(new Error("You must provide valid credentials"));
   }
-
 
   // Check if user exists in DB
 
-  User.findOne({ username }).then(foundUser => {
-        if (foundUser) throw new Error('Username already exists')
-const salt     = bcrypt.genSaltSync(10);
-    const hashPass = bcrypt.hashSync(password, salt);
+  User.findOne({ username })
+    .then(foundUser => {
+      if (foundUser) throw new Error("Username already exists");
+      const salt = bcrypt.genSaltSync(10);
+      const hashPass = bcrypt.hashSync(password, salt);
 
-    return new User({
-      username,
-      password: hashPass
-    }).save();
-  })
+      return new User({
+        neighbourhood,
+        username,
+        password: hashPass,
+        role
+      }).save();
+    })
 
-  .then( savedUser => login(req, savedUser)) // Login the user using passport
-  .then( user => res.json({status: 'signup & login successfully', user})) // Answer JSON
-  .catch(e => next(e));
+    .then(savedUser => login(req, savedUser)) // Login the user using passport
+    .then(user => res.json({ status: "signup & login successfully", user })) // Answer JSON
+    .catch(e => next(e));
 });
+
+
+// router.post("/signupclient", (req, res, next) => {
+//   const { neighbourhood, username, password, role } = req.body;
+
+//   if (!username || !password) {
+//     next(new Error("You must provide valid credentials"));
+//   }
+
+//   // Check if user exists in DB
+
+//   User.findOne({ username })
+//     .then(foundUser => {
+//       if (foundUser) throw new Error("Username already exists");
+//       const salt = bcrypt.genSaltSync(10);
+//       const hashPass = bcrypt.hashSync(password, salt);
+
+//       return new User({
+//         neighbourhood,
+//         username,
+//         password: hashPass,
+//         role
+//       }).save();
+//     })
+
+//     .then(savedUser => login(req, savedUser)) // Login the user using passport
+//     .then(user => res.json({ status: "signup & login successfully", user })) // Answer JSON
+//     .catch(e => next(e));
+// });
+
 
 
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
-//     // Check for errors
+    //     // Check for errors
     if (err) next(new Error("Something went wrong"));
     if (!theUser) next(failureDetails);
 
-//     // Return user and logged in
+    //     // Return user and logged in
     login(req, theUser).then(user => {
-//       // console.log("entra en el login")
-//       // console.log(req.user)
+      //       // console.log("entra en el login")
+      //       // console.log(req.user)
       res.status(200).json(req.user);
     });
   })(req, res, next);
 });
 
-router.get('/currentuser', (req,res,next) => {
-  if(req.user){
+router.get("/currentuser", (req, res, next) => {
+  if (req.user) {
     res.status(200).json(req.user);
-  }else{
-    next(new Error('Not logged in'))
+  } else {
+    next(new Error("Not logged in"));
   }
-})
-
-
-
+});
 
 router.post("/logout", (req, res) => {
-//   ///esto era get y puse post
+  //   ///esto era get y puse post
   req.logout();
   res.status(200).json({ message: "logged out" });
 });
@@ -90,4 +119,3 @@ router.use((err, req, res, next) => {
 });
 
 module.exports = router;
-

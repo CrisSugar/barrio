@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
+import SignupClient from "./components/auth/SignupClient";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import AllShops from "./components/allShops/AllShops";
@@ -14,6 +15,8 @@ import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
 import HomeClient from "./components/homeClient/HomeClient";
 import HomeOwner from "./components/homeOwner/HomeOwner";
+import Home from "./components/home/Home";
+import Barrio from "./components/landing/Barrio";
 import AddShop from "./components/addShop/AddShop";
 import AddOffer from "./components/addOffer/AddOffer";
 import AddNotification from "./components/addNotification/AddNotification";
@@ -29,15 +32,17 @@ class App extends Component {
   }
 
   getUser = userObj => {
-    this.setState({
-      loggedInUser: userObj
-    });
+    // this.setState({
+    //   loggedInUser: userObj
+    // });
+    this.fetchUser();
   };
 
   logout = () => {
     this.service.logout().then(() => {
-      this.setState({ loggedInUser: null, navigate: true }, () =>
-        console.log(this.state)
+      this.setState(
+        { loggedInUser: null, navigate: true }
+        // console.log(this.state)
       );
     });
   };
@@ -60,87 +65,150 @@ class App extends Component {
   }
 
   render() {
-
-
     if (this.state.loggedInUser) {
       // if (this.state.loggedInUser.role === "owner") {
       return (
         <React.Fragment>
-          <Redirect to="/homeowner" />
-
           <div className="App">
+            <Redirect to="/home" />
             <Navbar
               userInSession={this.state.loggedInUser}
               // getUser={this.getUser}
               logout={this.logout}
-              {...this.props}
+              // {...this.props}
             />
-            
+
             <main className="container">
               <Switch>
                 <Route
                   exact
-                  path="/homeowner"
-                  render={() => <HomeOwner></HomeOwner>}
+                  path="/home"
+                  render={() => (
+                    <Home
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></Home>
+                  )}
                 />
-                <Route
+                {/* <Route
                   exact
                   path="/homeclient"
                   render={() => <HomeClient></HomeClient>}
-                />
+                /> */}
                 <Route
                   exact
                   path="/shops"
                   render={() => (
                     // <AllShops loggedinUser={this.state.loggedInUser}></AllShops>
-                    <AllShops></AllShops>
+                    <AllShops
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AllShops>
                   )}
                 />
                 <Route
                   exact
                   path="/shop/new"
-                  render={() => <AddShop></AddShop>}
+                  render={() => (
+                    <AddShop
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AddShop>
+                  )}
                 />
+                {/* <Route
+                  exact
+                  path="/shop/:id"
+                  render={match => (
+                    <ShopDetail
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                      {...match}
+                    ></ShopDetail>
+                  )}
+                /> */}
                 <Route
                   exact
                   path="/shop/:id"
-                  render={match => <ShopDetail {...match}></ShopDetail>}
+                  render={(props) => (
+                    <ShopDetail
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                      {...props}
+                    ></ShopDetail>
+                  )}
                 />
                 <Route
                   exact
-                  path="/shop/delete"
-                  render={() => <AllShops></AllShops>}
+                  path="/shopdelete/:id"
+                  render={(props) => (
+                    <AllShops
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                      {...props}
+                    ></AllShops>
+                  )}
                 />
                 <Route
                   exact
                   path="/offers"
-                  render={() => <AllOffers></AllOffers>}
+                  render={() => (
+                    <AllOffers
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AllOffers>
+                  )}
                 />
                 <Route
                   exact
                   path="/offer/new"
-                  render={() => <AddOffer></AddOffer>}
+                  render={() => (
+                    <AddOffer
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AddOffer>
+                  )}
                 />
                 <Route
                   exact
                   path="/offer/:id"
-                  render={match => <OfferDetail {...match}></OfferDetail>}
+                  render={(props) => (
+                    <OfferDetail
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                      {...props}
+                    ></OfferDetail>
+                  )}
                 />
                 <Route
                   exact
                   path="/notifications"
-                  render={() => <AllNotifications></AllNotifications>}
+                  render={() => (
+                    <AllNotifications
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AllNotifications>
+                  )}
                 />
                 <Route
                   exact
                   path="/notification/new"
-                  render={() => <AddNotification></AddNotification>}
+                  render={() => (
+                    <AddNotification
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                    ></AddNotification>
+                  )}
                 />
                 <Route
                   exact
                   path="/notification/:id"
-                  render={match => (
-                    <NotificationDetail {...match}></NotificationDetail>
+                  render={(props) => (
+                    <NotificationDetail
+                      userInSession={this.state.loggedInUser}
+                      getUser={this.getUser}
+                      {...props}
+                    ></NotificationDetail>
                   )}
                 />
               </Switch>
@@ -151,27 +219,38 @@ class App extends Component {
     } else {
       return (
         <React.Fragment>
-          <Redirect to="/signup" />
+          <Redirect to="/Barrio" />
           <div className="App">
             <Navbar
               userInSession={this.state.loggedInUser}
-              logout={this.logout} {...this.props}
+              logout={this.logout}
+              // {...this.props}
             />
             <main className="container">
-            <Switch>
-              <Route
-                exact
-                path="/signup"
-                render={() => <Signup getUser={this.getUser} />}
-              />
-              <Route
-                exact
-                path="/login"
-                render={(props) => <Login getUser={this.getUser} {...props}/>}
-              />
-            </Switch>
+              <Switch>
+                <Route
+                  exact
+                  path="/barrio"
+                  render={() => <Barrio getUser={this.getUser} />}
+                />
+                <Route
+                  exact
+                  path="/login"
+                  render={props => <Login getUser={this.getUser} {...props} />}
+                />
+                <Route
+                  exact
+                  path="/signup"
+                  render={() => <Signup getUser={this.getUser} />}
+                />
+                <Route
+                  exact
+                  path="/signupClient"
+                  render={() => <SignupClient getUser={this.getUser} />}
+                />
+              </Switch>
             </main>
-            {(this.state.navigate) && <Redirect to="/signup" push="true"/>}
+            {this.state.navigate && <Redirect to="/signup" push="true" />}
           </div>
         </React.Fragment>
       );
