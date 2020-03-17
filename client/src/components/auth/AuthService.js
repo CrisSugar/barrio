@@ -25,9 +25,15 @@ class AuthService {
   };
 
   loggedin = () => { 
-    return this.service.get("/currentUser")
-    .then(response => response.data);
+    return this.service.get("/currentUser") 
+    .then( response => response.data);
   };
+
+  // loggedin = () => { 
+  //   return this.service.get("/userInSession") 
+  //   .then( response => response.data);
+  // };
+  
 
 
 

@@ -21,9 +21,9 @@ const login = (req, user) => {
 
 // SIGNUP
 
-// router.get('/signup', (req,res,next) => {
-//   res.render('auth/signup');
-// })
+router.get('/signup', (req,res,next) => {
+  res.render('auth/signup');
+})
 
 router.post("/signup", (req, res, next) => {
   const { neighbourhood, username, password, role } = req.body;
@@ -101,16 +101,30 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/currentuser", (req, res, next) => {
+  
   if (req.user) {
+    
     res.status(200).json(req.user);
   } else {
     next(new Error("Not logged in"));
   }
 });
 
+// router.get("/logout", (req, res) => {
+//   //   ///esto era get y puse post
+//   // res.cookie('connect.sid', '', {expires: new Date(1), path: '/' });
+//   req.logout();
+//   // res.clearCookie('connect.sid', { path: '/Barrio' });
+//   // res.redirect('/Barrio');
+//   res.status(200).json({ message: "logged out" });
+// });
+
 router.post("/logout", (req, res) => {
   //   ///esto era get y puse post
+  // res.cookie('connect.sid', '', {expires: new Date(1), path: '/' });
   req.logout();
+  // res.clearCookie('connect.sid', { path: '/Barrio' });
+  // res.redirect('/Barrio');
   res.status(200).json({ message: "logged out" });
 });
 

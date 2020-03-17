@@ -10,7 +10,7 @@ export default class Home extends React.Component {
     this.state = {
       loggedInUser: null,
       shops: [],
-      offers: [],
+      offers: []
       // role:""
     };
     this.service = new Service();
@@ -21,8 +21,7 @@ export default class Home extends React.Component {
   };
 
   fetchThings() {
-    
-        this.service.getAllShops(this.props.userInSession._id).then(response => {
+    this.service.getAllShops(this.props.userInSession._id).then(response => {
       let filteredShops;
       filteredShops = response.filter(shop => {
         console.log(shop);
