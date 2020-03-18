@@ -35,7 +35,9 @@ export default class AllOffers extends React.Component {
         {this.state.offers.map(anyoffers => (
           <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>
         ))}</ul>
+        {/* {this.props.userInSession.role === "owner" && */}
         <button><Link to={'/offer/new'} className="link">Crear Oferta</Link></button>
+        {/* } */}
       </div>
     );
   }
