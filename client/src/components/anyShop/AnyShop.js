@@ -63,14 +63,14 @@ export default class AnyShop extends React.Component {
               </Link>
             </button>
             {/* <button><Link to="/shopdelete/:id" className="link">Borrar</Link></button> */}
-            {/* {this.props.userInSession.role === "owner" && */}
+            {this.props.userInSession.role === "owner" &&
             <button
               onClick={() => this.deleteShop(this.props._id)}
               className="link"
             >
               Borrar
             </button>
-            {/* } */}
+            }
           </div>
         </ul>
       </div>

@@ -49,7 +49,7 @@ export default class Home extends React.Component {
     if (this.props.userInSession.role === "owner") { 
       return (
         <div className="homeowner">
-          <AllShops></AllShops>
+          <AllShops userInSession={this.props.userInSession}></AllShops>
           <div className="but-cont">
             <button>
               <Link to="/offers" className="link">
@@ -72,7 +72,7 @@ export default class Home extends React.Component {
             Aquí encontrarás un montón de ofertas, échales un ojo!
           </h1>
           <div className="item">
-            <AllOffers></AllOffers>
+            <AllOffers userInSession={this.props.userInSession}></AllOffers>
           </div>
 
           <div>
