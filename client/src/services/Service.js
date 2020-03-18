@@ -74,12 +74,19 @@ class Service {
       .catch(error => console.log(error));
   };
 
+  // deleteShop = (id) => {
+  //   return this.service
+  //     .delete(`/shop/${id}`)
+  //     .then(response => response.data)
+  //     .catch(error => console.log(error));
+  // };
+
   deleteShop = (id) => {
-    return this.service
-      .delete(`/shop/${id}`)
-      .then(response => response.data)
-      .catch(error => console.log(error));
-  };
+    console.log(id)
+    return this.service.delete("/shopdelete/${id}")
+    .then(response => response.data)
+  }
+
 
 
   handleUpload(theFile) {

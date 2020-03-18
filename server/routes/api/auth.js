@@ -119,7 +119,7 @@ router.get("/currentuser", (req, res, next) => {
 //   res.status(200).json({ message: "logged out" });
 // });
 
-router.post("/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   //   ///esto era get y puse post
   // res.cookie('connect.sid', '', {expires: new Date(1), path: '/' });
   req.logout();

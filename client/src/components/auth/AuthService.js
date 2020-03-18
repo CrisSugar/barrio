@@ -14,7 +14,7 @@ class AuthService {
 
   signup = (username, password) => {
     return this.service
-      .post("/signup", { username, password})
+      .post("/home", { username, password})
       .then(response => response.data);
   };
 
@@ -24,8 +24,13 @@ class AuthService {
       .then(response => response.data);
   };
 
+  // loggedin = () => { 
+  //   return this.service.get("/currentUser") 
+  //   .then( response => response.data);
+  // };
+
   loggedin = () => { 
-    return this.service.get("/currentUser") 
+    return this.service.get("/home") 
     .then( response => response.data);
   };
 

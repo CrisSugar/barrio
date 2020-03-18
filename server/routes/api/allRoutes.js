@@ -52,11 +52,11 @@ router.post("/shop/new", (req, res, next) => {
 });
 
 /// update one
-router.put("/shop/:id", (req, res, next) => {
-  Shop.findByIdAndUpdate(req.params.id, req.body).then(() => {
-    res.json({ updated: true, _id: req.params.id });
-  });
-});
+// router.put("/shop/:id", (req, res, next) => {
+//   Shop.findByIdAndUpdate(req.params.id, req.body).then(() => {
+//     res.json({ updated: true, _id: req.params.id });
+//   });
+// });
 
 /// delete one
 router.delete("/shopdelete/:id", (req, res, next) => {

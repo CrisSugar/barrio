@@ -9,7 +9,7 @@ class Navbar extends Component {
     super(props);
     this.state = { loggedInUser: null };
     this.service = new AuthService();
-    this.user = []
+    this.user = [];
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,16 +22,18 @@ class Navbar extends Component {
 
   render() {
     // if (this.state.loggedInUser) {
-      if (this.props.userInSession) {
+    if (this.props.userInSession) {
       return (
         <div className="navbar-div">
           <nav className="nav-style">
-            <img
-              src="../../../logo193.png"
-              alt="logo"
-              height="60"
-              className="navimag"
-            />
+            <Link to="/Home">
+              <img
+                src="../../../logo193.png"
+                alt="logo"
+                height="60"
+                className="navimag"
+              />
+            </Link>
             <ul>
               <div className="div-nav">
                 <li>

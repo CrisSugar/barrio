@@ -28,13 +28,13 @@ class App extends Component {
     this.state = { loggedInUser: null, navigate: false };
 
     this.service = new AuthService();
-    this.fetchUser();
+    // this.fetchUser();
   }
 
   getUser = userObj => {
-    // this.setState({
-    //   loggedInUser: userObj
-    // });
+    this.setState({
+      loggedInUser: userObj
+    });
     this.fetchUser();
   };
 
@@ -43,6 +43,7 @@ class App extends Component {
       this.setState(
         { loggedInUser: null, navigate: true }
         // console.log(this.state)
+       
       );
     });
   };

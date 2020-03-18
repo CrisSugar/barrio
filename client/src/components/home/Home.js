@@ -44,8 +44,8 @@ export default class Home extends React.Component {
     });
   }
 
-  render() {
-    if (this.props.userInSession.role === "owner") {
+  render() { console.log("HOLAAAAAAAAAAAAAAAA")
+    if (this.props.userInSession.role === "owner") { 
       return (
         <div className="homeowner">
           <AllShops></AllShops>

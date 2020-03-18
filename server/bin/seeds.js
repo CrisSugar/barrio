@@ -96,7 +96,7 @@ let shops = [
       "https://res.cloudinary.com/dnefup5bk/image/upload/v1583967178/barrio-app/tiendaropa_xjl8e6.jpg",
     mobile: 632518977,
     web: "www.novedadeseloina.com",
-    owner: String,
+    owner: "Berto Romero",
     offers: [],
     year: 2004
   },
