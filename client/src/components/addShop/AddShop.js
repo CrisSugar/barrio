@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-// import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 
@@ -113,12 +112,12 @@ class AddShop extends Component {
     this.setState({ [name]: value });
   };
 
-  handleImage = event => {
-    // event.preventDefault();
-    const { name, value, files } = event.target;
-    this.setState({ [name]: value });
-    this.setState({ ["file"]: files[0] });
-  };
+  // handleImage = event => {
+  //   // event.preventDefault();
+  //   const { name, value, files } = event.target;
+  //   this.setState({ [name]: value });
+  //   this.setState({ ["file"]: files[0] });
+  // };
 
   render() {
     return (
@@ -167,8 +166,8 @@ class AddShop extends Component {
               type="file"
               name="file"
               value={this.state.file}
-              onChange={e => this.handleImage(e)}
-              //onChange={e => this.handleFileUpload(e)}
+              // onChange={e => this.handleImage(e)}
+              onChange={e => this.handleFileUpload(e)}
             />
           </fieldset>
           <fieldset>
