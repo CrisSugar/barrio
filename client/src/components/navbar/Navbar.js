@@ -9,11 +9,7 @@ class Navbar extends Component {
     super(props);
     this.state = { loggedInUser: null };
     this.service = new AuthService();
-    this.user = [];
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ ...this.state, loggedInUser: nextProps["userInSession"] });
+    this.user = this.props.userInSession;
   }
 
   handleLogout = e => {
@@ -21,6 +17,8 @@ class Navbar extends Component {
   };
 
   render() {
+    console.log(this.props.userInSession)
+    console.log(this.state.user)
     // if (this.state.loggedInUser) {
     if (this.props.userInSession) {
       return (

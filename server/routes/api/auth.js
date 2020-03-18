@@ -21,19 +21,13 @@ const login = (req, user) => {
 
 // SIGNUP
 
-router.get('/signup', (req,res,next) => {
-  res.render('auth/signup');
-})
-
 router.post("/signup", (req, res, next) => {
-  const { neighbourhood, username, password, role } = req.body;
-
+  const {username, password, neighbourhood, role } = req.body;
   if (!username || !password) {
     next(new Error("You must provide valid credentials"));
   }
 
   // Check if user exists in DB
-
   User.findOne({ username })
     .then(foundUser => {
       if (foundUser) throw new Error("Username already exists");
@@ -47,42 +41,10 @@ router.post("/signup", (req, res, next) => {
         role
       }).save();
     })
-
     .then(savedUser => login(req, savedUser)) // Login the user using passport
     .then(user => res.json({ status: "signup & login successfully", user })) // Answer JSON
     .catch(e => next(e));
 });
-
-
-// router.post("/signupclient", (req, res, next) => {
-//   const { neighbourhood, username, password, role } = req.body;
-
-//   if (!username || !password) {
-//     next(new Error("You must provide valid credentials"));
-//   }
-
-//   // Check if user exists in DB
-
-//   User.findOne({ username })
-//     .then(foundUser => {
-//       if (foundUser) throw new Error("Username already exists");
-//       const salt = bcrypt.genSaltSync(10);
-//       const hashPass = bcrypt.hashSync(password, salt);
-
-//       return new User({
-//         neighbourhood,
-//         username,
-//         password: hashPass,
-//         role
-//       }).save();
-//     })
-
-//     .then(savedUser => login(req, savedUser)) // Login the user using passport
-//     .then(user => res.json({ status: "signup & login successfully", user })) // Answer JSON
-//     .catch(e => next(e));
-// });
-
-
 
 
 router.post("/login", (req, res, next) => {
@@ -101,12 +63,12 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/currentuser", (req, res, next) => {
-  
   if (req.user) {
-    
     res.status(200).json(req.user);
   } else {
+    console.log("entra en el else")
     next(new Error("Not logged in"));
+    res.status(500).json({mal : true})
   }
 });
 

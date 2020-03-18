@@ -82,8 +82,7 @@ class Service {
   // };
 
   deleteShop = (id) => {
-    console.log(id)
-    return this.service.delete("/shopdelete/${id}")
+    return this.service.delete(`/shopdelete/${id}`)
     .then(response => response.data)
   }
 

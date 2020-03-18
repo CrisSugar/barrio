@@ -17,6 +17,7 @@ export default class Home extends React.Component {
   }
 
   componentDidMount = () => {
+    console.log(this.props.userInSession)
     this.fetchThings();
   };
 

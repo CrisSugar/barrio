@@ -14,7 +14,7 @@ export default class AllShops extends React.Component {
     };
   }
 
-  componentDidMount() {
+  fetchShops = () =>{
     this.service.getAllShops().then(response => {
       let filteredShops;
       filteredShops = response.filter(shop => {
@@ -27,18 +27,34 @@ export default class AllShops extends React.Component {
     });
   }
 
+  componentDidMount() {
+    if(this.state.shops.length === 0) {
+      this.fetchShops()
+    }
+  }
+
   render() {
     console.log(this.state.shops);
-    // let shops = [this.props.allShops
 
     return (
       <div className="cadatienda">
       <ul className="shops-container">
         {this.state.shops.map(anyshops => 
-          <AnyShop key={anyshops._id} {...anyshops} />
+          <AnyShop deletedShop={()=>this.fetchShops()} key={anyshops._id} {...anyshops} />
          ) }
       </ul>
+      {this.props.userInSession.role === "owner" &&
       <button className="buttonshop"><Link to={'/shop/new'} className="link">Añadir Tienda</Link></button>
+      }
+      {/* Siempre lo que se devuelve que esté envuelto en un div o un React.fragment :) 
+      {this.props.userInSession.role === "owner" ?
+      <h1>Hola, eres owner</h1> :
+      <h1>Hola, eres client</h1>
+      } */}
+
+
+
+      
       </div>
     );
   }

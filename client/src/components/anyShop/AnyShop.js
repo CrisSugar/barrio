@@ -14,20 +14,20 @@ export default class AnyShop extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.service.getShop(this.props.match.params.id).then(response => {
-          this.setState({
-        shop: response
-      });
-    });
-  }
+  // componentDidMount() {
+  //   this.service.getShop(this.props.match.params.id).then(response => {
+  //         this.setState({
+  //       shop: response
+  //     });
+  //   });
+  // }
 
   deleteShop = id => {
     this.service
       .deleteShop(id)
-      // .then(() =>
-      // //   this.props.history.push(`/shop/${this.props.userInSession._id}`)
-      // )
+      .then(() =>
+            this.props.deletedShop()
+      )
       .catch(err => console.log(err));
   };
 
@@ -64,7 +64,7 @@ export default class AnyShop extends React.Component {
             </button>
             {/* <button><Link to="/shopdelete/:id" className="link">Borrar</Link></button> */}
             <button
-              onClick={() => this.deleteShop(this.state.shop._id)}
+              onClick={() => this.deleteShop(this.props._id)}
               className="link"
             >
               Borrar

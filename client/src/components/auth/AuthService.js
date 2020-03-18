@@ -12,9 +12,9 @@ class AuthService {
     });
   }
 
-  signup = (username, password) => {
+  signup = (username, password, neighbourhood, role) => {
     return this.service
-      .post("/home", { username, password})
+      .post("/signup", { username, password, neighbourhood, role})
       .then(response => response.data);
   };
 
@@ -24,20 +24,20 @@ class AuthService {
       .then(response => response.data);
   };
 
-  // loggedin = () => { 
-  //   return this.service.get("/currentUser") 
-  //   .then( response => response.data);
-  // };
+  loggedin = () => { 
+    return this.service.get("/currentUser") 
+    .then( response => response.data);
+  };
 
   loggedin = () => { 
     return this.service.get("/home") 
     .then( response => response.data);
   };
 
-  // loggedin = () => { 
-  //   return this.service.get("/userInSession") 
-  //   .then( response => response.data);
-  // };
+  loggedin = () => { 
+    return this.service.get("/userInSession") 
+    .then( response => response.data);
+  };
   
 
 
