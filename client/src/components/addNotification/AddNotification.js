@@ -9,30 +9,30 @@ class AddNotification extends Component {
     super(props);
     this.state = {
       neighbourhood: "",
-      commentary: "",
+      commentary: ""
     };
     this.service = new Service();
   }
 
   // this method handles just the file upload
-//   handleFileUpload = e => {
-//     console.log("The file to be uploaded is: ", e);
+  //   handleFileUpload = e => {
+  //     console.log("The file to be uploaded is: ", e);
 
-    // const uploadData = new FormData();
-    // imageUrl => this name has to be the same as in the model since we pass
-    // req.body to .create() method when creating a new thing in '/api/things/create' POST route
-    // uploadData.append("imageUrl", e);
+  // const uploadData = new FormData();
+  // imageUrl => this name has to be the same as in the model since we pass
+  // req.body to .create() method when creating a new thing in '/api/things/create' POST route
+  // uploadData.append("imageUrl", e);
 
-    // this.service.handleUpload(uploadData)
-    //   .then(response => {
-    //     // console.log('response is: ', response);
-    //     // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-    //     console.log(response.secure_url)
-    //     this.setState({ imageUrl: response.secure_url });
-    //   })
-    //   .catch(err => {
-    //     console.log("Error while uploading the file: ", err);
-    //   });
+  // this.service.handleUpload(uploadData)
+  //   .then(response => {
+  //     // console.log('response is: ', response);
+  //     // after the console.log we can see that response carries 'secure_url' which we can use to update the state
+  //     console.log(response.secure_url)
+  //     this.setState({ imageUrl: response.secure_url });
+  //   })
+  //   .catch(err => {
+  //     console.log("Error while uploading the file: ", err);
+  //   });
   // };
 
   // this method submits the form
@@ -53,8 +53,8 @@ class AddNotification extends Component {
         console.log("added: ", response);
         // here you would redirect to some other page
         this.setState({
-          neighbourhood: '',
-          commentary: '',
+          neighbourhood: "",
+          commentary: "",
           error: false
         });
         // this.props.getNotification(response);
@@ -70,9 +70,7 @@ class AddNotification extends Component {
 
   handleChange = event => {
     // event.preventDefault();
-    const {
-      name, value
-    } = event.target;
+    const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
@@ -90,15 +88,20 @@ class AddNotification extends Component {
       <div>
         <h2>Nuevo Aviso</h2>
         <form onSubmit={this.handleFormSubmit}>
-
           <fieldset>
-            <label>Barrio</label>
-            <input
-              type="text"
-              name="neighbourhood"
-              value={this.state.neighbourhood}
-              onChange={e => this.handleChange(e)}
-            />
+            <label>
+              Barrio:{" "}
+              <select
+                name="neighbourhood"
+                value={this.state.neighbourhood}
+                onChange={e => this.handleChange(e)}
+              >
+                <option value=""></option>
+                <option value="Delicias">Delicias</option>
+                <option value="Centro">Centro</option>
+                <option value="La Almozara">La Almozara</option>
+              </select>
+            </label>
           </fieldset>
           <fieldset>
             <label>Comentario</label>
@@ -115,13 +118,14 @@ class AddNotification extends Component {
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
-        <button><Link to="/notifications" className="link">
-              <h4>Ver Avisos</h4>
-            </Link></button>
+        <button>
+          <Link to="/notifications" className="link">
+            <h4>Ver Avisos</h4>
+          </Link>
+        </button>
       </div>
     );
   }
 }
-
 
 export default AddNotification;

@@ -21,7 +21,7 @@ const login = (req, user) => {
 
 // SIGNUP
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", (req, res, next) => { 
   const {username, password, neighbourhood, role } = req.body;
   if (!username || !password) {
     next(new Error("You must provide valid credentials"));
@@ -41,13 +41,22 @@ router.post("/signup", (req, res, next) => {
         role
       }).save();
     })
-    .then(savedUser => login(req, savedUser)) // Login the user using passport
-    .then(user => res.json({ status: "signup & login successfully", user })) // Answer JSON
+    .then(savedUser =>{
+      console.log("perrrooooooo")
+      console.log(savedUser)
+      login(req, savedUser)
+    }) // Login the user using passport console.log()
+    .then(user => {
+      console.log("guacamayoooo")
+      res.json({ status: "signup & login successfully", user })
+    }) // Answer JSON
     .catch(e => next(e));
 });
 
 
-router.post("/login", (req, res, next) => {
+
+
+router.post("/login", (req, res, next) => { console.log("logueass??")
   passport.authenticate("local", (err, theUser, failureDetails) => {
     //     // Check for errors
     if (err) next(new Error("Something went wrong"));
@@ -71,15 +80,6 @@ router.get("/currentuser", (req, res, next) => {
     res.status(500).json({mal : true})
   }
 });
-
-// router.get("/logout", (req, res) => {
-//   //   ///esto era get y puse post
-//   // res.cookie('connect.sid', '', {expires: new Date(1), path: '/' });
-//   req.logout();
-//   // res.clearCookie('connect.sid', { path: '/Barrio' });
-//   // res.redirect('/Barrio');
-//   res.status(200).json({ message: "logged out" });
-// });
 
 router.get("/logout", (req, res) => {
   //   ///esto era get y puse post

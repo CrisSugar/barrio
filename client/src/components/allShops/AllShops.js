@@ -43,9 +43,9 @@ export default class AllShops extends React.Component {
           <AnyShop userInSession={this.props.userInSession} deletedShop={()=>this.fetchShops()} key={anyshops._id} {...anyshops} />
          ) }
       </ul>
-      {/* {this.props.userInSession.role === "owner" && */}
+      {this.props.userInSession.role === "owner" &&
       <button className="buttonshop"><Link to={'/shop/new'} className="link">Añadir Tienda</Link></button>
-      {/* } */}
+      }
       {/* Siempre lo que se devuelve que esté envuelto en un div o un React.fragment :) 
       {this.props.userInSession.role === "owner" ?
       <h1>Hola, eres owner</h1> :

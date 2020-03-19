@@ -23,10 +23,14 @@ class SignupClient extends Component {
       .signup(username, password, neighbourhood, role)
       .then(response => {
         this.setState({
-          username: "",
-          password: "",
-          neighbourhood: "",
-          role: ""
+          // username: "",
+          // password: "",
+          // neighbourhood: "",
+          // role: ""
+          username: username,
+          password: password,
+          neighbourhood: neighbourhood,
+          role: role
         });
         //aquí elevamos el nuevo usuario una vez creado a App usando getUser via props
         //por tanto, informamos a App de que el nuevo usuario ha sido creado, provocando un re-render

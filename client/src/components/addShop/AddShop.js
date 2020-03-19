@@ -112,12 +112,12 @@ class AddShop extends Component {
     this.setState({ [name]: value });
   };
 
-  // handleImage = event => {
-  //   // event.preventDefault();
-  //   const { name, value, files } = event.target;
-  //   this.setState({ [name]: value });
-  //   this.setState({ ["file"]: files[0] });
-  // };
+  handleImage = event => {
+    // event.preventDefault();
+    const { name, value, files } = event.target;
+    this.setState({ [name]: value });
+    this.setState({ ["file"]: files[0] });
+  };
 
   render() {
     return (
@@ -134,14 +134,21 @@ class AddShop extends Component {
             />
           </fieldset>
           <fieldset>
-            <label>Barrio</label>
-            <input
-              type="text"
-              name="neighbourhood"
-              value={this.state.neighbourhood}
-              onChange={e => this.handleChange(e)}
-            />
+            <label>
+              Barrio:{" "}
+              <select
+                name="neighbourhood"
+                value={this.state.neighbourhood}
+                onChange={e => this.handleChange(e)}
+              >
+                <option value=""></option>
+                <option value="Delicias">Delicias</option>
+                <option value="Centro">Centro</option>
+                <option value="La Almozara">La Almozara</option>
+              </select>
+            </label>
           </fieldset>
+
           <fieldset>
             <label>Sector</label>
             <input
@@ -164,7 +171,7 @@ class AddShop extends Component {
             <label>Imagen</label>
             <input
               type="file"
-              name="file"
+              name="imageUrl"
               value={this.state.file}
               // onChange={e => this.handleImage(e)}
               onChange={e => this.handleFileUpload(e)}

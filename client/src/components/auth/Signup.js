@@ -53,7 +53,7 @@ class Signup extends Component {
     this.setState({ [name]: value });
   };
 
-  render() {
+  render() { 
     return (
       <div className="sigform">
         <h1> ;-) </h1>

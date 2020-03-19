@@ -105,15 +105,20 @@ class AddOffer extends Component {
       <div>
         <h2>Nueva Oferta</h2>
         <form onSubmit={this.handleFormSubmit}>
-
-          <fieldset>
-            <label>Barrio</label>
-            <input
-              type="text"
-              name="neighbourhood"
-              value={this.state.neighbourhood}
-              onChange={e => this.handleChange(e)}
-            />
+        <fieldset>
+            <label>
+              Barrio:{" "}
+              <select
+                name="neighbourhood"
+                value={this.state.neighbourhood}
+                onChange={e => this.handleChange(e)}
+              >
+                <option value=""></option>
+                <option value="Delicias">Delicias</option>
+                <option value="Centro">Centro</option>
+                <option value="La Almozara">La Almozara</option>
+              </select>
+            </label>
           </fieldset>
           <fieldset>
             <label>Tienda</label>

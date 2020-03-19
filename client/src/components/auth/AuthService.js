@@ -12,11 +12,19 @@ class AuthService {
     });
   }
 
+
   signup = (username, password, neighbourhood, role) => {
     return this.service
       .post("/signup", { username, password, neighbourhood, role})
-      .then(response => response.data);
+      .then(response => response.data); 
   };
+
+  signupClient = (username, password, neighbourhood, role) => {
+    return this.service
+      .post("/signup", { username, password, neighbourhood, role})
+      .then(response => response.data); 
+  };
+
 
   login = (username, password) => {
     return this.service

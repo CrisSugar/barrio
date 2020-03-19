@@ -90,7 +90,7 @@ class App extends Component {
           </div>
         </React.Fragment>
       );
-    } else {
+    } else { 
       return (
         <React.Fragment>
           <Redirect to="/barrio" />

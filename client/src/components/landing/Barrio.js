@@ -22,18 +22,6 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        {/* <div>
-          <button>
-            <Link className="link" to="/signup">
-              COMERCIANTE
-            </Link>
-          </button>
-          <button>
-            <Link className="link" to="/signupclient">
-              VECINO
-            </Link>
-          </button>
-        </div> */}
         <div className="div-text">
           <h2>
             ¿Alguna vez has pedido "cuarto y mitad" en la

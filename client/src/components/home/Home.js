@@ -45,12 +45,12 @@ export default class Home extends React.Component {
     });
   }
 
-  render() { console.log("HOLAAAAAAAAAAAAAAAA")
+  render() { 
     if (this.props.userInSession.role === "owner") { 
       return (
         <div className="homeowner">
-          {/* <AllShops userInSession={this.props.userInSession}></AllShops> */}
-          <AllShops></AllShops>
+          <AllShops userInSession={this.props.userInSession}></AllShops>
+          {/* <AllShops></AllShops> */}
           <div className="but-cont">
             <button>
               <Link to="/offers" className="link">
@@ -73,8 +73,8 @@ export default class Home extends React.Component {
             Aquí encontrarás un montón de ofertas, échales un ojo!
           </h1>
           <div className="item">
-            {/* <AllOffers userInSession={this.props.userInSession}></AllOffers> */}
-            <AllOffers></AllOffers>
+            <AllOffers userInSession={this.props.userInSession}></AllOffers>
+            {/* <AllOffers></AllOffers> */}
           </div>
 
           <div>
