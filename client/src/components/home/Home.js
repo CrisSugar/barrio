@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Service from "../../services/Service";
 import AllShops from "../allShops/AllShops";
 import AllOffers from "../allOffers/AllOffers";
+import "./Home.css"
 
 
 export default class Home extends React.Component {

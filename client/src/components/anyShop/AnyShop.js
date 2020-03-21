@@ -53,8 +53,7 @@ export default class AnyShop extends React.Component {
               {this.props.userInSession.role === "owner" && (
                 <button
                   onClick={() => this.deleteShop(this.props._id)}
-                  className="link"
-                >
+                  className="link">
                   Borrar
                 </button>
               )}

@@ -86,7 +86,7 @@ class App extends Component {
                 <Route exact path="/offer/new" render={() => (<AddOffer userInSession={this.state.loggedInUser} getUser={this.getUser}></AddOffer>)}/>
                 <Route exact path="/offer/:id" render={(props) => ( <OfferDetail userInSession={this.state.loggedInUser} getUser={this.getUser} {...props}/>)}/>
                 <Route exact path="/notifications" render={() => (<AllNotifications userInSession={this.state.loggedInUser} getUser={this.getUser}/>)}/>
-                <Route exact path="/notifications/new" render={() => (<AddNotification userInSession={this.state.loggedInUser} getUser={this.getUser}></AddNotification>)}/>
+                <Route exact path="/notification/new" render={() => (<AddNotification userInSession={this.state.loggedInUser} getUser={this.getUser}></AddNotification>)}/>
                 <Route exact path="/notifications/:id" render={() => (<NotificationDetail userInSession={this.state.loggedInUser} getUser={this.getUser}></NotificationDetail>)}/>
               </Switch>
             </main>

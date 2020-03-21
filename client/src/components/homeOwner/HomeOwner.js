@@ -2,6 +2,7 @@ import React from "react";
 import AllShops from "../allShops/AllShops";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import "./HomeOwner.css"
 
 
 export default class HomeOwner extends React.Component {

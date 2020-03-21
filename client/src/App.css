@@ -24,7 +24,7 @@
   width: 100vw;
   /* max-width: 1260px; */
   /* background-color: yellow; */
-  height: 100vw;
+  height: 100vh;
   display: flex; 
   flex-direction: row; 
   align-items: flex-start;

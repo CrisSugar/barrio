@@ -28,7 +28,7 @@ export default class AllOffers extends React.Component {
 
   render() {
     console.log(this.state.offers);
-    // let shops = [this.props.allShops
+    // let offers = [this.props.allOffers
 
     return (
       <div>

@@ -10,13 +10,16 @@
     /* display: flex; */
     display: flex; 
   flex-direction: column; 
+  
 }
 
 .item {
-    width: 100vw;
+    width: 20%;
     /* background-color: green; */
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    margin:10px;
+    /* position: absolute; */
 }
 
 .list{
