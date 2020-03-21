@@ -3,7 +3,6 @@ import React from "react";
 function AnyOffer(props) {
   return (
     <div>
-      {/* <img src={props.image_url} alt="" /> */}
       <ul>
         <li>
           <p>{props.neighbourhood}</p>

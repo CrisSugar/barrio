@@ -5,24 +5,29 @@
 
 .App {
   height: 100%;
-  max-width: 1299px;
-  
+  width: 100vw;
   text-align: center;
-  background-color: #4ABDAC;
+  /* background-color: #4ABDAC; */
+  background-image: url("./cubosazules.jpg");
+  background-repeat: no-repeat;
+
   font-size: calc(7px + 2vmin);
   color: #DFDCE3;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   
 }
 
 .container{
-  margin-top: 80px;
-  width: 400px;
+  padding-top: 150px;
+  width: 100vw;
+  /* max-width: 1260px; */
+  /* background-color: yellow; */
+  height: 100vw;
   display: flex; 
-  flex-direction: column; 
-  align-items: center;
+  flex-direction: row; 
+  align-items: flex-start;
   justify-content: center; 
   
   

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthService from "../auth/AuthService";
+import "../landing/Barrio.css";
 import { Link } from "react-router-dom";
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
@@ -22,7 +23,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="div-text">
+        <div className="divtext">
           <h2>
             ¿Alguna vez has pedido "cuarto y mitad" en la
             carnicería? ¿El camarero de ese bar te pregunta si quieres
@@ -35,9 +36,37 @@ class Landing extends Component {
             para mantener nuestro barrio vivo.{" "}
           </h3>
         </div>
-        <div className="land-photo">
-          <img src="/barrio.jpg" alt="barrio"></img>
+ 
+        <div className="slider">
+          <ul>
+            <li>
+              <img src="carrousel1.jpg"  alt="clothshop" />
+            </li>
+            <li>
+              <img src="carrousel2.jpg"  alt="cafe" />
+            </li>
+            <li>
+              <img src="carrousel.3.jpg"  alt="" />
+            </li>
+            <li>
+              <img src="carrousel4.jpg"  alt="" />
+            </li>
+            <li>
+              <img src="carrousel6.jpeg"  alt="owner" />
+            </li>
+          </ul>
         </div>
+        <div >
+          <ul className="questions">
+            <li>Preguntas frecuentes</li>
+            <li>Quiénes somos</li>
+            <li>Política de privacidad</li>
+            <li>Contacto</li>
+
+          </ul>
+        </div>
+        
+
       </div>
     );
   }

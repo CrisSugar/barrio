@@ -4,6 +4,7 @@ import Service from "../../services/Service";
 import AllShops from "../allShops/AllShops";
 import AllOffers from "../allOffers/AllOffers";
 
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);

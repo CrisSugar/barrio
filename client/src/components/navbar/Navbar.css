@@ -1,6 +1,6 @@
 .nav-style {
-    background-color: #FC4A1A;
-    height: 80px;
+    background-color: rgb(96, 19, 160);
+    height: 100px;
     width: 100vw;
     margin: 0px;
     display: flex; 
@@ -38,7 +38,7 @@ nav>ul {
     border-color: #DFDCE3;
     margin: 15px;
     padding: 5px;
-    font-size: 25px;
+    font-size: 25px; 
 }
 
 .div-nav{

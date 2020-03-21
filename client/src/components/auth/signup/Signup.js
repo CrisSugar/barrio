@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import AuthService from "./AuthService";
+import AuthService from "../AuthService";
+import "./Signup.css";
 import { Link } from "react-router-dom";
+
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
 //uno llama a /signup y el otro a /login usando nuestro AuthService

@@ -1,8 +1,8 @@
 import React from "react";
+
 function AnyNotification(props) {
   return (
     <div>
-      {/* <img src={props.anyshops.image_url} alt="" /> */}
       <ul>
         <li>
           <h4>{props.neighbourhood}</h4>

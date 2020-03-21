@@ -60,17 +60,17 @@ class Navbar extends Component {
             />
             <ul>
               <div className="div-nav">
-                <li className="navlink">
+              <li>
                   <Link to="/signup" className="link">
                     Comerciante
                   </Link>
                 </li>
-                <li className="navlink">
+                <li>
                   <Link to="/signupClient" className="link">
                     Vecino
                   </Link>
                 </li>
-                <li className="navlink">
+                <li>
                   <Link to="/login" className="link">
                     Iniciar sesión
                   </Link>

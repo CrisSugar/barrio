@@ -1,6 +1,7 @@
 import React from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 export default class OfferDetail extends React.Component {
   constructor(props) {
@@ -29,10 +30,10 @@ export default class OfferDetail extends React.Component {
           <h2>{this.state.offer.product}</h2>
           <p> Precio : {this.state.offer.prize}</p>
           <p>Precio oferta: {this.state.offer.offerPrize}</p>
-          <button><Link to="/offers" className="link">
+          <Button variant="primary"><Link to="/offers" className="link">
             <h4>Ver Ofertas</h4>
           </Link>
-        </button>
+        </Button>
         </div>
       );
     } else {

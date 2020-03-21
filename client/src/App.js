@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import Navbar from "./components/navbar/Navbar";
-import Signup from "./components/auth/Signup";
+import Signup from "./components/auth/signup/Signup";
 import SignupClient from "./components/auth/SignupClient";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
@@ -14,13 +15,15 @@ import AllNotifications from "./components/allNotifications/AllNotifications";
 import ShopDetail from "./components/shopDetail/ShopDetail";
 import OfferDetail from "./components/offerDetail/OfferDetail";
 import NotificationDetail from "./components/notificationDetail/NotificationDetail";
-import HomeClient from "./components/homeClient/HomeClient";
-import HomeOwner from "./components/homeOwner/HomeOwner";
 import Home from "./components/home/Home";
 import Barrio from "./components/landing/Barrio";
 import AddShop from "./components/addShop/AddShop";
 import AddOffer from "./components/addOffer/AddOffer";
 import AddNotification from "./components/addNotification/AddNotification";
+
+
+
+
 
 class App extends Component {
   constructor(props) {

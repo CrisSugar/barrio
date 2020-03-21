@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 
+
 class AddOffer extends Component {
   constructor(props) {
     super(props);
@@ -17,26 +18,6 @@ class AddOffer extends Component {
     this.service = new Service();
   }
 
-  // this method handles just the file upload
-//   handleFileUpload = e => {
-//     console.log("The file to be uploaded is: ", e);
-
-    // const uploadData = new FormData();
-    // imageUrl => this name has to be the same as in the model since we pass
-    // req.body to .create() method when creating a new thing in '/api/things/create' POST route
-    // uploadData.append("imageUrl", e);
-
-    // this.service.handleUpload(uploadData)
-    //   .then(response => {
-    //     // console.log('response is: ', response);
-    //     // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-    //     console.log(response.secure_url)
-    //     this.setState({ imageUrl: response.secure_url });
-    //   })
-    //   .catch(err => {
-    //     console.log("Error while uploading the file: ", err);
-    //   });
-  // };
 
   // this method submits the form
   handleFormSubmit = event => {
@@ -90,15 +71,6 @@ class AddOffer extends Component {
     } = event.target;
     this.setState({ [name]: value });
   };
-
-  // handleImage = event => {
-  //   // event.preventDefault();
-  //   const {
-  //     name, value,files
-  //   } = event.target;
-  //   this.setState({ [name]: value});
-  //   this.setState({ ["file"]: files[0]});
-  // };
 
   render() {
     return (

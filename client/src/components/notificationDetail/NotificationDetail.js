@@ -1,6 +1,7 @@
 import React from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 export default class NotificationDetail extends React.Component {
   constructor(props) {
@@ -25,11 +26,11 @@ export default class NotificationDetail extends React.Component {
         <div>
           <h4>{this.state.notification.neighbourhood}</h4>
           <p>{this.state.notification.commentary}</p>
-          <button>
+          <Button variant="primary">
             <Link to="/notifications" className="link">
               Ver avisos
             </Link>
-          </button>
+          </Button>
         </div>
       );
     } else {

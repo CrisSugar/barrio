@@ -3,6 +3,7 @@ import AnyNotification from "../anyNotification/AnyNotification";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 
+
 export default class AllNotifications extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,9 @@ export default class AllNotifications extends React.Component {
           <AnyNotification key={anynotifications._id} {...anynotifications} />
         ))
         }
+        {/* {this.props.userInSession.role === "owner" && */}
         <button><Link to={'/notification/new'} className="link">Crear aviso</Link></button>
+        {/* } */}
       </div>
     );
   }
