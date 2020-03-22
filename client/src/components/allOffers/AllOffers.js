@@ -31,7 +31,7 @@ export default class AllOffers extends React.Component {
     // let offers = [this.props.allOffers
 
     return (
-      <div>
+      <div className="listoffers">
        <ul className="offers-container">
         {this.state.offers.map(anyoffers => (
           <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>

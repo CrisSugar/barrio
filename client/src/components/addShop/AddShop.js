@@ -24,11 +24,14 @@ class AddShop extends Component {
   // this method handles just the file upload
   handleFileUpload = e => {
     console.log("The file to be uploaded is: ", e);
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
 
     const uploadData = new FormData();
     // imageUrl => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new thing in '/api/things/create' POST route
     uploadData.append("imageUrl", e);
+    // uploadData.append("imageUrl", e.target.files[0]);
+
 
     this.service
       .handleUpload(uploadData)
@@ -172,8 +175,8 @@ class AddShop extends Component {
             <label>Imagen</label>
             <input
               type="file"
-              name="imageUrl"
-              value={this.state.file}
+              // name="imageUrl"
+              // value={this.state.file}
               // onChange={e => this.handleImage(e)}
               onChange={e => this.handleFileUpload(e)}
             />
@@ -185,7 +188,7 @@ class AddShop extends Component {
               name="owner"
               value={this.state.owner}
               onChange={e => this.handleChange(e)}
-              //onChange={e => this.handleFileUpload(e)}
+            
             />
           </fieldset>
           <fieldset>

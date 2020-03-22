@@ -94,9 +94,9 @@ class Service {
     // .catch(errorHandler);
   }
 
-  saveNewThing(newThing) {
-    // console.log('new thing is: ', newThing)
-    return this.service.post("/things/create", newThing).then(res => res.data);
+  saveNewShop(newShop) {
+    // console.log('new shop is: ', newShop)
+    return this.service.post("/shop/new", newShop).then(res => res.data);
     // .catch(errorHandler);
   }
 }

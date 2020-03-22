@@ -3,7 +3,7 @@ import React from "react";
 function AnyNotification(props) {
   return (
     <div>
-      <ul>
+      <ul className="cada-aviso">
         <li>
           <h4>{props.neighbourhood}</h4>
         </li>

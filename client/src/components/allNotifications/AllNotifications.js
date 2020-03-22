@@ -29,7 +29,7 @@ export default class AllNotifications extends React.Component {
     console.log(this.state.notifications);
 
     return (
-      <div>
+      <div className="notif-container">
         {this.state.notifications.map(anynotifications => (
           <AnyNotification key={anynotifications._id} {...anynotifications} />
         ))

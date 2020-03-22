@@ -1,7 +1,6 @@
 .landing{
-  
-  /* width: 1260px; */
-  width: 100vw;
+  /* height: 100vh; */
+  /* width: 100vw; */
 }
 
 .divtext{
@@ -9,9 +8,9 @@
     padding-right: 45px
 }
 
-.landphoto{
+/* .landphoto{
   
-}
+} */
 
 .slider {
 

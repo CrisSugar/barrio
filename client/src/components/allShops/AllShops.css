@@ -1,10 +1,12 @@
 .shops-container {
     display: flex;
     flex-direction: row;
-    /* background-color: turquoise; */
-    /* border: solid #5B6DCD 10px;
-    padding: 2px; */
-
+    /* background-color: turquoise;  */
+    /* border: solid #5B6DCD 10px; */
+    /* padding: 5px; */
+    /* max-width: 1260px; */
+    margin:10px;
+    overflow: auto;
 }
 
 li {
@@ -22,8 +24,8 @@ height: 95px;
 }
 
 .cadatienda{
-    width: 1250px;
+    /* width: 1250px; */
     margin-bottom: 20px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
