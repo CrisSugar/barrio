@@ -2,6 +2,7 @@ import React from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import "./ShopDetail.css";
 
 export default class ShopDetail extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class ShopDetail extends React.Component {
           </p>
           <Button variant="primary">
           <Link to="/shops" className="link">
-            <h4>Ver Tiendas</h4>
+            Ver Tiendas
           </Link>
         </Button>
         </div>

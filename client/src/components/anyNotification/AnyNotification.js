@@ -1,8 +1,9 @@
 import React from "react";
+import "./AnyNotification.css";
 
 function AnyNotification(props) {
   return (
-    <div>
+ 
       <ul className="cada-aviso">
         <li>
           <h4>{props.neighbourhood}</h4>
@@ -12,7 +13,7 @@ function AnyNotification(props) {
         </li>
         {/* <Link to={`/notification/${props._id}`} className="link">Ver Aviso</Link> */}
       </ul>
-    </div>
+
   );
 }
 

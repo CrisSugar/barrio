@@ -1,3 +1,8 @@
 .cada-aviso{
     width: 70%;
+    height: 100%;
+    background-color: rgb(243, 69, 69);
+    border: solid rgb(9, 10, 12) 3px;
+    padding: 20px;
+    margin:20px;
 }

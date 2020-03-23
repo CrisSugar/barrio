@@ -7,7 +7,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/signup/Signup";
 import SignupClient from "./components/auth/SignupClient";
-import Login from "./components/auth/Login";
+import Login from "./components/auth/login/Login";
 import AuthService from "./components/auth/AuthService";
 import AllShops from "./components/allShops/AllShops";
 import AllOffers from "./components/allOffers/AllOffers";

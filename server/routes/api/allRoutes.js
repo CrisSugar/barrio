@@ -88,12 +88,6 @@ router.post("/upload", uploader.single("imageUrl"), (req, res, next) => {
 
 /// show all
 
-// router.get("/offers", (req, res, next) => {
-//   Offer.find().then(allOffers => {
-//     res.json(allOffers);
-//   });
-// });
-
 router.get("/offers", (req, res, next) => {
   Offer.find().then(allOffers => {
     res.json(allOffers);
@@ -107,10 +101,6 @@ router.get("/offer/:id", (req, res, next) => {
   });
 });
 
-/// create one
-// router.post("/offer/new", (req, res, next) => {
-//   Offer.create(req.params.id, req.body).then(() => res.redirect("/offers"));
-// });
 
 router.post("/offer/new", (req, res, next) => {
   const { neighbourhood, shop, product, prize, offerPrize } = req.body;
@@ -146,16 +136,6 @@ router.get("/notification/:id", (req, res, next) => {
   );
 });
 
-/// create one
-// router.post("/notification/new", (req, res, next) => {
-//   let aviso = {
-//     neighbourhood : req.body.neighbourhood,
-//     commentary: req.body.commentary
-//   }
-//   Notification.create(aviso).then(() =>
-//     res.json(aviso)
-//   );
-// });
 
 router.post("/notification/new", (req, res, next) => {
   const { neighbourhood, commentary } = req.body;

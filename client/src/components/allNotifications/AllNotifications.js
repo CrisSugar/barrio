@@ -2,6 +2,7 @@ import React from "react";
 import AnyNotification from "../anyNotification/AnyNotification";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import "./allNotifications.css";
 
 
 export default class AllNotifications extends React.Component {
@@ -29,11 +30,13 @@ export default class AllNotifications extends React.Component {
     console.log(this.state.notifications);
 
     return (
+      <div className="listnotif">
       <div className="notif-container">
         {this.state.notifications.map(anynotifications => (
           <AnyNotification key={anynotifications._id} {...anynotifications} />
         ))
         }
+        </div>
         {/* {this.props.userInSession.role === "owner" && */}
         <button><Link to={'/notification/new'} className="link">Crear aviso</Link></button>
         {/* } */}

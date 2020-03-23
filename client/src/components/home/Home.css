@@ -1,12 +1,20 @@
-.homeowner{
+.homeowner {
     width: 100vw;
-    /* height: 100vh; */
+    margin-bottom: 50px;
 }
 
-.but-cont{
+.but-cont {
     max-width: 1290px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin:15px;
+
+}
+
+.homeclient {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
 }

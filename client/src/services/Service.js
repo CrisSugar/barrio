@@ -74,12 +74,6 @@ class Service {
       .catch(error => console.log(error));
   };
 
-  // deleteShop = (id) => {
-  //   return this.service
-  //     .delete(`/shop/${id}`)
-  //     .then(response => response.data)
-  //     .catch(error => console.log(error));
-  // };
 
   deleteShop = (id) => {
     return this.service.delete(`/shopdelete/${id}`)

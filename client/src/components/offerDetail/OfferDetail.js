@@ -2,6 +2,7 @@ import React from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import "./OfferDetail.css";
 
 export default class OfferDetail extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class OfferDetail extends React.Component {
   render() {
     if (this.state.offer) {
       return (
-        <div>
+        <div className="oferta">
           {/* <img src={this.state.offer.image_url} alt=""/>  */}
           <h4>{this.state.offer.neighbourhood}</h4>
           <h4>{this.state.offer.shop}</h4>
@@ -31,7 +32,7 @@ export default class OfferDetail extends React.Component {
           <p> Precio : {this.state.offer.prize}</p>
           <p>Precio oferta: {this.state.offer.offerPrize}</p>
           <Button variant="primary"><Link to="/offers" className="link">
-            <h4>Ver Ofertas</h4>
+            Ver Ofertas
           </Link>
         </Button>
         </div>

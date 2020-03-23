@@ -2,6 +2,7 @@ import React from "react";
 import AnyOffer from "../anyOffer/AnyOffer";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import "./AllOffers.css";
 
 
 export default class AllOffers extends React.Component {
@@ -32,10 +33,11 @@ export default class AllOffers extends React.Component {
 
     return (
       <div className="listoffers">
-       <ul className="offers-container">
+       <div className="offers-container">
         {this.state.offers.map(anyoffers => (
           <AnyOffer key={anyoffers._id} {...anyoffers}></AnyOffer>
-        ))}</ul>
+        ))}
+        </div>
         {this.props.userInSession.role === "owner" &&
         <button><Link to={'/offer/new'} className="link">Crear Oferta</Link></button>
         }

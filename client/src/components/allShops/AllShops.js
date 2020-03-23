@@ -46,7 +46,7 @@ export default class AllShops extends React.Component {
          ) }
           </div>
       {this.props.userInSession.role === "owner" &&
-      <button className="buttonshop"><Link to={'/shop/new'} className="link">Añadir Tienda</Link></button>
+      <button><Link to={'/shop/new'} className="link">Añadir Tienda</Link></button>
       }
       {/* Siempre lo que se devuelve que esté envuelto en un div o un React.fragment :) 
       {this.props.userInSession.role === "owner" ?

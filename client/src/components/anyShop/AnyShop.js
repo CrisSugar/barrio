@@ -31,7 +31,7 @@ export default class AnyShop extends React.Component {
 
   render() {
     return (
-      <div className="item">
+      // <div className="item">
         <div className="cadafila">
           <ul className="list">
             <li>
@@ -59,7 +59,7 @@ export default class AnyShop extends React.Component {
               )}
             </div>
           </ul>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

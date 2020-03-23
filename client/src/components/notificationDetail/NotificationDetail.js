@@ -2,6 +2,7 @@ import React from "react";
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import "./NotificationDetail.css"
 
 export default class NotificationDetail extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class NotificationDetail extends React.Component {
   render() {
     if (this.state.notification) {
       return (
-        <div>
+        <div className="nota">
           <h4>{this.state.notification.neighbourhood}</h4>
           <p>{this.state.notification.commentary}</p>
           <Button variant="primary">

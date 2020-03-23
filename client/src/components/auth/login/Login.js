@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import AuthService from "./AuthService";
+// import AuthService from "./AuthService";
+import AuthService from "../AuthService";
+import "./Login.css";
 
 class Login extends Component {
   constructor(props) {
@@ -44,7 +46,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="loginform">
         <h3>Inicia sesión con tus datos:</h3>
 
         <form onSubmit={this.handleFormSubmit}>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
+import "./AddShop.css"
 
 
 class AddShop extends Component {
@@ -125,7 +126,7 @@ class AddShop extends Component {
 
   render() {
     return (
-      <div>
+      <div className="formshop">
         <h2>Nueva Tienda</h2>
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
@@ -220,13 +221,13 @@ class AddShop extends Component {
           </fieldset>
     
           {/* <input type="file" onChange={e => this.handleFileUpload(e)} /> */}
-          <button type="submit">Guardar</button>
+          <button type="submit" className="link">Guardar</button>
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
         <button>
           <Link to="/shops" className="link">
-            <h4>Ver Tiendas</h4>
+            Ver Tiendas
           </Link>
         </button>
       </div>

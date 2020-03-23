@@ -3,35 +3,32 @@
     height: 130px;
 }
 
-.cadafila{
-    /* width: 100vw;
-    height: 100vh; */
-    /* background-color: silver; */
-    /* display: flex; */
-    display: flex; 
-  flex-direction: column; 
-  
+.cadafila {
+
+    display: flex;
+    flex-direction: column;
+
 }
 
 .item {
-    width: 20%;
-    /* background-color: green; */
+    width: 90%;
+    height: 50%;
     display: flex;
-    /* flex-direction: row; */
-    margin:10px;
-    /* position: absolute; */
+
 }
 
-.list{
-    width: 240px;
+.list {
+    /* width: 240px; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 0px; */
     background-color: #5B6DCD;
-    border: solid #5B6DCD 10px;
-    padding: 2px;
+    border: solid rgb(9, 10, 12) 3px;
+    padding: 20px;
+    margin: 20px;
 }
+
 
 button {
     background-color: transparent;

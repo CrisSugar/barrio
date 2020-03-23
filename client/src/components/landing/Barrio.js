@@ -43,9 +43,6 @@ class Landing extends Component {
               <img src="carrousel1.jpg"  alt="clothshop" />
             </li>
             <li>
-              <img src="carrousel2.jpg"  alt="cafe" />
-            </li>
-            <li>
               <img src="carrousel.3.jpg"  alt="" />
             </li>
             <li>

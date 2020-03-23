@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import the service file since we need it to send (and get) the data to(from) server
 import Service from "../../services/Service";
 import { Link } from "react-router-dom";
-
+import "./AddOffer.css";
 
 class AddOffer extends Component {
   constructor(props) {
@@ -13,11 +13,10 @@ class AddOffer extends Component {
       shop: "",
       product: "",
       prize: "",
-      offerPrize: "",
+      offerPrize: ""
     };
     this.service = new Service();
   }
-
 
   // this method submits the form
   handleFormSubmit = event => {
@@ -43,11 +42,11 @@ class AddOffer extends Component {
         console.log("added: ", response);
         // here you would redirect to some other page
         this.setState({
-          neighbourhood: '',
-          shop: '',
-          product: '',
-          prize: '',
-          offerPrize: '',
+          neighbourhood: "",
+          shop: "",
+          product: "",
+          prize: "",
+          offerPrize: "",
           error: false
         });
         // this.props.getOffer(response);
@@ -66,18 +65,16 @@ class AddOffer extends Component {
 
   handleChange = event => {
     // event.preventDefault();
-    const {
-      name, value
-    } = event.target;
+    const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
   render() {
     return (
-      <div>
+      <div className="formoffer">
         <h2>Nueva Oferta</h2>
         <form onSubmit={this.handleFormSubmit}>
-        <fieldset>
+          <fieldset>
             <label>
               Barrio:{" "}
               <select
@@ -129,13 +126,15 @@ class AddOffer extends Component {
             />
           </fieldset>
           {/* <input type="file" onChange={e => this.handleFileUpload(e)} /> */}
-          <button type="submit">Guardar</button>
+          <button type="submit" className="link">Guardar</button>
           {/* <input className="enviar" type="submit" value="Enviar" /> */}
           <h1>{this.state.error ? "Error" : ""}</h1>
         </form>
-        <button><Link to="/offers" className="link">
-              <h4>Ver Ofertas</h4>
-            </Link></button>
+        <button>
+          <Link to="/offers" className="link">
+            Ver Ofertas
+          </Link>
+        </button>
       </div>
     );
   }
